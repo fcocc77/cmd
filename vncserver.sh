@@ -1,3 +1,4 @@
+#!/bin/sh
 yum -y install tigervnc-server
 
 pkill Xvnc
