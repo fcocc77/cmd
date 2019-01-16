@@ -1,33 +1,32 @@
-yum install vsftpd
+#!/bin/sh
+yum -y install vsftpd
 
-useradd "user"
-passwd "user"
-userdel -r "user"
+user=public2
+group=server5
 
-# ------------- grupos y propietarios ------------
-chmod 770 : permisos al usuario:grupo
-chown user:group
-#----------------------
+ftpdir=/media/ftp
+userdir=$ftpdir/$user
 
-vim /etc/vsftpd/vsftpd.conf
+useradd $user
+passwd $user
 
-#------------------------
-anonymous_enable=NO
+mkdir $userdir
+chown $user:$group -R $userdir
+chmod 770 -R $userdir
+
+conf="/etc/vsftpd/vsftpd.conf"
+
+echo "anonymous_enable=NO
 local_enable=YES
 write_enable=YES
 pam_service_name=vsftpd
 listen=YES
 chroot_local_user=YES
 ftpd_banner=Bienvenido al servidor FTP de JumpCats
-local_root=/home/user
-#------------------------
+local_root=$ftpdir" > $conf
 
-#---------- disable selinux ----------------
-vim /etc/selinux/config
-	SELINUX=disabled
+echo SELINUX=disabled > /etc/selinux/config
 setenforce 0
 
-#---------------------------
-
-service vsftpd restart
-chkconfig vsftpd on
+systemctl restart vsftpd
+systemctl enable vsftpd

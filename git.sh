@@ -3,7 +3,7 @@
 	git ls-files --others --exclude-standard >> .gitignore
 
 # force push
-i	git push origin master --force
+	git push origin master --force
 
 # reset local files
 	git reset --hard
@@ -26,3 +26,5 @@ i	git push origin master --force
 	git tag -a 1.0 -m "details"
 	git push --tags
 
+# guarda credenciales de usuario y password
+	git config credential.helper store

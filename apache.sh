@@ -1,3 +1,7 @@
+
+vim /etc/httpd/conf/httpd.conf
+
+
 NameVirtualHost *:80
 <VirtualHost *:80>
         ServerName server.panoptiko.com
