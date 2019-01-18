@@ -11,7 +11,7 @@ After=syslog.target network.target
 
 [Service]
 Type=forking
-ExecStart=/sbin/runuser -l root -c '/usr/bin/vncserver %i -geometry 1280x1024'
+ExecStart=/sbin/runuser -l root -c '/usr/bin/vncserver :7 -geometry 1280x1024'
 
 
 [Install]
