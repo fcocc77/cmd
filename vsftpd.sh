@@ -1,10 +1,13 @@
 #!/bin/sh
 yum -y install vsftpd
 
-user=public2
-group=server5
+# Esto no funciona en discos montados director la ruta local_root 
+# tiene que ser la carpeta padre del disco montado
+user=pdf
+group=server2
+ftpdir=/home/ftp
+#------------------------------
 
-ftpdir=/media/ftp
 userdir=$ftpdir/$user
 
 useradd $user
@@ -22,7 +25,6 @@ write_enable=YES
 pam_service_name=vsftpd
 listen=YES
 chroot_local_user=YES
-ftpd_banner=Bienvenido al servidor FTP de JumpCats
 local_root=$ftpdir" > $conf
 
 echo SELINUX=disabled > /etc/selinux/config

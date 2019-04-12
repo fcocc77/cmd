@@ -1,7 +1,7 @@
 #!/bin/sh
 #----------------------
-user=server3
-shared="/media/server_01_backup"
+user=server1
+shared="/opt"
 #----------------------
 
 name=$(basename $shared)
