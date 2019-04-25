@@ -32,6 +32,9 @@ mdadm --add /dev/md127 /dev/sda1
 mdadm --grow --raid-devices=4 /dev/md127
 -------------------------------------------------------
 
+----------------Force assamble--------------------------
+mdadm --assemble --force /dev/md127 /dev/sda /dev/sdb /dev/sdd
+-------------------------------------------------------
 
 --------------------check raid-------------
 mdadm --detail /dev/md0
@@ -39,5 +42,5 @@ mdadm --detail /dev/md0
 
 ------------------remove array-------------------
 mdadm --stop /dev/md127
-mdadm --zero-superblock /dev/sda1
+mdadm /dev/md127 --remove /dev/md127
 ------------------------------------------------
