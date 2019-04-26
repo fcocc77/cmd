@@ -1,4 +1,9 @@
 #!/bin/sh
+#------------------------------
+# importante:
+# El servidor donde esta el ftp tiene que tener puesta 
+# la ip del gateway para que se pueda hacer nat desde el router
+#------------------------------
 yum -y install vsftpd
 
 # Esto no funciona en discos montados director la ruta local_root 

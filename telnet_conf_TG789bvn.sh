@@ -14,7 +14,6 @@ pass: user
 # http:
     :nat tmpladd group=wan outside_addr=0.0.0.1 inside_addr=172.16.1.64 outside_port=80 inside_port=80
 # ftp:
-    :nat tmpladd group=wan outside_addr=0.0.0.1 inside_addr=172.16.1.64 outside_port=2021 inside_port=2021
     :nat tmpladd group=wan outside_addr=0.0.0.1 inside_addr=172.16.1.64 outside_port=21 inside_port=21
 # ssh:
     :nat tmpladd group=wan outside_addr=0.0.0.1 inside_addr=172.16.1.64 outside_port=22 inside_port=22
