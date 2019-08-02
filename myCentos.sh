@@ -42,23 +42,33 @@ yum -y install git
 	--install-extension syler.sass-indented \
 	--install-extension azemoh.theme-onedark \
 	--install-extension foxundermoon.shell-format \
-	--install-extension jeff-hykin.better-shellscript-sytax
+	--install-extension jeff-hykin.better-shellscript-sytax \
+	--install-extension vscode-icons-team.vscode-icons
 	# -------------
 # ----------------------
 
 # Repositorios Instalacion
 	yum -y install epel-release
 	yum -y install http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
+	yum -y install  https://centos7.iuscommunity.org/ius-release.rpm
 # ---------------------
 
 # Programas generales
 	yum -y install deluge # Torrent
 	yum -y install ntfs-3g.x86_64 # Particiones de windows
+	yum -y erase git && yum -y install  git2u-all # Git
+	yum -y install rclone.x86_64 # Google Drive
+
+	yum -y install python36
+	yum -y install python36-pip
+	pip3 install django
+	pip3 install Pillow
+	pip3 install --upgrade pip
+
 	# Shell extentions
 	yum -y install gnome-shell-extension-system-monitor-applet.noarch
 	yum -y install gnome-shell-extension-dash-to-dock.noarch
 	yum -y install gnome-shell-extension-no-hot-corner
-	
 # -------------------------------------
 
 
@@ -73,7 +83,9 @@ yum -y install git
 
 # Dash personalizacion
 	dash="sudo -u $user gsettings set org.gnome.shell.extensions.dash-to-dock"
-	$dash dash-max-icon-size 35
+	$dash dash-max-icon-size 24
+	$dash extend-height true
+	$dash custom-theme-shrink true # Padding en los bordes
 	$dash dock-position 'BOTTOM'
 	$dash running-indicator-style 'DOTS' # Indicador en forma de punto
 	$dash custom-theme-customize-running-dots true # Activar cambio de color de dot
