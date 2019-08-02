@@ -43,7 +43,22 @@ gpgcheck=1
 gpgkey=https://packages.microsoft.com/keys/microsoft.asc
 EOF
 yum -y install code
-yum -y install git
+# ---------------------------------------
+
+# Git ------------
+yum -y install git2u-all 
+	# Configuraciones
+	git config --global alias.lod 'log --oneline -10'
+	github=/home/$user/Documents/GitHub
+	mkdir $github
+	cd $github
+	git clone https://fcocc77:$gitpass@github.com/fcocc77/videovina.git
+	git clone https://fcocc77:$gitpass@github.com/fcocc77/cats_farm.git
+	git clone https://fcocc77:$gitpass@github.com/fcocc77/cmd.git
+	git clone https://fcocc77:$gitpass@github.com/fcocc77/scripts.git
+	cd -
+	chown $user:$user -R $github
+
 	# Extenciones
 	sudo -u $user code \
 	--install-extension ms-vscode.cpptools \
@@ -62,20 +77,6 @@ yum -y install git
 	yum -y install vim
 	yum -y --enablerepo=elrepo-kernel install kernel-ml # Kernel
 		grub2-mkconfig -o /boot/efi/EFI/redhat/grub.cfg
-	# Git ------------
-	yum -y erase git && yum -y install git2u-all 
-		# Configuraciones
-		git config --global alias.lod 'log --oneline -10'
-		github=/home/$user/Documents/GitHub
-		mkdir $github
-		cd $github
-		git clone https://fcocc77:$gitpass@github.com/fcocc77/videovina.git
-		git clone https://fcocc77:$gitpass@github.com/fcocc77/cats_farm.git
-		git clone https://fcocc77:$gitpass@github.com/fcocc77/cmd.git
-		git clone https://fcocc77:$gitpass@github.com/fcocc77/scripts.git
-		cd -
-		chown $user:$user -R $github
-	# ---------------------------------------
 	yum -y install rclone.x86_64 # Google Drive
 	yum -y install unar # Descompresor RAR
 
