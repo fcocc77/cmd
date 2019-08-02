@@ -57,6 +57,7 @@ yum -y install git
 # Programas generales
 	yum -y install deluge # Torrent
 	yum -y install ntfs-3g.x86_64 # Particiones de windows
+	yum -y install vim
 	yum -y --enablerepo=elrepo-kernel install kernel-ml # Kernel
 		grub2-mkconfig -o /boot/efi/EFI/redhat/grub.cfg
 	# Git ------------
