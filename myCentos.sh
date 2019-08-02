@@ -2,6 +2,15 @@
 # Estos son los ajustes de inicio par mi de Centos 7 minimal
 
 user=pancho
+echo Introducir Clave de GitHub:
+read gitpass
+
+# Repositorios Instalacion
+	yum -y install epel-release
+	yum -y install http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
+	yum -y install https://www.elrepo.org/elrepo-release-7.0-4.el7.elrepo.noarch.rpm
+	yum -y install  https://centos7.iuscommunity.org/ius-release.rpm
+# ---------------------
 
 # Actualizacion de systema
 yum -y update
@@ -21,7 +30,7 @@ enabled=1
 gpgcheck=1
 gpgkey=https://dl.google.com/linux/linux_signing_key.pub
 EOF
-yum install google-chrome-stable
+yum -y install google-chrome-stable
 # ------------------------
 
 # VSCode
@@ -47,13 +56,6 @@ yum -y install git
 	# -------------
 # ----------------------
 
-# Repositorios Instalacion
-	yum -y install epel-release
-	yum -y install http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
-	yum -y install https://www.elrepo.org/elrepo-release-7.0-4.el7.elrepo.noarch.rpm
-	yum -y install  https://centos7.iuscommunity.org/ius-release.rpm
-# ---------------------
-
 # Programas generales
 	yum -y install deluge # Torrent
 	yum -y install ntfs-3g.x86_64 # Particiones de windows
@@ -67,8 +69,6 @@ yum -y install git
 		github=/home/$user/Documents/GitHub
 		mkdir $github
 		cd $github
-		echo Introducir Clave de GitHub
-		read gitpass
 		git clone https://fcocc77:$gitpass@github.com/fcocc77/videovina.git
 		git clone https://fcocc77:$gitpass@github.com/fcocc77/cats_farm.git
 		git clone https://fcocc77:$gitpass@github.com/fcocc77/cmd.git
@@ -91,7 +91,6 @@ yum -y install git
 	yum -y install gnome-shell-extension-no-hot-corner
 # -------------------------------------
 
-
 # Gnome Configuraciones
 # este comando muestra la lista de las configuraciones que se pueden cambiar "gsettings list-recursively"
 	sudo -u $user gsettings set org.gnome.desktop.interface enable-animations false # Desabilita animacion
@@ -99,8 +98,6 @@ yum -y install git
 	sudo -u $user gsettings set org.gnome.desktop.background show-desktop-icons true # Iconos del escritorio
 	sudo -u $user gsettings set org.gnome.nautilus.list-view use-tree-view true # Modo carpetas con ramas
 	sudo -u $user gsettings set org.gnome.desktop.wm.preferences button-layout ':,minimize,maximize,close' # Botones de la barra superior
-
-
 
 # Dash personalizacion
 	dash="sudo -u $user gsettings set org.gnome.shell.extensions.dash-to-dock"
