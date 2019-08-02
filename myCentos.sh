@@ -99,6 +99,10 @@ yum -y install git2u-all
 	sudo -u $user gsettings set org.gnome.desktop.background show-desktop-icons true # Iconos del escritorio
 	sudo -u $user gsettings set org.gnome.nautilus.list-view use-tree-view true # Modo carpetas con ramas
 	sudo -u $user gsettings set org.gnome.desktop.wm.preferences button-layout ':,minimize,maximize,close' # Botones de la barra superior
+	sudo -u $user gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed true # dash fijo
+	sudo -u $user gsettings set org.gnome.shell.extensions.system-monitor cpu-style 'both'
+	sudo -u $user gsettings set org.gnome.shell.extensions.system-monitor memory-style 'both'
+	sudo -u $user gsettings set org.gnome.shell.extensions.system-monitor icon-display false
 
 # Dash personalizacion
 	dash="sudo -u $user gsettings set org.gnome.shell.extensions.dash-to-dock"
