@@ -60,14 +60,16 @@ yum -y install git
 	yum -y erase git && yum -y install git2u-all 
 		# Configuraciones
 		git config --global alias.lod 'log --oneline -10'
-		git config credential.helper store # Para almacenar usuario y password
-		github=$home/Documents/GitHub
+		github=/home/$user/Documents/GitHub
 		mkdir $github
-		git clone https://github.com/fcocc77/videovina.git $github
-		git clone https://github.com/fcocc77/catsfarm.git $github
-		git clone https://github.com/fcocc77/cmd.git $github
-		git clone https://github.com/fcocc77/scripts.git $github
-		git clo
+		cd $github
+		echo Introducir Clave de GitHub
+		read gitpass
+		git clone https://fcocc77:$gitpass@github.com/fcocc77/videovina.git
+		git clone https://fcocc77:$gitpass@github.com/fcocc77/cats_farm.git
+		git clone https://fcocc77:$gitpass@github.com/fcocc77/cmd.git
+		git clone https://fcocc77:$gitpass@github.com/fcocc77/scripts.git
+		cd -
 	# ---------------------------------------
 	yum -y install rclone.x86_64 # Google Drive
 	yum -y install unar # Descompresor RAR
@@ -91,6 +93,7 @@ yum -y install git
 	sudo -u $user gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true # Cick con el trackpad
 	sudo -u $user gsettings set org.gnome.desktop.background show-desktop-icons true # Iconos del escritorio
 	sudo -u $user gsettings set org.gnome.nautilus.list-view use-tree-view true # Modo carpetas con ramas
+	sudo -u $user gsettings set org.gnome.desktop.wm.preferences button-layout ':close,minimize,maximize' # Botones de la barra superior
 
 
 
