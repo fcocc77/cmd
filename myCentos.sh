@@ -50,12 +50,15 @@ yum -y install git
 # Repositorios Instalacion
 	yum -y install epel-release
 	yum -y install http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
+	yum -y install https://www.elrepo.org/elrepo-release-7.0-4.el7.elrepo.noarch.rpm
 	yum -y install  https://centos7.iuscommunity.org/ius-release.rpm
 # ---------------------
 
 # Programas generales
 	yum -y install deluge # Torrent
 	yum -y install ntfs-3g.x86_64 # Particiones de windows
+	yum -y --enablerepo=elrepo-kernel install kernel-ml # Kernel
+		grub2-mkconfig -o /boot/efi/EFI/redhat/grub.cfg
 	# Git ------------
 	yum -y erase git && yum -y install git2u-all 
 		# Configuraciones
