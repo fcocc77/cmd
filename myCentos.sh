@@ -83,7 +83,7 @@ yum -y install git2u-all
 
 	yum -y install python36
 	yum -y install python36-pip
-	pip3 install django
+	pip3 install --upgrade Django==2.1
 	pip3 install Pillow
 	pip3 install --upgrade pip
 
