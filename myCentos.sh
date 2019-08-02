@@ -116,7 +116,8 @@ yum -y install git2u-all
 	$dash transparency-mode 'FIXED' # Opacidad fija
 # ---------------------
 
-# Short Cut Terminal
+# Short Cut 
+	#Terminal
 	shortcut="sudo -u $user gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/"
 	$shortcut copy '<Ctrl>c'
 	$shortcut paste '<Ctrl>v'
@@ -124,8 +125,18 @@ yum -y install git2u-all
 	$shortcut close-tab '<Ctrl>w'
 	$shortcut new-window '<Ctrl>n'
 	$shortcut close-window '<Ctrl>q'
+	# --------------------
+	# Escritorio
+	sudo -u $user gsettings set org.gnome.desktop.wm.keybindings show-desktop "['<Primary><Alt>d']" # Mostrar escritorio
 # -----------------
 
 # Boot Ajustes
 grub2-mkconfig -o /boot/grub2/grub.cfg 
 # ---------------------------------
+
+# Wallpappers
+cd /home/$user/Pictures
+wget "https://u.cubeupload.com/Nd8UdD.png"
+sudo -u $user gsettings set org.gnome.desktop.background picture-uri /home/pancho/$user/Nd8UdD.png
+cd -
+# ----------------------
