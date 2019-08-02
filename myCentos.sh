@@ -70,6 +70,7 @@ yum -y install git
 		git clone https://fcocc77:$gitpass@github.com/fcocc77/cmd.git
 		git clone https://fcocc77:$gitpass@github.com/fcocc77/scripts.git
 		cd -
+		chown $user:$user -R $github
 	# ---------------------------------------
 	yum -y install rclone.x86_64 # Google Drive
 	yum -y install unar # Descompresor RAR
@@ -93,7 +94,7 @@ yum -y install git
 	sudo -u $user gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true # Cick con el trackpad
 	sudo -u $user gsettings set org.gnome.desktop.background show-desktop-icons true # Iconos del escritorio
 	sudo -u $user gsettings set org.gnome.nautilus.list-view use-tree-view true # Modo carpetas con ramas
-	sudo -u $user gsettings set org.gnome.desktop.wm.preferences button-layout ':close,minimize,maximize' # Botones de la barra superior
+	sudo -u $user gsettings set org.gnome.desktop.wm.preferences button-layout ':,minimize,maximize,close' # Botones de la barra superior
 
 
 
