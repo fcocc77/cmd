@@ -56,8 +56,21 @@ yum -y install git
 # Programas generales
 	yum -y install deluge # Torrent
 	yum -y install ntfs-3g.x86_64 # Particiones de windows
-	yum -y erase git && yum -y install  git2u-all # Git
+	# Git ------------
+	yum -y erase git && yum -y install git2u-all 
+		# Configuraciones
+		git config --global alias.lod 'log --oneline -10'
+		git config credential.helper store # Para almacenar usuario y password
+		github=$home/Documents/GitHub
+		mkdir $github
+		git clone https://github.com/fcocc77/videovina.git $github
+		git clone https://github.com/fcocc77/catsfarm.git $github
+		git clone https://github.com/fcocc77/cmd.git $github
+		git clone https://github.com/fcocc77/scripts.git $github
+		git clo
+	# ---------------------------------------
 	yum -y install rclone.x86_64 # Google Drive
+	yum -y install unar # Descompresor RAR
 
 	yum -y install python36
 	yum -y install python36-pip
