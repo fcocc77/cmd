@@ -132,7 +132,7 @@ yum -y install git2u-all
 # -----------------
 
 # Boot Ajustes
-GRUB_DEFAULT=0
+grub2-set-default 0
 grub2-mkconfig -o /boot/grub2/grub.cfg 
 # ---------------------------------
 
