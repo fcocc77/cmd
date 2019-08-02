@@ -121,3 +121,7 @@ yum -y install git2u-all
 	$shortcut new-window '<Ctrl>n'
 	$shortcut close-window '<Ctrl>q'
 # -----------------
+
+# Boot Ajustes
+grub2-mkconfig -o /boot/grub2/grub.cfg 
+# ---------------------------------
