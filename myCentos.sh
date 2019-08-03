@@ -150,3 +150,14 @@ wget "https://u.cubeupload.com/Nd8UdD.png"
 sudo -u $user gsettings set org.gnome.desktop.background picture-uri /home/pancho/$user/Nd8UdD.png
 cd -
 # ----------------------
+
+# Añade los Driver de Intel a Xorg
+cat << EOF >> /etc/X11/xorg.con
+Section "Device"
+	Option     "TearFree" "true"
+	Identifier  "Card0"
+	Driver      "intel"
+	BusID       "PCI:0:2:0"
+EndSection
+EOF
+# ----------------------
