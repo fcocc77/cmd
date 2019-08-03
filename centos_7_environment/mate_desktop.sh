@@ -1,0 +1,1 @@
+yum groupinstall "MATE Desktop" # Escritorio Gnome 2
