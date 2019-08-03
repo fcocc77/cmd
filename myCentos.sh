@@ -78,9 +78,14 @@ yum -y install git2u-all
 	yum -y install ntfs-3g.x86_64 # Particiones de windows
 	yum -y install vim
 	yum -y install vlc
+	
+	# Virtual Box
+	yum -y --enablerepo=elrepo-kernel install kernel-ml kernel-ml-devel kernel-ml-headers
+	yum -y install make patch gcc perl
 	yum -y install VirtualBox-5.2.x86_64
-	yum -y --enablerepo=elrepo-kernel install kernel-ml # Kernel
-		grub2-mkconfig -o /boot/efi/EFI/redhat/grub.cfg
+	/sbin/vboxconfig
+	# -------------------------
+	
 	yum -y install rclone.x86_64 # Google Drive
 	yum -y install unar # Descompresor RAR
 
@@ -136,7 +141,7 @@ yum -y install git2u-all
 
 # Boot Ajustes
 grub2-set-default 0
-grub2-mkconfig -o /boot/grub2/grub.cfg 
+grub2-mkconfig -o /boot/grub2/grub.cfg
 # ---------------------------------
 
 # Wallpappers
