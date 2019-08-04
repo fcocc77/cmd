@@ -1,5 +1,5 @@
 # Programas generales
-yum -y install deluge # Torrent
+yum -y install ffmpeg
 yum -y install ntfs-3g # Particiones de windows
 yum -y install vim
 yum -y install vlc
