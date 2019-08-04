@@ -36,13 +36,6 @@ echo "exec /usr/bin/mate-session" >> ~/.xinitrc # Inicio de MATE por defecto
 sudo -u $user echo "exec /usr/bin/mate-session" >> ~/.xinitrc
 # ------------------------------------
 
-# Wallpappers
-cd /home/$user/Pictures
-wget "https://u.cubeupload.com/Nd8UdD.png"
-sudo -u $user gsettings set org.gnome.desktop.background picture-uri /home/pancho/$user/Nd8UdD.png
-cd -
-# ----------------------
-
 # Boot Ajustes
 grub2-set-default 0
 grub2-mkconfig -o /boot/grub2/grub.cfg
