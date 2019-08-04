@@ -4,8 +4,8 @@ gitpass=$2
 # Git ------------
 yum -y install git2u-all 
 # Configuraciones
-git config --global alias.lod 'log --oneline -10'
-git config --global alias.auto '!git add . && git commit -m "..." && git push'
+sudo -u $user git config --global alias.lod 'log --oneline -10'
+sudo -u $user git config --global alias.auto '!git add . && git commit -m "..." && git push'
 github=/home/$user/Documents/GitHub
 mkdir $github
 cd $github
