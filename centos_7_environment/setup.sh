@@ -14,33 +14,27 @@ wget https://download.virtualbox.org/virtualbox/rpm/el/virtualbox.repo -P /etc/y
 yum -y update
 # ------------------------
 
-# Google Chrome
-cat << EOF > /etc/yum.repos.d/google-chrome.repo
-[google-chrome]
-name=google-chrome
-baseurl=http://dl.google.com/linux/chrome/rpm/stable/x86_64
-enabled=1
-gpgcheck=1
-gpgkey=https://dl.google.com/linux/linux_signing_key.pub
-EOF
-yum -y install google-chrome-stable
-# ------------------------
-
 # Añade los Driver de Intel a Xorg
-cat << EOF >> /etc/X11/xorg.conf
+cat << EOF >> /etc/X11/xorg.conf.d/20-intel.conf
 Section "Device"
-	Option     "TearFree"	"true"
-	Option     "AccelMethod"	"sna"
-	Driver     "intel"
+   Identifier  "Intel Graphics"
+   Driver      "intel"
+   Option      "TearFree"    "true"
+   Option      "AccelMethod" "sna"
 EndSection
 EOF
 # ----------------------
 
 # Modulos
-sh dev_tools.sh $gitpass
+sh dev_tools.sh $user $gitpass
 sh apps.sh 
-sh mate_desktop.sh
 # -----------------
+
+# Escritorio MATTE
+yum groupinstall "MATE Desktop"
+echo "exec /usr/bin/mate-session" >> ~/.xinitrc # Inicio de MATE por defecto
+sudo -u $user echo "exec /usr/bin/mate-session" >> ~/.xinitrc
+# ------------------------------------
 
 # Boot Ajustes
 grub2-set-default 0

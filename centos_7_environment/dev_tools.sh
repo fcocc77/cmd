@@ -1,3 +1,5 @@
+user=$1
+gitpass=$2
 
 # Git ------------
 yum -y install git2u-all 
@@ -7,10 +9,10 @@ git config --global alias.auto '!git add . && git commit -m "..." && git push'
 github=/home/$user/Documents/GitHub
 mkdir $github
 cd $github
-git clone https://fcocc77:$1@github.com/fcocc77/videovina.git
-git clone https://fcocc77:$1@github.com/fcocc77/cats_farm.git
-git clone https://fcocc77:$1@github.com/fcocc77/cmd.git
-git clone https://fcocc77:$1@github.com/fcocc77/scripts.git
+git clone https://fcocc77:$gitpass@github.com/fcocc77/videovina.git
+git clone https://fcocc77:$gitpass@github.com/fcocc77/cats_farm.git
+git clone https://fcocc77:$gitpass@github.com/fcocc77/cmd.git
+git clone https://fcocc77:$gitpass@github.com/fcocc77/scripts.git
 cd -
 chown $user:$user -R $github
 
