@@ -27,12 +27,11 @@ yum -y install google-chrome-stable
 # ------------------------
 
 # Añade los Driver de Intel a Xorg
-cat << EOF >> /etc/X11/xorg.con
+cat << EOF >> /etc/X11/xorg.conf
 Section "Device"
-	Option     "TearFree" "true"
-	Identifier  "Card0"
-	Driver      "intel"
-	BusID       "PCI:0:2:0"
+	Option     "TearFree"	"true"
+	Option     "AccelMethod"	"sna"
+	Driver     "intel"
 EndSection
 EOF
 # ----------------------
@@ -40,7 +39,6 @@ EOF
 # Modulos
 sh dev_tools.sh $gitpass
 sh apps.sh 
-sh gnome_desktop.sh
 sh mate_desktop.sh
 # -----------------
 
