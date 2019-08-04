@@ -31,7 +31,7 @@ sh apps.sh
 # -----------------
 
 # Escritorio MATTE
-yum groupinstall "MATE Desktop"
+yum -y groupinstall "MATE Desktop"
 echo "exec /usr/bin/mate-session" >> ~/.xinitrc # Inicio de MATE por defecto
 sudo -u $user echo "exec /usr/bin/mate-session" >> ~/.xinitrc
 # ------------------------------------
@@ -40,3 +40,7 @@ sudo -u $user echo "exec /usr/bin/mate-session" >> ~/.xinitrc
 grub2-set-default 0
 grub2-mkconfig -o /boot/grub2/grub.cfg
 # ---------------------------------
+
+# Borrar Gnome Desktop
+yum -y erase gnome-desktop3
+# ----------------------
