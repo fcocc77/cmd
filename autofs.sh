@@ -1,37 +1,34 @@
-root:
+yum -y install autofs
 
+# ---------------------
+os="linux"
+writing=true
+# ---------------------
+disk="server_01"
+ip="192.168.10.46"
+# ---------------------
+user="server2"
+password="jump77cats"
+# ---------------------
 
-mkdir -p /Volumes/
-chmod -R ugo+rw /Volumes
+echo /mnt /etc/auto.cifs --timeout=600 --ghost > /etc/auto.master
 
+if $writing; then
+	rw=rw
+else
+	rw=ro
+fi
 
-mount -t  cifs  //192.168.137.77/VisualFX4 /Volumes/VisualFX4   -o username="JumpCats-001",passwors="vfx",nounix 
-umount /Volumes/diskname
-
-
-
-
-automount:
-
-
-
-
-vim /etc/auto.master
-     /mnt /etc/auto.cifs --timeout=600 --ghost
-
-vim /etc/auto.cifs
-	linux_disk_name   -fstype=cifs,rw,noperm,vers=1.0,username="user",password="pass"   ://ip/disk_name
-	mac_disk_name     -fstype=cifs,nounix,sec=ntlmssp,noperm,rw,username="user",password="pass"   ://ip/disk_name
-
-rw "escribir y leer"   
-ro "solo leer"
-
-
-
-
-
+# diferentes metodos si es el disco a montar es linux o mac
+if [ $os == "linux" ]; then
+	echo $disk -fstype=cifs,$rw,noperm,vers=1.0,username=$user,password=$password ://$ip/$disk > /etc/auto.cifs
+else
+	echo $disk -fstype=cifs,nounix,sec=ntlmssp,noperm,$rw,username=$user,password=$password ://$ip/$disk > /etc/auto.cifs
+fi
+# ------------------------------
+	
 systemctl enable autofs
-service autofs start
+systemctl restart autofs
     
 
 
