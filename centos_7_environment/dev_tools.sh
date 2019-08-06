@@ -16,18 +16,6 @@ git clone https://fcocc77:$gitpass@github.com/fcocc77/scripts.git
 cd -
 chown $user:$user -R $github
 
-# Extenciones
-sudo -u $user code \
---install-extension ms-vscode.cpptools \
---install-extension ritwickdey.live-sass \
---install-extension syler.sass-indented \
---install-extension azemoh.theme-onedark \
---install-extension foxundermoon.shell-format \
---install-extension jeff-hykin.better-shellscript-sytax \
---install-extension vscode-icons-team.vscode-icons \
---install-extension coolbear.systemd-unit-file
-# ----------------------
-
 # VSCode
 cat << EOF >> /etc/yum.repos.d/vscode.repo
 [code]
@@ -39,6 +27,18 @@ gpgkey=https://packages.microsoft.com/keys/microsoft.asc
 EOF
 yum -y install code
 # ---------------------------------------
+
+# Extenciones
+sudo -u $user code \
+--install-extension ms-vscode.cpptools \
+--install-extension ritwickdey.live-sass \
+--install-extension syler.sass-indented \
+--install-extension azemoh.theme-onedark \
+--install-extension foxundermoon.shell-format \
+--install-extension jeff-hykin.better-shellscript-sytax \
+--install-extension vscode-icons-team.vscode-icons \
+--install-extension coolbear.systemd-unit-file
+# ----------------------
 
 # Python3 y django
 yum -y install python36
