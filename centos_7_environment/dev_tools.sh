@@ -24,7 +24,8 @@ sudo -u $user code \
 --install-extension azemoh.theme-onedark \
 --install-extension foxundermoon.shell-format \
 --install-extension jeff-hykin.better-shellscript-sytax \
---install-extension vscode-icons-team.vscode-icons
+--install-extension vscode-icons-team.vscode-icons \
+--install-extension coolbear.systemd-unit-file
 # ----------------------
 
 # VSCode

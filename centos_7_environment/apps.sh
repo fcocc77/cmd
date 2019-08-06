@@ -1,9 +1,11 @@
 # Programas generales
 yum -y install ffmpeg
 yum -y install ntfs-3g # Particiones de windows
+yum -y install ntfsprogs
 yum -y install vim
 yum -y install vlc
 yum -y install rclone # Google Drive
+yum -y install rclone-browser
 yum -y install unar # Descompresor RAR	
 
 # Virtual Box
