@@ -7,6 +7,7 @@ yum -y install vlc
 yum -y install rclone # Google Drive
 yum -y install rclone-browser
 yum -y install unar # Descompresor RAR	
+yum -y install flattr-icons # Iconos bonitos
 
 # Virtual Box
 yum -y --enablerepo=elrepo-kernel install kernel-ml kernel-ml-devel kernel-ml-headers
