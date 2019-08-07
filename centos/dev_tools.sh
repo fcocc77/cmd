@@ -37,7 +37,11 @@ sudo -u $user code \
 --install-extension foxundermoon.shell-format \
 --install-extension jeff-hykin.better-shellscript-sytax \
 --install-extension vscode-icons-team.vscode-icons \
---install-extension coolbear.systemd-unit-file
+--install-extension coolbear.systemd-unit-file \
+--install-extension usernamehw.remove-empty-lines \
+--install-extension batisteo.vscode-django \
+--install-extension seanwu.vscode-qt-for-python \
+--install-extension ms-python.python
 # ----------------------
 
 # Python3 y django

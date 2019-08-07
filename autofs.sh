@@ -4,11 +4,11 @@ yum -y install autofs
 os="linux"
 writing=true
 # ---------------------
-disk="server_01"
-ip="192.168.10.46"
+disk="disk1"
+ip="192.168.0.77"
 # ---------------------
-user="server2"
-password="jump77cats"
+user="pancho"
+password="vfx"
 # ---------------------
 
 echo /mnt /etc/auto.cifs --timeout=600 --ghost > /etc/auto.master
