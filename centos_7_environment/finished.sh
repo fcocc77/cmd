@@ -11,3 +11,14 @@ cd -
 
 # Para guardar los valores "dconf dump /org/mate/ > mate_desktop.ini"
 sudo -u $user dconf load /org/mate/ < mate_desktop.ini
+# -----------------------------
+
+# Wacom PC Button Al iniciar
+wacom=/home/$user/.config/autostart/xsetwacom.desktop
+cat << EOF >> $wacom
+[Desktop Entry]
+Name=wacom
+Exec=xsetwacom set "Wacom Intuos4 6x9 Pen stylus" TabletPCButton on
+EOF
+chown $user:$user $wacom
+# -------------------
