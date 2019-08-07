@@ -17,6 +17,7 @@ sudo -u $user dconf load /org/mate/ < mate_desktop.ini
 wacom=/home/$user/.config/autostart/xsetwacom.desktop
 cat << EOF >> $wacom
 [Desktop Entry]
+Type=Application
 Name=wacom
 Exec=xsetwacom set "Wacom Intuos4 6x9 Pen stylus" TabletPCButton on
 EOF
