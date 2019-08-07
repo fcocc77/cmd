@@ -1,7 +1,3 @@
-lsblk
-df
-
-
 
 ------------------create particiones ------------------------
 parted /dev/sda mklabel gpt
@@ -9,12 +5,9 @@ parted -a opt /dev/sda mkpart primary ext4 0% 100%
 -------------------------------------------------------------
 
 
-
-
 -----------------create_raid_5-----------------------------------------------
 mdadm --create /dev/md127 --level=5 --raid-devices=3 /dev/sdb1 /dev/sdc1 /dev/sdd1
 -----------------------------------------------------------------------------
-
 
 
 # si es que el md se borra al reiniciar despuede crear el raid poner eso
