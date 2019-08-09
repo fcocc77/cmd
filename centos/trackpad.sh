@@ -1,28 +1,17 @@
+#!/usr/bin/env sh
+
+# Para los gestos
 # https://gitlab.com/cunidev/gestures
 # # https://github.com/bulletmark/libinput-gestures
 # yum -y install xdotool # Ejecuta los shortcut en el terminal
 # yum -y install python36-gobject
-
 # # -------------------
 
-# # xinput list-props "Apple Inc. Magic Trackpad 2"
-# # xinput set-prop "Apple Inc. Magic Trackpad 2" "Device Accel Constant Deceleration" 1
-
-
-# minSpeed=0
-# maxSpeed=10
-# acceleration=1
+# Cambia parametros de X Server en tiempo real
 # xinput list
 # xinput list-props "Apple Inc. Magic Trackpad 2"
-# xinput set-prop "Apple Inc. Magic Trackpad 2" "Synaptics Move Speed"  $minSpeed, $maxSpeed, $acceleration, 0
-# xinput set-prop "Apple Inc. Magic Trackpad 2" "Synaptics Scrolling Distance" -250, -250
-
-
-# xinput set-prop "Apple Inc. Magic Trackpad 2" "Trackpad Sensitivity" .5
-# xinput set-prop "Apple Inc. Magic Trackpad 2" "Trackpad Smooth Scroll" 2
-
-
-
+# xinput set-prop "Apple Inc. Magic Trackpad 2" "parameter" value
+# --------------------------------------------------
 
 yum -y install xorg-x11-server-devel
 yum -y install mtdev-devel
@@ -40,5 +29,33 @@ Section "InputClass"
     MatchDevicePath "/dev/input/event*"
     Identifier      "Touchpads"
     Driver          "mtrack"
+
+    # Velocidad
+    Option  "Sensitivity" "0.5"
+    # -----------------------
+
+    # Sensibilidad de toque
+    Option  "FingerHigh" "1"
+    Option  "FingerLow" "1"
+    # ---------------------
+
+    # Natural Scroll
+    Option  "ScrollUpButton" "5"
+    Option  "ScrollDownButton" "4"
+    # --------------------------
+
+    # Hasta dónde debe mover sus dedos antes de que se active
+    Option  "ScrollDistance" "30"
+    # ---------------------------
+
+    # Arrastre con 3 dedos
+    Option "SwipeDistance" "1"
+    Option "SwipeLeftButton" "1"
+    Option "SwipeRightButton" "1"
+    Option "SwipeUpButton" "1"
+    Option "SwipeDownButton" "1"
+    Option "SwipeClickTime" "0"
+    Option "SwipeSensitivity" "1000"
+    # -----------------------
 EndSection
 EOF
