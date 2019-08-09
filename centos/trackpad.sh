@@ -23,7 +23,9 @@ make
 make install
 mv /usr/local/lib/xorg/modules/input/*  /usr/lib64/xorg/modules/input
 
-cat << EOF >> /usr/share/X11/xorg.conf.d/50-mtrack.conf
+mtrack="/usr/share/X11/xorg.conf.d/50-mtrack.conf"
+rm $mtrack
+cat << EOF >> $mtrack
 Section "InputClass"
     MatchIsTouchpad "on"
     MatchDevicePath "/dev/input/event*"
