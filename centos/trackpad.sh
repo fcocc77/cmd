@@ -47,7 +47,7 @@ Section "InputClass"
     # --------------------------
 
     # Hasta dónde debe mover sus dedos antes de que se active
-    Option  "ScrollDistance" "30"
+    Option  "ScrollDistance" "50"
     # ---------------------------
 
     # Arrastre con 3 dedos
