@@ -28,3 +28,12 @@ for i in $bluemans; do
     sed -i 's/python3/python3.4/g' $i
 done
 # ---------------------------------
+
+# Crea dos reglas para que se ejecuten al inicio la interface hci0
+# y conectar los dispositivos ya enparentados
+cat << EOF >> /etc/udev/rules.d/10-blueman.rules
+ACTION=="add", KERNEL=="hci0", RUN+="/usr/bin/hciconfig hci0 up"
+ACTION=="add", KERNEL=="hci0", RUN+="/usr/bin/hciconfig hci0 piscan"
+EOF
+# -----------------------
+# Con el comando hciconfig obtenemos las interface bluetooth que hay en el equipo
