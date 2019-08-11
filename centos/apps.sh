@@ -23,8 +23,14 @@ yum -y --enablerepo=elrepo-kernel install \
 
 # En los shortcut de teclado "sh xfce4-appfinder.sh"
 cat << EOF >> /usr/bin/xfce4-appfinder.sh
-xfce4-appfinder
+# Checkea si xfce4-appfinder esta corriendo
+running=$(wmctrl -l|awk '{$3=""; $2=""; $1="";  print $0}')
+echo $running
+if ! [[ $running =~ "Application Finder" ]]; then
+        xfce4-appfinder
+fi
 xdotool windowactivate $(xdotool search --onlyvisible --class 'xfce4-appfinder' | tail -n1)
+#--------------------------
 EOF
 # --------------
 
