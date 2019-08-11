@@ -34,6 +34,7 @@ echo $running
 if ! [[ $running =~ "Application Finder" ]]; then
         xfce4-appfinder
 fi
+wmctrl -r "Application Finder" -b add,above # Mantiene la applicacion siempre sobre
 xdotool windowactivate $(xdotool search --onlyvisible --class 'xfce4-appfinder' | tail -n1)
 #--------------------------
 EOF
