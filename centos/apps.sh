@@ -10,6 +10,10 @@ yum -y install \
     xfce4-appfinder \
     wmctrl
 
+# Iconos sin la dependencia de KDE
+rpm -ivh --nodeps http://li.nux.ro/download/nux/dextop/el7/x86_64//flattr-icons-0-0.1.20141227gitf5218b7.el7.nux.noarch.rpm
+# ----------------
+
 # Virtual Box
 yum -y --enablerepo=elrepo-kernel install \ 
     kernel-ml \
