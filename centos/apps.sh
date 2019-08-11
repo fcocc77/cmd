@@ -7,7 +7,8 @@ yum -y install \
     rclone \
     unar \
     flattr-icons \
-    xfce4-appfinder
+    xfce4-appfinder \
+    wmctrl
 
 # Virtual Box
 yum -y --enablerepo=elrepo-kernel install \ 
