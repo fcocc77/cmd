@@ -23,3 +23,7 @@ Exec=xsetwacom set "Wacom Intuos4 6x9 Pen stylus" TabletPCButton on
 EOF
 chown $user:$user $wacom
 # -------------------
+
+# Terminal Color 
+echo 'PS1="\[\e[0;33m\][\[\e[0;32m\]\u\[\e[0;33m\]@\h:\[\e[0;39m\]\w\[\e[0;33m\]]\$\[\e[0m\] "' > /home/pancho/.bashrc
+# -------------------------
