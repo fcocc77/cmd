@@ -10,7 +10,7 @@ cd -
 # ----------------------
 
 # Para guardar los valores "dconf dump /org/mate/ > mate_desktop.ini"
-sudo -u $user dconf load /org/mate/ < mate_desktop.ini
+sudo -u $user dconf load /org/mate/ < conf/mate_desktop.ini
 # -----------------------------
 
 # Wacom PC Button Al iniciar
@@ -25,5 +25,5 @@ chown $user:$user $wacom
 # -------------------
 
 # Terminal Color 
-echo 'PS1="\[\e[0;33m\][\[\e[0;32m\]\u\[\e[0;33m\]@\h:\[\e[0;39m\]\w\[\e[0;33m\]]\$\[\e[0m\] "' > /home/pancho/.bashrc
+echo 'PS1="\[\e[0;33m\][\[\e[0;32m\]\u\[\e[0;33m\]@\h:\[\e[0;39m\]\w\[\e[0;33m\]]\$\[\e[0m\] "' > /home/$user/.bashrc
 # -------------------------

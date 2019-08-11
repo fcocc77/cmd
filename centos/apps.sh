@@ -8,7 +8,8 @@ yum -y install \
     unar \
     flattr-icons \
     xfce4-appfinder \
-    wmctrl
+    wmctrl \
+    xdotool
 
 # Iconos sin la dependencia de KDE
 rpm -ivh --nodeps http://li.nux.ro/download/nux/dextop/el7/x86_64//flattr-icons-0-0.1.20141227gitf5218b7.el7.nux.noarch.rpm
@@ -27,17 +28,7 @@ yum -y --enablerepo=elrepo-kernel install \
 # -------------------------
 
 # En los shortcut de teclado "sh xfce4-appfinder.sh"
-cat << EOF >> /usr/bin/xfce4-appfinder.sh
-# Checkea si xfce4-appfinder esta corriendo
-running=$(wmctrl -l|awk '{$3=""; $2=""; $1="";  print $0}')
-echo $running
-if ! [[ $running =~ "Application Finder" ]]; then
-        xfce4-appfinder
-fi
-wmctrl -r "Application Finder" -b add,above # Mantiene la applicacion siempre sobre
-xdotool windowactivate $(xdotool search --onlyvisible --class 'xfce4-appfinder' | tail -n1)
-#--------------------------
-EOF
+cp conf/appfinder.sh /usr/bin/xfce4-appfinder.sh
 # --------------
 
 # Google Chrome
