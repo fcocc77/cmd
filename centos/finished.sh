@@ -25,5 +25,11 @@ chown $user:$user $wacom
 # -------------------
 
 # Terminal Color 
-echo 'PS1="\[\e[0;33m\][\[\e[0;32m\]\u\[\e[0;33m\]@\h:\[\e[0;39m\]\w\[\e[0;33m\]]\$\[\e[0m\] "' > /home/$user/.bashrc
+theme='PS1="\[\e[0;33m\][\[\e[0;32m\]\u\[\e[0;33m\]@\h:\[\e[0;39m\]\w\[\e[0;33m\]]\$\[\e[0m\] "'
+echo $theme > /home/$user/.bashrc
+echo  $theme > /root/.bashrc
 # -------------------------
+# Terminal: ignora mayusculas en el autocomĺetado con el tabulador
+echo set completion-ignore-case on > /home/$user/.inputrc
+echo set completion-ignore-case on > /root/.inputrc
+# --------------------------------------
