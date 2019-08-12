@@ -1,8 +1,6 @@
 user=$1
 gitpass=$2
 
-# Git ------------
-yum -y install git2u-all 
 # Configuraciones
 su $user -c git config --global alias.lod 'log --oneline -10'
 su $user -c git config --global alias.auto '!git add . && git commit -m "..." && git push'
@@ -16,17 +14,6 @@ git clone https://fcocc77:$gitpass@github.com/fcocc77/scripts.git
 cd -
 chown $user:$user -R $github
 
-# VSCode
-cat << EOF >> /etc/yum.repos.d/vscode.repo
-[code]
-name=Visual Studio Code
-baseurl=https://packages.microsoft.com/yumrepos/vscode
-enabled=1
-gpgcheck=1
-gpgkey=https://packages.microsoft.com/keys/microsoft.asc
-EOF
-yum -y install code
-# ---------------------------------------
 
 # Extenciones
 su $user -c code \
@@ -45,8 +32,6 @@ su $user -c code \
 # ----------------------
 
 # Python3 y django
-yum -y install python36
-yum -y install python36-pip
 pip3 install --upgrade Django==2.1
 pip3 install Pillow
 pip3 install --upgrade pip
