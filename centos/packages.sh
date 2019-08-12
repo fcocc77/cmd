@@ -70,6 +70,7 @@ packages=(
     vlc
     rclone
     unar
+    WoeUSB # Windows ISO Booteable
     VirtualBox-5.2
     # ------------------------
 )
