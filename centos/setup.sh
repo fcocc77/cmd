@@ -35,7 +35,7 @@ sh apps.sh
 # Escritorio MATTE
 yum -y groupinstall "MATE Desktop"
 echo "exec /usr/bin/mate-session" >> ~/.xinitrc # Inicio de MATE por defecto
-sudo -u $user echo "exec /usr/bin/mate-session" >> ~/.xinitrc
+su $user -c "echo exec /usr/bin/mate-session >> ~/.xinitrc"
 # ------------------------------------
 
 # Boot Ajustes

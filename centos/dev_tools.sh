@@ -4,8 +4,8 @@ gitpass=$2
 # Git ------------
 yum -y install git2u-all 
 # Configuraciones
-sudo -u $user git config --global alias.lod 'log --oneline -10'
-sudo -u $user git config --global alias.auto '!git add . && git commit -m "..." && git push'
+su $user -c git config --global alias.lod 'log --oneline -10'
+su $user -c git config --global alias.auto '!git add . && git commit -m "..." && git push'
 github=/home/$user/Documents/GitHub
 mkdir $github
 cd $github
@@ -29,7 +29,7 @@ yum -y install code
 # ---------------------------------------
 
 # Extenciones
-sudo -u $user code \
+su $user -c code \
 --install-extension ms-vscode.cpptools \
 --install-extension ritwickdey.live-sass \
 --install-extension syler.sass-indented \
