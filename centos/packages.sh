@@ -75,12 +75,13 @@ packages=(
 )
 # -------------------------------------
 packagesGroups=(
+    "Development Tools"
     "MATE Desktop"
 )
 # -------------------------------------
 
-yum -y --enablerepo=elrepo-kernel install ${packages[@]}
 yum -y groupinstall ${packagesGroups[@]}
+yum -y --enablerepo=elrepo-kernel install ${packages[@]}
 yum -y update
 
 
