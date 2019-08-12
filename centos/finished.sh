@@ -11,6 +11,7 @@ cd -
 
 # Para guardar los valores "dconf dump /org/mate/ > mate_desktop.ini"
 sudo -u $user dconf load /org/mate/ < conf/mate_desktop.ini
+su $user -c "dconf load /org/mate/ < ./conf/mate_desktop.ini"
 # -----------------------------
 
 # Wacom PC Button Al iniciar
