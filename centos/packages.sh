@@ -70,8 +70,8 @@ packages=(
     vlc
     rclone
     unar
-    WoeUSB # Windows USB Booteable
     VirtualBox-5.2
+    htop # Top con colores
     # ------------------------
 )
 # -------------------------------------

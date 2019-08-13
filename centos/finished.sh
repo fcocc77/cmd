@@ -13,17 +13,6 @@ cd -
 su $user -c "dconf load /org/mate/ < ./conf/mate_desktop.ini"
 # -----------------------------
 
-# Wacom PC Button Al iniciar
-wacom=/home/$user/.config/autostart/xsetwacom.desktop
-cat << EOF >> $wacom
-[Desktop Entry]
-Type=Application
-Name=wacom
-Exec=xsetwacom set "Wacom Intuos4 6x9 Pen stylus" TabletPCButton on
-EOF
-chown $user:$user $wacom
-# -------------------
-
 # Terminal Color 
 theme='PS1="\[\e[0;33m\][\[\e[0;32m\]\u\[\e[0;33m\]@\h:\[\e[0;39m\]\w\[\e[0;33m\]]\$\[\e[0m\] "'
 echo $theme > /home/$user/.bashrc
