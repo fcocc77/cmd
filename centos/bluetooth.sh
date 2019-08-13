@@ -15,3 +15,13 @@ ACTION=="add", KERNEL=="hci0", RUN+="/usr/bin/hciconfig hci0 piscan"
 EOF
 # -----------------------
 # Con el comando hciconfig obtenemos las interface bluetooth que hay en el equipo
+
+# Conectar via terminal: hay que seguir tal cual los pasos para que funcione
+# hcitool scan  # to get the MAC address of your device
+# bluetoothctl
+# agent on
+# scan on  # wait for your device's address to show up here
+# scan off
+# trust MAC_ADDRESS
+# pair MAC_ADDRRESS
+# connect MAC_ADDRESS
