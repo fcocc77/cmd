@@ -19,6 +19,9 @@ echo $theme > /home/$user/.bashrc
 echo  $theme > /root/.bashrc
 # -------------------------
 # Terminal: ignora mayusculas en el autocomĺetado con el tabulador
-echo set completion-ignore-case on > /home/$user/.inputrc
-echo set completion-ignore-case on > /root/.inputrc
+echo "\$include /etc/inputrc
+set completion-ignore-case on" > /home/$user/.inputrc
+
+echo "\$include /etc/inputrc
+set completion-ignore-case on" > /root/.inputrc
 # --------------------------------------
