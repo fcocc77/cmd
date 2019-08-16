@@ -13,6 +13,10 @@ sh dev_tools.sh $user $gitpass
 cp conf/appfinder.sh /usr/bin/xfce4-appfinder.sh
 # --------------
 
+# En los shortcut de teclado "sh workstation.sh"
+cp conf/workstation.sh /usr/bin/workstation.sh
+# --------------
+
 # Escritorio MATTE
 echo "exec /usr/bin/mate-session" >> ~/.xinitrc # Inicio de MATE por defecto
 su $user -c "echo exec /usr/bin/mate-session >> ~/.xinitrc"
@@ -26,4 +30,3 @@ cp conf/*.conf /usr/share/X11/xorg.conf.d
 grub2-set-default 0
 grub2-mkconfig -o /boot/grub2/grub.cfg
 # ---------------------------------
-
