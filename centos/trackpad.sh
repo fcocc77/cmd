@@ -20,5 +20,6 @@ cd xf86-input-mtrack
 make
 make install
 mv /usr/local/lib/xorg/modules/input/*  /usr/lib64/xorg/modules/input
+cd -
 
 cp conf/50-mtrack.conf /usr/share/X11/xorg.conf.d
