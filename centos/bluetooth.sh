@@ -22,6 +22,7 @@ EOF
 # agent on
 # scan on  # wait for your device's address to show up here
 # scan off
-# trust MAC_ADDRESS
-# pair MAC_ADDRRESS
-# connect MAC_ADDRESS
+# info C0:A5:3E:07:00:20
+# trust C0:A5:3E:07:00:20
+# pair C0:A5:3E:07:00:20
+# connect C0:A5:3E:07:00:20
