@@ -36,3 +36,11 @@ pip3 install --upgrade Django==2.1
 pip3 install Pillow
 pip3 install --upgrade pip
 # ---------------------------------------
+
+# con esto funciona el qDebug para QT5
+cat << EOF >> /etc/xdg/QtProject/qtlogging.ini
+[Rules]
+*.debug=true
+qt.*.debug=false
+EOF
+# --------------------------------------
