@@ -16,6 +16,8 @@ EOF
 # -----------------------
 # Con el comando hciconfig obtenemos las interface bluetooth que hay en el equipo
 
+# cuando se bloquea "rfkill unblock all"
+
 # Conectar via terminal: hay que seguir tal cual los pasos para que funcione
 # hcitool scan  # to get the MAC address of your device
 # bluetoothctl
