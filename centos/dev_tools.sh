@@ -28,7 +28,8 @@ su $user -c code \
 --install-extension usernamehw.remove-empty-lines \
 --install-extension batisteo.vscode-django \
 --install-extension seanwu.vscode-qt-for-python \
---install-extension ms-python.python
+--install-extension ms-python.python \
+--install-extension devmike.mikrotik-routeros-script
 # ----------------------
 
 # Python3 y django

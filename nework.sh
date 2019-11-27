@@ -1,7 +1,7 @@
 # -----------------------
-interface="enp7s0"
-ipNumber=77
-ipBase=0
+interface="eno1"
+ipNumber=10
+ipBase=10
 # -----------------------
 
 conf="/etc/sysconfig/network-scripts/ifcfg-$interface"
