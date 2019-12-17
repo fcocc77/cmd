@@ -1,4 +1,5 @@
 user="pancho"
+gitpass="pass"
 
 # Desarrollo
 yum erase -y git
@@ -31,6 +32,18 @@ yum -y groupinstall "Development Tools"
 su $user -c "git config --global alias.lod 'log --oneline -10'"
 su $user -c "git config --global alias.auto '!git add . && git commit -m "..." && git push'"
 # -------------------
+
+# copiar repositorios
+github=/home/$user/Documents/GitHub
+mkdir $github
+cd $github
+git clone https://fcocc77:$gitpass@github.com/fcocc77/videovina.git
+git clone https://fcocc77:$gitpass@github.com/fcocc77/cats_farm.git
+git clone https://fcocc77:$gitpass@github.com/fcocc77/cmd.git
+git clone https://fcocc77:$gitpass@github.com/fcocc77/scripts.git
+cd -
+chown $user:$user -R $github
+# ----------------------
 
 # Extenciones vscode
 su $user -c "code \
