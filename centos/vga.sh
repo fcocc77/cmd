@@ -1,4 +1,13 @@
+#!/usr/bin/env sh
 
+packages=(
+    # Nvidia Optimus
+    bumblebee
+    primus
+    VirtualGLl
+    # ---------------------
+)
+yum -y install ${packages[@]}
 
 # Bumblebee
 # Hay que cambiar en el /etc/bumblebee/bumblebee.conf "Driver=nvidia" y
@@ -7,7 +16,7 @@
 # pantalla principal (echo $DISPLAY) si no da un error
 
 # vim /etc/default/grub
-    # Append the following to the GRUB_CMDLINE_LINUX line:
-        # modprobe.blacklist=nouveau
+# Append the following to the GRUB_CMDLINE_LINUX line:
+# modprobe.blacklist=nouveau
 # Instalar driver oficiales para kernel-ml
 # -----------------------------

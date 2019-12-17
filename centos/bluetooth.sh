@@ -1,4 +1,17 @@
 #!/usr/bin/env sh
+
+# repositorio blueman
+wget https://copr.fedorainfracloud.org/coprs/scx/blueman/repo/epel-7/scx-blueman-epel-7.repo -P /etc/yum.repos.d
+# -------------------
+
+# Bluetooth
+packages=(
+    python34-gobject
+    blueman
+)
+yum -y install ${packages[@]}
+# -----------------------
+
 # Cambia el env de python3 a python3.4 para que no de conflicto con el python3.6
 cd /usr/bin/
 bluemans="blueman-adapters blueman-applet blueman-assistant blueman-report blueman-sendto blueman-services"
@@ -9,7 +22,7 @@ done
 
 # Crea dos reglas para que se ejecuten al inicio la interface hci0
 # y conectar los dispositivos ya enparentados
-cat << EOF >> /etc/udev/rules.d/10-blueman.rules
+cat <<EOF >>/etc/udev/rules.d/10-blueman.rules
 ACTION=="add", KERNEL=="hci0", RUN+="/usr/bin/hciconfig hci0 up"
 ACTION=="add", KERNEL=="hci0", RUN+="/usr/bin/hciconfig hci0 piscan"
 EOF
