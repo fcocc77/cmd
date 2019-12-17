@@ -23,7 +23,7 @@ packages=(
     python36-pip
     # ------------------
 )
-yum -y install ${packages[@]}
+yum -y --enablerepo=elrepo-kernel install ${packages[@]}
 yum -y groupinstall "Development Tools"
 # -------------------
 
@@ -48,7 +48,6 @@ su $user -c "code \
     --install-extension seanwu.vscode-qt-for-python \
     --install-extension ms-python.python \
     --install-extension devmike.mikrotik-routeros-script"
-
 # ----------------------
 
 # Python3 y django

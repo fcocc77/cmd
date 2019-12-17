@@ -1,27 +1,18 @@
-user=pancho
-# Virtual Box
-/sbin/vboxconfig
-# -------------------------
+# Poner en los shortcut de teclado "sh xfce4-appfinder.sh"
+cp conf/appfinder.sh /usr/bin/xfce4-appfinder.sh
+# --------------
 
-# Wallpappers
-cd /home/$user/Pictures
-wget "https://u.cubeupload.com/Nd8UdD.png"
-cd -
-# ----------------------
+# Poner en de teclado "sh workstation.sh"
+cp conf/workstation.sh /usr/bin/workstation.sh
+# --------------
 
-# Para guardar los valores "dconf dump /org/mate/ > mate_desktop.ini"
-su $user -c "dconf load /org/mate/ < ./conf/mate_desktop.ini"
-# -----------------------------
+# copia los xorg configuraciones
+cp conf/*.conf /usr/share/X11/xorg.conf.d
+# --------------------------
 
-# Terminal Color 
-theme='PS1="\[\e[0;33m\][\[\e[0;32m\]\u\[\e[0;33m\]@\h:\[\e[0;39m\]\w\[\e[0;33m\]]\$\[\e[0m\] "'
-echo $theme > /home/$user/.bashrc
-echo  $theme > /root/.bashrc
-# -------------------------
-# Terminal: ignora mayusculas en el autocomĺetado con el tabulador
-echo "\$include /etc/inputrc
-set completion-ignore-case on" > /home/$user/.inputrc
+# Boot Ajustes
+grub2-set-default 0
+grub2-mkconfig -o /boot/grub2/grub.cfg
+# ---------------------------------
 
-echo "\$include /etc/inputrc
-set completion-ignore-case on" > /root/.inputrc
-# --------------------------------------
+yum -y update

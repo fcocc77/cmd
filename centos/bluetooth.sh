@@ -6,7 +6,12 @@ wget https://copr.fedorainfracloud.org/coprs/scx/blueman/repo/epel-7/scx-blueman
 
 # Bluetooth
 packages=(
-    python34-gobject
+    # python34-dbus python34-gobject
+    http://springdale.math.ias.edu/data/puias/unsupported/7/x86_64//python34-dbus-1.2.4-2.sdl7.x86_64.rpm
+    http://springdale.math.ias.edu/data/puias/unsupported/7/x86_64//python34-gobject-3.22.0-4.sdl7.x86_64.rpm
+    http://springdale.math.ias.edu/data/puias/unsupported/7/x86_64//python34-gobject-base-3.22.0-4.sdl7.x86_64.rpm
+    http://springdale.math.ias.edu/data/puias/unsupported/7/x86_64//python34-cairo-1.10.0-24.sdl7.x86_64.rpm
+    # ----------------------
     blueman
 )
 yum -y install ${packages[@]}
