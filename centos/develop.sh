@@ -1,7 +1,7 @@
 user="pancho"
 
 # Desarrollo
-yum erase -y git 
+yum erase -y git
 packages=(
     # Complilacion
     kernel-ml
@@ -28,12 +28,12 @@ yum -y groupinstall "Development Tools"
 # -------------------
 
 # Configuraciones git
-su $user -c git config --global alias.lod 'log --oneline -10'
-su $user -c git config --global alias.auto '!git add . && git commit -m "..." && git push'
+su $user -c "git config --global alias.lod 'log --oneline -10'"
+su $user -c "git config --global alias.auto '!git add . && git commit -m "..." && git push'"
 # -------------------
 
 # Extenciones vscode
-su $user -c code \
+su $user -c "code \
     --install-extension ms-vscode.cpptools \
     --install-extension ritwickdey.live-sass \
     --install-extension syler.sass-indented \
@@ -47,7 +47,7 @@ su $user -c code \
     --install-extension batisteo.vscode-django \
     --install-extension seanwu.vscode-qt-for-python \
     --install-extension ms-python.python \
-    --install-extension devmike.mikrotik-routeros-script
+    --install-extension devmike.mikrotik-routeros-script"
 
 # ----------------------
 
