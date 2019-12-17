@@ -15,4 +15,4 @@ grub2-set-default 0
 grub2-mkconfig -o /boot/grub2/grub.cfg
 # ---------------------------------
 
-yum -y update
+yum -y update --skip-broken

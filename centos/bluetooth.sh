@@ -5,6 +5,7 @@ wget https://copr.fedorainfracloud.org/coprs/scx/blueman/repo/epel-7/scx-blueman
 # -------------------
 
 # Bluetooth
+yum erase -y blueman
 packages=(
     # python34-dbus python34-gobject
     http://springdale.math.ias.edu/data/puias/unsupported/7/x86_64//python34-dbus-1.2.4-2.sdl7.x86_64.rpm
