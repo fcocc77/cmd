@@ -16,6 +16,7 @@ gpasswd -a $USER bumblebee
 # driver nvidia
 cd /home/$USER/Downloads
 wget http://es.download.nvidia.com/XFree86/Linux-x86_64/440.44/NVIDIA-Linux-x86_64-440.44.run
+# funciona con este kernel: 5.4.6-1.el7.elrepo
 # --------------------------
 
 # 1 - agregar la linea "modprobe.blacklist=nouveau" en GRUB_CMDLINE_LINUX en el archivo /etc/default/grub
