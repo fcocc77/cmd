@@ -26,6 +26,8 @@ packages=(
     # --------------------
 
     # otros
+    net-tools
+    terminator
     wget
     ffmpeg
     ntfs-3g
@@ -33,7 +35,6 @@ packages=(
     vlc
     rclone
     unar
-    VirtualBox-5.2
     htop # Top con colores
     # ------------------------
 )

@@ -37,5 +37,5 @@ echo 'Section "Device"
     Identifier  "Nvidia Graphics"
     Driver      "nvidia"
     BusID       "PCI:3:0:0"
-EndSection' >"/usr/share/X11/xorg.conf.d/40-wacom.conf"
+EndSection' >"/usr/share/X11/xorg.conf.d/90-nvidia.conf"
 # ---------------

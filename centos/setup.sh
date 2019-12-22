@@ -3,7 +3,7 @@
 # Configuracion de modulos
 sh packages.sh
 sh desktop.sh
-sh bumblebee.sh
+sh nvidia.sh
 sh bluetooth.sh
 sh terminal.sh
 sh develop.sh
