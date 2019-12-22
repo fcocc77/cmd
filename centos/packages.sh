@@ -26,6 +26,7 @@ packages=(
     # --------------------
 
     # otros
+    wget
     ffmpeg
     ntfs-3g
     ntfsprogs

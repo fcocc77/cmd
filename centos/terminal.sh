@@ -1,3 +1,5 @@
+user="pancho"
+
 # Terminal Color 
 theme='PS1="\[\e[0;33m\][\[\e[0;32m\]\u\[\e[0;33m\]@\h:\[\e[0;39m\]\w\[\e[0;33m\]]\$\[\e[0m\] "'
 echo $theme > /home/$user/.bashrc

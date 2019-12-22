@@ -1,5 +1,5 @@
 user="pancho"
-gitpass="pass"
+gitpass="password"
 
 # Desarrollo
 yum erase -y git
@@ -24,13 +24,20 @@ packages=(
     python36-pip
     # ------------------
 )
-yum -y --enablerepo=elrepo-kernel install ${packages[@]}
 yum -y groupinstall "Development Tools"
+yum -y --enablerepo=elrepo-kernel install ${packages[@]}
 # -------------------
 
 # Configuraciones git
-su $user -c "git config --global alias.lod 'log --oneline -10'"
-su $user -c "git config --global alias.auto '!git add . && git commit -m "..." && git push'"
+lod="git config --global alias.lod 'log --oneline -10'"
+auto="git config --global alias.auto '!git add . && git commit -m "..." && git push'"
+# root
+eval $lod
+eval $auto
+# -----
+# user
+su $user -c "$lod"
+su $user -c "$auto"
 # -------------------
 
 # copiar repositorios
@@ -52,7 +59,7 @@ su $user -c "code \
     --install-extension syler.sass-indented \
     --install-extension azemoh.theme-onedark \
     --install-extension foxundermoon.shell-format \
-    --install-extension jeff-hykin.better-shellscript-sytax \
+    --install-extension jeff-hykin.better-shellscript-syntax \
     --install-extension jeff-hykin.better-cpp-syntax \
     --install-extension vscode-icons-team.vscode-icons \
     --install-extension coolbear.systemd-unit-file \
@@ -70,6 +77,7 @@ pip3 install --upgrade pip
 # ---------------------------------------
 
 # con esto funciona el qDebug para QT5
+mkdir /etc/xdg/QtProject
 cat <<EOF >>/etc/xdg/QtProject/qtlogging.ini
 [Rules]
 *.debug=true
