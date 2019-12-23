@@ -39,13 +39,16 @@ eval $auto
 su $user -c "$lod"
 su $user -c "$auto"
 # -------------------
+git config --global user.email "fcocc77@gmail.com"
+git config --global user.name "Francisco Contreras"
+
 
 # copiar repositorios
 github=/home/$user/Documents/GitHub
 mkdir $github
 cd $github
 git clone https://fcocc77:$gitpass@github.com/fcocc77/videovina.git
-git clone https://fcocc77:$gitpass@github.com/fcocc77/cats_farm.git
+git clone https://fcocc77:$gitpass@github.com/fcocc77/vinarender.git
 git clone https://fcocc77:$gitpass@github.com/fcocc77/cmd.git
 git clone https://fcocc77:$gitpass@github.com/fcocc77/scripts.git
 cd -
