@@ -70,6 +70,7 @@ su $user -c "code \
     --install-extension batisteo.vscode-django \
     --install-extension seanwu.vscode-qt-for-python \
     --install-extension ms-python.python \
+    --install-extension sandy081.todotasks \
     --install-extension devmike.mikrotik-routeros-script"
 # ----------------------
 
