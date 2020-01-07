@@ -22,7 +22,7 @@ userdir=$ftpdir/$user
 useradd $user
 passwd $user
 
-mkdir $userdir
+mkdir -p $userdir
 chown $user:$group -R $userdir
 chmod 770 -R $userdir
 
