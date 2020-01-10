@@ -41,7 +41,9 @@ su $user -c "$auto"
 # -------------------
 git config --global user.email "fcocc77@gmail.com"
 git config --global user.name "Francisco Contreras"
-
+# ignora los permisos de archivos chmod xxx
+# git config core.filemode false
+# --------------------------------
 
 # copiar repositorios
 github=/home/$user/Documents/GitHub
