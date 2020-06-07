@@ -5,9 +5,6 @@ gitpass="password"
 yum erase -y git
 packages=(
     # Complilacion
-    kernel-ml
-    kernel-ml-devel
-    kernel-ml-headers
     make
     patch
     gcc
@@ -25,7 +22,7 @@ packages=(
     # ------------------
 )
 yum -y groupinstall "Development Tools"
-yum -y --enablerepo=elrepo-kernel install ${packages[@]}
+yum -y install ${packages[@]}
 # -------------------
 
 # Configuraciones git
