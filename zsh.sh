@@ -1,8 +1,16 @@
 # source code: https://github.com/ohmyzsh/ohmyzsh
 
 function install() {
+    cd /tmp
+
     yum -y install zsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+    # fuentes necesarias
+    git clone https://github.com/powerline/fonts.git --depth=1
+    cd fonts
+    sh ./install.sh
+    rm -rf fonts
 
     # usar el zsh de forma predeterminada
     chsh -s /bin/zsh
@@ -11,7 +19,7 @@ function install() {
 function zshrc() {
     # cambia el tema
     theme='robbyrussell'
-    # theme='agnoster'
+    theme='agnoster'
 
     userdir=$1
 
@@ -22,6 +30,7 @@ function zshrc() {
     echo "export ZSH=\"/home/pancho/.oh-my-zsh\"" >>$zshrc
     echo "ZSH_THEME='$theme'" >>$zshrc
     echo "plugins=(git)" >>$zshrc
+    echo "ZSH_DISABLE_COMPFIX=\"true\"" >>$zshrc
     echo "source \$ZSH/oh-my-zsh.sh" >>$zshrc
     # ----------------------
 
@@ -42,5 +51,5 @@ function zshrc() {
     # ---------------------
 }
 
-# zshrc '/home/pancho'
+zshrc '/home/pancho'
 zshrc '/root'
