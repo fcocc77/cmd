@@ -1,18 +1,46 @@
 # source code: https://github.com/ohmyzsh/ohmyzsh
 
-# yum -y install zsh
-# sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+function install() {
+    yum -y install zsh
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
-# cambia el tema
-user="pancho"
-zshrc="/home/$user/.zshrc"
-# sed -i "s|robbyrussell|agnoster|g"
+    # usar el zsh de forma predeterminada
+    chsh -s /bin/zsh
+}
 
-echo "
-export ZSH="/home/pancho/.oh-my-zsh"
-ZSH_THEME="agnoster"
-plugins=(git)
-source $ZSH/oh-my-zsh.sh" >$zshrc
+function zshrc() {
+    # cambia el tema
+    theme='robbyrussell'
+    # theme='agnoster'
 
-# usar el zsh de forma predeterminada
-# chsh -s /bin/zsh
+    userdir=$1
+
+    zshrc="$userdir/.zshrc"
+    rm $zshrc
+
+    # zsh configuraciones
+    echo "export ZSH=\"/home/pancho/.oh-my-zsh\"" >>$zshrc
+    echo "ZSH_THEME='$theme'" >>$zshrc
+    echo "plugins=(git)" >>$zshrc
+    echo "source \$ZSH/oh-my-zsh.sh" >>$zshrc
+    # ----------------------
+
+    # alias
+    user='pancho'
+    github="cd /home/$user/Documents/GitHub"
+
+    echo alias vina=\"$github/videovina\" >>$zshrc
+    echo alias vinarender=\"$github/vinarender\" >>$zshrc
+    echo alias natron=\"$github/natron_utils\" >>$zshrc
+    echo alias juno=\"$github/juno\" >>$zshrc
+    echo alias github=\"$github\" >>$zshrc
+    echo alias cmd=\"$github/cmd\" >>$zshrc
+
+    echo alias bashrc=\"vim ~/.bashrc\" >>$zshrc
+    echo alias desk=\"cd ~/Desktop\" >>$zshrc
+    echo alias natron_plugins=\"cd /usr/share/Natron/Plugins\" >>$zshrc
+    # ---------------------
+}
+
+# zshrc '/home/pancho'
+zshrc '/root'
