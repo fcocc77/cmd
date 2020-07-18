@@ -12,6 +12,9 @@ function install() {
     sh ./install.sh
     rm -rf fonts
 
+    # autosuggestions
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
     # usar el zsh de forma predeterminada
     chsh -s /bin/zsh
 }
@@ -30,6 +33,7 @@ function zshrc() {
     echo "export ZSH=\"/home/pancho/.oh-my-zsh\"" >>$zshrc
     echo "ZSH_THEME='$theme'" >>$zshrc
     echo "plugins=(git)" >>$zshrc
+    echo "plugins=(zsh-autosuggestions)" >>$zshrc
     echo "ZSH_DISABLE_COMPFIX=\"true\"" >>$zshrc
     echo "source \$ZSH/oh-my-zsh.sh" >>$zshrc
     # ----------------------
