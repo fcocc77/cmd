@@ -3,6 +3,7 @@
 function install() {
     cd /tmp
 
+    yum -y install tmux2
     yum -y install zsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
