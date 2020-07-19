@@ -16,6 +16,9 @@ function install() {
     # autosuggestions
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
+    # Colores para la sintaxis
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
     # usar el zsh de forma predeterminada
     chsh -s /bin/zsh
 }
@@ -33,8 +36,7 @@ function zshrc() {
     # zsh configuraciones
     echo "export ZSH=\"/home/pancho/.oh-my-zsh\"" >>$zshrc
     echo "ZSH_THEME='$theme'" >>$zshrc
-    echo "plugins=(git)" >>$zshrc
-    echo "plugins=(zsh-autosuggestions)" >>$zshrc
+    echo "plugins=(git zsh-autosuggestions zsh-syntax-highlighting)" >>$zshrc
     echo "ZSH_DISABLE_COMPFIX=\"true\"" >>$zshrc
     echo "source \$ZSH/oh-my-zsh.sh" >>$zshrc
     # ----------------------
