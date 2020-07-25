@@ -1,5 +1,5 @@
 
-user=$HOME
+user='/home/pancho'
 
 # Oh-my-zsh
 export ZSH="$user/.oh-my-zsh"
