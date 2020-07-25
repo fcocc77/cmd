@@ -24,6 +24,9 @@ call plug#end()
 " Tema de estilos
 colorscheme nord
 
+" Estilo de la seleccion de textos 'VISUAL'
+hi Visual cterm=bold ctermbg=Blue 
+
 " Status Line
 let g:currentmode={
     \ 'n'  : 'Normal',
@@ -49,8 +52,6 @@ let g:currentmode={
 
 set laststatus=2
 set noshowmode
-set statusline=
-set statusline+=%0*\ %n\                                 " Buffer number
 set statusline+=%0*\ %{toupper(g:currentmode[mode()])}\  " The current mode
 set statusline+=%1*\ %<%F%m%r%h%w\                       " File path, modified, readonly, helpfile, preview
 set statusline+=%3*│                                     " Separator
@@ -62,3 +63,10 @@ set statusline+=%=                                       " Right Side
 set statusline+=%2*\ col:\ %02v\                         " Colomn number
 set statusline+=%3*│                                     " Separator
 set statusline+=%1*\ ln:\ %02l/%L\ (%3p%%)\              " Line number / total lines, percentage of document
+
+" Statusline color
+au InsertEnter * hi statusline guifg=black guibg=#d7afff ctermfg=black ctermbg=magenta
+au InsertLeave * hi statusline guifg=black guibg=#8fbfdc ctermfg=black ctermbg=cyan
+hi StatusLine ctermbg=cyan ctermfg=black 
+
+
