@@ -1,4 +1,3 @@
-
 user='/home/pancho'
 
 # Oh-my-zsh
@@ -7,6 +6,11 @@ ZSH_THEME='agnoster'
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 ZSH_DISABLE_COMPFIX="true"
 source $ZSH/oh-my-zsh.sh
+
+# muestra solo el directorio actual
+prompt_dir() {
+    prompt_segment blue black '%c'
+}
 
 # Alias
 alias vina="cd $user/Documents/GitHub/videovina"
