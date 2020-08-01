@@ -12,6 +12,12 @@ prompt_dir() {
     prompt_segment blue black '%c'
 }
 
+# color del usuario
+prompt_context() {
+    local user=$(whoami)
+    prompt_segment cyan black "$user"
+}
+
 # Alias
 alias vina="cd $user/Documents/GitHub/videovina"
 alias vinarender="cd $user/Documents/GitHub/vinarender"

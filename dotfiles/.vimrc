@@ -65,8 +65,8 @@ set statusline+=%3*│                                     " Separator
 set statusline+=%1*\ ln:\ %02l/%L\ (%3p%%)\              " Line number / total lines, percentage of document
 
 " Statusline color
-au InsertEnter * hi statusline guifg=black guibg=#d7afff ctermfg=black ctermbg=magenta
-au InsertLeave * hi statusline guifg=black guibg=#8fbfdc ctermfg=black ctermbg=cyan
-hi StatusLine ctermbg=cyan ctermfg=black 
+au InsertEnter * hi statusline guifg=black guibg=#d7afff ctermfg=white ctermbg=magenta
+au InsertLeave * hi statusline guifg=black guibg=#8fbfdc ctermfg=white ctermbg=cyan
+hi StatusLine ctermbg=cyan ctermfg=white 
 
 
