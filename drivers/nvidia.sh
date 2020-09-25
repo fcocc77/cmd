@@ -4,8 +4,7 @@ packages=(
     # Nvidia Optimus
     bumblebee
     primus
-    VirtualGLl
-    # ---------------------
+    glx-utils
 )
 yum -y install ${packages[@]}
 
@@ -28,7 +27,9 @@ wget http://us.download.nvidia.com/XFree86/Linux-x86_64/440.100/NVIDIA-Linux-x86
 #     "optirun -vv glxgears -info"
 #---------------------------------
 
-# lspci | grep VGA
+# lspci | grep NVIDIA
+# optirun glxgears
+# optirun glxspheres64n
 
 # nota: el Display del bumblebee.conf "VirtualDisplay=:8" no puede tener el mismo numero que la
 # pantalla principal (echo $DISPLAY) si no da un error
