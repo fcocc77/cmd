@@ -17,7 +17,7 @@ mdadm --examine --scan --config=mdadm.conf >> /etc/mdadm.conf
 mkfs -t ext4 /dev/md127
 
 
-"para disco de mas de 2TB formatear el disco en gtp"
+# para disco de mas de 2TB formatear el disco en gtp
 
 
 ----------------expand_raid_5--------------------------

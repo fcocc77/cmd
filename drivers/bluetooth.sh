@@ -1,9 +1,5 @@
 #!/usr/bin/env sh
 
-# repositorio blueman
-wget https://copr.fedorainfracloud.org/coprs/scx/blueman/repo/epel-7/scx-blueman-epel-7.repo -P /etc/yum.repos.d
-# -------------------
-
 # Bluetooth
 yum erase -y blueman
 packages=(

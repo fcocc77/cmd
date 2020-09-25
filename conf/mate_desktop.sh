@@ -11,16 +11,8 @@ echo "exec /usr/bin/mate-session" >>~/.xinitrc # Inicio de MATE por defecto
 su $user -c "echo exec /usr/bin/mate-session >> ~/.xinitrc"
 # ------------------------------------
 
-# Wallpappers
-pictures="/home/$user/Pictures"
-mkdir pictures
-cd $pictures
-wget "https://u.cubeupload.com/Nd8UdD.png"
-cd -
-# ----------------------
-
 # Para guardar los valores "dconf dump /org/mate/ > mate_desktop.ini"
-su $user -c "dconf load /org/mate/ < ../conf/mate_desktop.ini"
+su $user -c "dconf load /org/mate/ < ./mate_desktop.ini"
 # -----------------------------
 
 # init 5 por defecto

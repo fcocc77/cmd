@@ -1,8 +1,6 @@
 user="pancho"
-gitpass="password"
 
 # Desarrollo
-yum erase -y git
 packages=(
     # Complilacion
     make
@@ -15,7 +13,7 @@ packages=(
     # -------------------
 
     # Edicion
-    git2u-all
+    git
     code
     python36
     python36-pip
@@ -25,34 +23,12 @@ yum -y groupinstall "Development Tools"
 yum -y install ${packages[@]}
 # -------------------
 
-# Configuraciones git
-lod="git config --global alias.lod 'log --oneline -10'"
-auto="git config --global alias.auto '!git add . && git commit -m "..." && git push'"
-# root
-eval $lod
-eval $auto
-# -----
-# user
-su $user -c "$lod"
-su $user -c "$auto"
 # -------------------
 git config --global user.email "fcocc77@gmail.com"
 git config --global user.name "Francisco Contreras"
 # ignora los permisos de archivos chmod xxx
 # git config core.filemode false
 # --------------------------------
-
-# copiar repositorios
-github=/home/$user/Documents/GitHub
-mkdir $github
-cd $github
-git clone https://fcocc77:$gitpass@github.com/fcocc77/videovina.git
-git clone https://fcocc77:$gitpass@github.com/fcocc77/vinarender.git
-git clone https://fcocc77:$gitpass@github.com/fcocc77/cmd.git
-git clone https://fcocc77:$gitpass@github.com/fcocc77/scripts.git
-cd -
-chown $user:$user -R $github
-# ----------------------
 
 # Extenciones vscode
 su $user -c "code \
@@ -72,12 +48,6 @@ su $user -c "code \
     --install-extension sandy081.todotasks \
     --install-extension devmike.mikrotik-routeros-script"
 # ----------------------
-
-# Python3 y django
-pip3 install --upgrade Django==2.1
-pip3 install Pillow
-pip3 install --upgrade pip
-# ---------------------------------------
 
 # con esto funciona el qDebug para QT5
 mkdir /etc/xdg/QtProject

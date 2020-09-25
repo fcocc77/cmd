@@ -5,6 +5,7 @@ xorg_drv=(
     xorg-x11-drv-keyboard
     xorg-x11-drv-wacom
     xorg-x11-drv-intel
+    xorg-x11-drv-synaptics
 )
 yum -y install ${xorg_drv[@]}
 # ------------------------
