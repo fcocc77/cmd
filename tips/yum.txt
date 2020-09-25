@@ -1,0 +1,2 @@
+# obtiene una lista con las versiones de paquetes disponibles en el repositorio
+yum --showduplicates list 'package-name.*'
