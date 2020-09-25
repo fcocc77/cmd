@@ -22,6 +22,7 @@ prompt_context() {
 alias vina="cd $user/Documents/develop/videovina"
 alias vinarender="cd $user/Documents/develop/vinarender"
 alias natron="cd $user/Documents/develop/natron_utils"
+alias nitrogen="cd $user/Documents/develop/nitrogen"
 alias juno="cd $user/Documents/develop/juno"
 alias develop="cd $user/Documents/develop"
 alias myconf="cd $user/Documents/develop/my-config"

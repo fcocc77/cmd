@@ -1,0 +1,6 @@
+
+# guarda el usuario y password permanentemente, (ejecutar en cada proyecto)
+git config credential.helper store
+
+# para revertir a un commit 
+git reset --hard 'commit_hash'
