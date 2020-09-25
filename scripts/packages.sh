@@ -1,5 +1,5 @@
 # Repositorios
-cp conf/*.repo /etc/yum.repos.d
+cp ../conf/*.repo /etc/yum.repos.d
 rpm --import https://packages.microsoft.com/keys/microsoft.asc
 # --------------------------------------------------
 
