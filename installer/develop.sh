@@ -1,3 +1,6 @@
+# gestor de packetes NODEJS
+curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
+
 # Desarrollo
 packages=(
     # Complilacion
@@ -8,12 +11,12 @@ packages=(
     xorg-x11-server-devel
     mtdev-devel
     dkms
-    # -------------------
+
+    nodejs
 
     # Edicion
     python36
     python36-pip
-    # ------------------
 )
 yum -y groupinstall "Development Tools"
 yum -y install ${packages[@]}
