@@ -8,6 +8,7 @@ packages=(
     google-chrome-stable
 
     # otros
+    tree
     net-tools
     terminator
     wget
