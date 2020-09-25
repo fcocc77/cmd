@@ -19,12 +19,12 @@ prompt_context() {
 }
 
 # Alias
-alias vina="cd $user/Documents/GitHub/videovina"
-alias vinarender="cd $user/Documents/GitHub/vinarender"
-alias natron="cd $user/Documents/GitHub/natron_utils"
-alias juno="cd $user/Documents/GitHub/juno"
-alias github="cd $user/Documents/GitHub"
-alias cmd="cd $user/Documents/GitHub/cmd"
+alias vina="cd $user/Documents/develop/videovina"
+alias vinarender="cd $user/Documents/develop/vinarender"
+alias natron="cd $user/Documents/develop/natron_utils"
+alias juno="cd $user/Documents/develop/juno"
+alias develop="cd $user/Documents/develop"
+alias myconf="cd $user/Documents/develop/my-conf"
 alias bashrc="vim /root/.bashrc"
 alias desk="cd /root/Desktop"
 alias natron_plugins="cd /usr/share/Natron/Plugins"

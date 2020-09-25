@@ -1,5 +1,6 @@
 # source code: https://github.com/ohmyzsh/ohmyzsh
 
+user='pancho'
 cd /tmp
 
 yum -y install tmux zsh
@@ -19,3 +20,12 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 # usar el zsh de forma predeterminada
 chsh -s /bin/zsh
+
+# copia el '.oh-my-zsh' a directorio del usuario
+cp -rf ~/.oh-my-zsh /home/$user
+chown $user:$user -R /home/$user/.oh-my-zsh
+
+# copia fuantes de root a user
+fonts="/home/$user/.local/share/fonts"
+cp /root/.local/share/fonts $fonts
+chown $user:$user -R $fonts

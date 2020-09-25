@@ -8,3 +8,6 @@ git config --global user.name "Francisco Contreras"
 # ignora los permisos de archivos chmod xxx
 # git config core.filemode false
 # --------------------------------
+
+# guarda el usuario y password permanentemente
+git config credential.helper store
