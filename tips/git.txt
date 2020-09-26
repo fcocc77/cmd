@@ -4,3 +4,6 @@ git config credential.helper store
 
 # para revertir a un commit 
 git reset --hard 'commit_hash'
+
+# con la '-u' dejamos el remote y branch por defecto
+git push -u <remote> <branch>
