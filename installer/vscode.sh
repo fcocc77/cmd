@@ -1,7 +1,7 @@
 yum -y install code
 
 # Extenciones vscode
-su $user -c "code \
+su $USER -c "code \
     --install-extension ms-vscode.cpptools \
     --install-extension ritwickdey.live-sass \
     --install-extension syler.sass-indented \
@@ -16,5 +16,6 @@ su $user -c "code \
     --install-extension seanwu.vscode-qt-for-python \
     --install-extension ms-python.python \
     --install-extension sandy081.todotasks \
-    --install-extension devmike.mikrotik-routeros-script"
-# ----------------------
+    --install-extension devmike.mikrotik-routeros-script \
+    --install-extension xshrim.txt-syntax \
+    --install-extension zhuangtongfa.material-theme"
