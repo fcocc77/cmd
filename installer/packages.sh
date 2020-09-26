@@ -10,7 +10,6 @@ packages=(
     # otros
     tree
     net-tools
-    terminator
     wget
     ffmpeg
     ntfs-3g
@@ -19,7 +18,7 @@ packages=(
     rclone
     unar
     htop       # Top con colores
-    bind-utils # para usar nslookup ( resuelve dns a ips )
+    bind-utils # para usar 'nslookup' ( resuelve dns a ips )
 )
 
 yum -y install ${packages[@]}
