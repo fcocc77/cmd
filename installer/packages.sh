@@ -19,6 +19,9 @@ packages=(
     unar
     htop       # Top con colores
     bind-utils # para usar 'nslookup' ( resuelve dns a ips )
+
+    # Audio
+    alsa-plugins-pulseaudio
 )
 
 yum -y install ${packages[@]}
