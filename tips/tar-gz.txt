@@ -1,0 +1,5 @@
+# Comprimir
+tar -czvf archivo.tar.gz /carpeta/a/empaquetar/
+
+# Descomprimir
+tar -xzvf archivo.tar.gz
