@@ -5,7 +5,7 @@ password="vfx"
 # este script bloquea el acceso al internet a una applicacion especifica
 # -----------
 
-# para que funcione el sudo en el usuario, solo funciona en root
+# para que funcione el sudo en el usuario, solo funciona en root, ¡ reiniciar para que tenga efecto !
 #   usermod -aG wheel "user"
 # ----------------------------
 
