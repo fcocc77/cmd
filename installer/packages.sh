@@ -20,6 +20,9 @@ packages=(
     htop       # Top con colores
     bind-utils # para usar 'nslookup' ( resuelve dns a ips )
 
+    # Descarga de Youtube
+    youtube-dl
+
     # Audio
     alsa-plugins-pulseaudio
 )
