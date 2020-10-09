@@ -1,0 +1,9 @@
+yum -y install iperf
+
+# Servidor:
+iperf -s
+#
+
+# Cliente
+iperf -c 'ip servidor'
+#
