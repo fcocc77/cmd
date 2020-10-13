@@ -1,5 +1,5 @@
 packages=(
-    # Buscador de applicaciones
+    # Buscador de aplicaciones
     xfce4-appfinder
     wmctrl
     xdotool
@@ -14,7 +14,6 @@ packages=(
     ffmpeg
     ntfs-3g
     ntfsprogs
-    vlc
     rclone
     unar
     htop       # Top con colores
@@ -25,6 +24,10 @@ packages=(
 
     # Audio
     alsa-plugins-pulseaudio
+
+    # Reproductores de Video:
+    mpv
+    vlc
 )
 
 yum -y install ${packages[@]}
