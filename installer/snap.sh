@@ -9,3 +9,7 @@ ln -s /var/lib/snapd/snap /snap
 
 # snap install whatsdesk
 # snap install spotify
+# snap install blender --channel=2.83lts/stable --classic
+
+# para ver versiones disponible:
+#   snap info 'app name'
