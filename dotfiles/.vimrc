@@ -18,8 +18,12 @@ set tabstop=4 " Espacios que se generan al presioar tab
 call plug#begin('~/.vim/plugged')
 
 Plug 'arcticicestudio/nord-vim'
+Plug 'preservim/nerdtree'
 
 call plug#end()
+
+" Nerd Tree al iniciar vim
+autocmd vimenter * NERDTree
 
 " Tema de estilos
 colorscheme nord
@@ -68,5 +72,3 @@ set statusline+=%1*\ ln:\ %02l/%L\ (%3p%%)\              " Line number / total l
 au InsertEnter * hi statusline guifg=black guibg=#d7afff ctermfg=white ctermbg=magenta
 au InsertLeave * hi statusline guifg=black guibg=#8fbfdc ctermfg=white ctermbg=cyan
 hi StatusLine ctermbg=cyan ctermfg=white 
-
-

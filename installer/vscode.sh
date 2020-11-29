@@ -3,7 +3,6 @@ yum -y install code
 # Extenciones vscode
 su $USER -c "code \
     --install-extension ms-vscode.cpptools \
-    --install-extension ritwickdey.live-sass \
     --install-extension syler.sass-indented \
     --install-extension azemoh.theme-onedark \
     --install-extension foxundermoon.shell-format \
