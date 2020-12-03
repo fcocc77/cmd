@@ -42,9 +42,9 @@ set tabstop=4 " Espacios que se generan al presioar tab
 
 " NerdTree Configuracion
 autocmd vimenter * NERDTree
-let NERDTreeShowLineNumbers=1 " Habilita los numeros
+let NERDTreeShowLineNumbers = 1 " Habilita los numeros
 autocmd FileType nerdtree setlocal relativenumber " Numeros relativos
-let g:NERDTreeWinSize=30
+let g:NERDTreeWinSize = 30
 silent! map <F2> :NERDTreeFind<CR>
 map <silent> <C-b> :NERDTreeToggle<CR>  
 ""
@@ -52,6 +52,7 @@ map <silent> <C-b> :NERDTreeToggle<CR>
 
 " Configuracion Ctrl-P
 let g:ctrlp_custom_ignore = 'node_modules'
+let g:ctrlp_show_hidden = 1
 ""
 
 
