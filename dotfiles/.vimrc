@@ -7,7 +7,11 @@ Plug 'srcery-colors/srcery-vim'
 Plug 'ryuta69/elly.vim'
 Plug 'morhetz/gruvbox'
 ""
-
+Plug 'yggdroot/indentline'
+Plug 'mxw/vim-jsx'
+Plug 'suy/vim-qmake' " Syntaxis para archivos .pro
+Plug 'irrationalistic/vim-tasks' " Syntaxis para to-do Tasks
+Plug 'octol/vim-cpp-enhanced-highlight' " Sintaxis para c++
 Plug 'preservim/nerdtree' " Arbol de archivos
 Plug 'vim-scripts/ctrlp.vim' " Buscador de archivos
 Plug 'vim-airline/vim-airline' " Barra de estado
@@ -18,6 +22,16 @@ call plug#end()
 " Numeros Laterales
 set number
 set relativenumber
+""
+
+" IndentLine Configuracion
+let g:indentLine_color_term = 239
+let g:indentLine_char = '⎸'
+""
+
+
+" Linea horizontal que muestra donde esta el cursor
+set cursorline
 ""
 
 
@@ -31,12 +45,13 @@ set nobackup
 filetype plugin indent on
 syntax on                
 autocmd Filetype * AnyFoldActivate               
-set foldlevel=0 
+set foldlevel=99 
 ""
 
 
 " Identacion
-set tabstop=4 " Espacios que se generan al presioar tab
+set tabstop=4
+set shiftwidth=4 " Espacios que se generan al presioar tab 
 ""
 
 
@@ -45,6 +60,7 @@ autocmd vimenter * NERDTree
 let NERDTreeShowLineNumbers = 1 " Habilita los numeros
 autocmd FileType nerdtree setlocal relativenumber " Numeros relativos
 let g:NERDTreeWinSize = 30
+let NERDTreeShowHidden = 1
 silent! map <F2> :NERDTreeFind<CR>
 map <silent> <C-b> :NERDTreeToggle<CR>  
 ""
