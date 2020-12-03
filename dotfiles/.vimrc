@@ -1,74 +1,70 @@
+" Para instalar los plugins ejecutar :PlugInstall
+call plug#begin('~/.vim/plugged')
+" Temas
+Plug 'arcticicestudio/nord-vim'
+Plug 'tomasr/molokai'
+Plug 'srcery-colors/srcery-vim'
+Plug 'ryuta69/elly.vim'
+Plug 'morhetz/gruvbox'
+""
+
+Plug 'preservim/nerdtree' " Arbol de archivos
+Plug 'vim-scripts/ctrlp.vim' " Buscador de archivos
+Plug 'vim-airline/vim-airline' " Barra de estado
+Plug 'pseewald/anyfold' " Folding para todos los lenguajes
+Plug 'airblade/vim-gitgutter' " Barra lateral que muestra los cambios de Git
+call plug#end()
+
 " Numeros Laterales
 set number
 set relativenumber
+""
+
 
 " Desabilita swap files y backups
 set noswapfile
 set nobackup
+""
+
 
 " Folding
-set foldmethod=syntax
-set nofoldenable " Al abrir un archivo, inicia con el fold desabilitado
-set foldlevel=0
+filetype plugin indent on
+syntax on                
+autocmd Filetype * AnyFoldActivate               
+set foldlevel=0 
+""
+
 
 " Identacion
 set tabstop=4 " Espacios que se generan al presioar tab
+""
 
-" Para instalar los plugins ejecutar :PlugInstall
-call plug#begin('~/.vim/plugged')
 
-Plug 'arcticicestudio/nord-vim'
-Plug 'preservim/nerdtree'
-
-call plug#end()
-
-" Nerd Tree al iniciar vim
+" NerdTree Configuracion
 autocmd vimenter * NERDTree
+let NERDTreeShowLineNumbers=1 " Habilita los numeros
+autocmd FileType nerdtree setlocal relativenumber " Numeros relativos
+let g:NERDTreeWinSize=30
+silent! map <F2> :NERDTreeFind<CR>
+map <silent> <C-b> :NERDTreeToggle<CR>  
+""
 
-" Tema de estilos
-colorscheme nord
 
-" Estilo de la seleccion de textos 'VISUAL'
-hi Visual cterm=bold ctermbg=Blue 
+" Configuracion Ctrl-P
+let g:ctrlp_custom_ignore = 'node_modules'
+""
 
-" Status Line
-let g:currentmode={
-    \ 'n'  : 'Normal',
-    \ 'no' : 'Normal·Operator Pending',
-    \ 'v'  : 'Visual',
-    \ 'V'  : 'V·Line',
-    \ '^V' : 'V·Block',
-    \ 's'  : 'Select',
-    \ 'S'  : 'S·Line',
-    \ '^S' : 'S·Block',
-    \ 'i'  : 'Insert',
-    \ 'R'  : 'Replace',
-    \ 'Rv' : 'V·Replace',
-    \ 'c'  : 'Command',
-    \ 'cv' : 'Vim Ex',
-    \ 'ce' : 'Ex',
-    \ 'r'  : 'Prompt',
-    \ 'rm' : 'More',
-    \ 'r?' : 'Confirm',
-    \ '!'  : 'Shell',
-    \ 't'  : 'Terminal'
-    \}
 
-set laststatus=2
-set noshowmode
-set statusline+=%0*\ %{toupper(g:currentmode[mode()])}\  " The current mode
-set statusline+=%1*\ %<%F%m%r%h%w\                       " File path, modified, readonly, helpfile, preview
-set statusline+=%3*│                                     " Separator
-set statusline+=%2*\ %Y\                                 " FileType
-set statusline+=%3*│                                     " Separator
-set statusline+=%2*\ %{''.(&fenc!=''?&fenc:&enc).''}     " Encoding
-set statusline+=\ (%{&ff})                               " FileFormat (dos/unix..)
-set statusline+=%=                                       " Right Side
-set statusline+=%2*\ col:\ %02v\                         " Colomn number
-set statusline+=%3*│                                     " Separator
-set statusline+=%1*\ ln:\ %02l/%L\ (%3p%%)\              " Line number / total lines, percentage of document
+" Habilita el tema actual
+colorscheme gruvbox
+set background=dark
+""
 
-" Statusline color
-au InsertEnter * hi statusline guifg=black guibg=#d7afff ctermfg=white ctermbg=magenta
-au InsertLeave * hi statusline guifg=black guibg=#8fbfdc ctermfg=white ctermbg=cyan
-hi StatusLine ctermbg=cyan ctermfg=white 
+
+" Permite que con el escape se terminen los textos resaltados
+nnoremap <esc> :noh<return><esc>
+nnoremap <esc>^[ <esc>^[
+
+" para que se vea bien los temas
+  set t_Co=256
+
