@@ -24,6 +24,12 @@ set number
 set relativenumber
 ""
 
+
+" leader mapeado con 'coma', sirve para el 'todo-task'
+let mapleader = ","
+""
+
+
 " IndentLine Configuracion
 let g:indentLine_color_term = 239
 let g:indentLine_char = '⎸'
@@ -67,7 +73,7 @@ map <silent> <C-b> :NERDTreeToggle<CR>
 
 
 " Configuracion Ctrl-P
-let g:ctrlp_custom_ignore = 'node_modules'
+set wildignore+=node_modules,*.o,*.swp,*.pyc
 let g:ctrlp_show_hidden = 1
 ""
 
@@ -81,7 +87,5 @@ set background=dark
 " Permite que con el escape se terminen los textos resaltados
 nnoremap <esc> :noh<return><esc>
 nnoremap <esc>^[ <esc>^[
-
-" para que se vea bien los temas
-  set t_Co=256
-
+""
+:
