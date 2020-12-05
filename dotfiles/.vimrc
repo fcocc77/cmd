@@ -7,6 +7,10 @@ Plug 'srcery-colors/srcery-vim'
 Plug 'ryuta69/elly.vim'
 Plug 'morhetz/gruvbox'
 ""
+Plug 'raimon49/requirements.txt.vim' " Syntaxis para los requerimientos para python pip
+Plug 'neoclide/coc.nvim' " Auto Completado
+Plug 'rhysd/vim-clang-format' " Formato para c++, javascript
+Plug 'junegunn/fzf'
 Plug 'yggdroot/indentline'
 Plug 'mxw/vim-jsx'
 Plug 'suy/vim-qmake' " Syntaxis para archivos .pro
@@ -22,6 +26,15 @@ call plug#end()
 " Numeros Laterales
 set number
 set relativenumber
+""
+
+
+" Autocompletar parentesis, llaves, corchete, comillas
+inoremap ( ()<Esc>i
+inoremap [ []<Esc>i
+inoremap { {}<Esc>i
+inoremap " ""<Esc>i
+inoremap ' ''<Esc>i
 ""
 
 
@@ -64,6 +77,7 @@ set shiftwidth=4 " Espacios que se generan al presioar tab
 " NerdTree Configuracion
 autocmd vimenter * NERDTree
 let NERDTreeShowLineNumbers = 1 " Habilita los numeros
+let NERDTreeIgnore = ['\.git$', 'node_modules']
 autocmd FileType nerdtree setlocal relativenumber " Numeros relativos
 let g:NERDTreeWinSize = 30
 let NERDTreeShowHidden = 1
@@ -88,4 +102,3 @@ set background=dark
 nnoremap <esc> :noh<return><esc>
 nnoremap <esc>^[ <esc>^[
 ""
-:
