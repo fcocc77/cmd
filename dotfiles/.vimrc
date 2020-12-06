@@ -84,7 +84,7 @@ let mapleader = ","
 ""
 
 " IndentLine Configuracion
-let g:indentLine_color_gui = '#49505e'
+let g:indentLine_color_gui = '#3b414d'
 let g:indentLine_char = '▏'
 ""
 
