@@ -1,12 +1,8 @@
-" Para instalar los plugins ejecutar :PlugInstall
+
 call plug#begin('~/.vim/plugged')
 " Temas
-Plug 'morhetz/gruvbox'
-Plug 'arcticicestudio/nord-vim'
 Plug 'joshdick/onedark.vim'
-Plug 'tomasr/molokai'
 Plug 'sonph/onehalf'
-Plug 'gosukiwi/vim-atom-dark'
 
 ""Plug 'ryanoasis/vim-devicons'
 ""Plug 'ryanoasis/nerd-fonts'
@@ -27,13 +23,18 @@ Plug 'pangloss/vim-javascript'
 Plug 'neoclide/coc.nvim' "Auto Completado
 ""
 
+" AirLine
+Plug 'vim-airline/vim-airline' 
+Plug 'vim-airline/vim-airline-themes'
+""
+
+
 " Complementos
 Plug 'rhysd/vim-clang-format' " Formato para c++, javascript
 Plug 'junegunn/fzf'
 Plug 'yggdroot/indentline'
 Plug 'preservim/nerdtree' " Arbol de archivos
 Plug 'vim-scripts/ctrlp.vim' " Buscador de archivos
-Plug 'vim-airline/vim-airline' " Barra de estado
 Plug 'pseewald/anyfold' " Folding para todos los lenguajes
 Plug 'airblade/vim-gitgutter' " Barra lateral que muestra los cambios de Git
 call plug#end()
@@ -138,19 +139,25 @@ set wildignore+=node_modules,*.o,*.swp,*.pyc
 let g:ctrlp_show_hidden = 1
 ""
 
+" AirLine
+let g:airline_powerline_fonts = 1 " Para que los rectangulos tengan puntas
+let g:airline_theme = 'onedark'
+let g:airline#extensions#tabline#enabled = 1
+""
+
+
 
 " Estilos 
 colorscheme onedark
 set termguicolors " habilita los 24 bit de colores
 set fillchars+=vert:\▏
-autocmd Syntax * syn match cOperator "[+=*%^&|<>-]" " Cambia el color de los operadores
+au Syntax * syn match cOperator "[+=*%^&|<>-]" " Cambia el color de los operadores
 
 
 
-""let g:airline#extensions#tabline#enabled = 1
 hi CursorLineNr guifg=#fd9845
 hi Folded          guifg=#656f80 guibg=#2c333f
-hi TabLineFill  guibg=#1f2127
+au ColorScheme * hi TabLineFill  guibg=#1f2127
 hi TabLine      guifg=#444a57 guibg=#1f2127 gui=none 
 hi TabLineSel   guifg=#e5c07b guibg=#282c34 gui=bold
 ""
