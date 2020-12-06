@@ -8,14 +8,16 @@ Plug 'tomasr/molokai'
 Plug 'sonph/onehalf'
 Plug 'gosukiwi/vim-atom-dark'
 
-
-
 ""Plug 'ryanoasis/vim-devicons'
 ""Plug 'ryanoasis/nerd-fonts'
+""Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
+" Auto Completado
+"Plug 'valloric/youcompleteme'
+Plug 'neoclide/coc.nvim' "Auto Completado
+""
 
 Plug 'raimon49/requirements.txt.vim' " Syntaxis para los requerimientos para python pip
-""Plug 'neoclide/coc.nvim' " Auto Completado
 Plug 'rhysd/vim-clang-format' " Formato para c++, javascript
 Plug 'junegunn/fzf'
 Plug 'yggdroot/indentline'
@@ -45,8 +47,8 @@ inoremap ' ''<Esc>i
 ""
 
 
-"" Si el async no es 0, el gitgutter deja el cpu al 100%
-let g:gitgutter_async=0
+" Para que funcione el borrado con la tecla 'backspace'
+set backspace=indent,eol,start
 ""
 
 
@@ -108,7 +110,7 @@ let g:ctrlp_show_hidden = 1
 " Estilos 
 colorscheme onedark
 set termguicolors " habilita los 24 bit de colores
-
+set fillchars+=vert:\▏
 
 ""let g:airline#extensions#tabline#enabled = 1
 hi CursorLineNr guifg=#fd9845
