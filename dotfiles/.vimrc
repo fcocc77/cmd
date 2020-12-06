@@ -1,14 +1,12 @@
 " Para instalar los plugins ejecutar :PlugInstall
 call plug#begin('~/.vim/plugged')
 " Temas
-Plug 'arcticicestudio/nord-vim'
-Plug 'tomasr/molokai'
-Plug 'srcery-colors/srcery-vim'
-Plug 'ryuta69/elly.vim'
 Plug 'morhetz/gruvbox'
-""
+Plug 'arcticicestudio/nord-vim'
+Plug 'joshdick/onedark.vim'
 Plug 'raimon49/requirements.txt.vim' " Syntaxis para los requerimientos para python pip
-Plug 'neoclide/coc.nvim' " Auto Completado
+
+""Plug 'neoclide/coc.nvim' " Auto Completado
 Plug 'rhysd/vim-clang-format' " Formato para c++, javascript
 Plug 'junegunn/fzf'
 Plug 'yggdroot/indentline'
@@ -20,7 +18,7 @@ Plug 'preservim/nerdtree' " Arbol de archivos
 Plug 'vim-scripts/ctrlp.vim' " Buscador de archivos
 Plug 'vim-airline/vim-airline' " Barra de estado
 Plug 'pseewald/anyfold' " Folding para todos los lenguajes
-Plug 'airblade/vim-gitgutter' " Barra lateral que muestra los cambios de Git
+""Plug 'airblade/vim-gitgutter' " Barra lateral que muestra los cambios de Git
 call plug#end()
 
 " Numeros Laterales
@@ -93,8 +91,8 @@ let g:ctrlp_show_hidden = 1
 
 
 " Habilita el tema actual
-colorscheme gruvbox
-set background=dark
+colorscheme onedark 
+set termguicolors " habilita los 24 bit de colores
 ""
 
 
