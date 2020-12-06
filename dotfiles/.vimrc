@@ -4,12 +4,17 @@ call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'arcticicestudio/nord-vim'
 Plug 'joshdick/onedark.vim'
+Plug 'tomasr/molokai'
+Plug 'sonph/onehalf'
+Plug 'gosukiwi/vim-atom-dark'
+
+
+
+""Plug 'ryanoasis/vim-devicons'
+""Plug 'ryanoasis/nerd-fonts'
+
+
 Plug 'raimon49/requirements.txt.vim' " Syntaxis para los requerimientos para python pip
-
-Plug 'ryanoasis/vim-devicons'
-Plug 'ryanoasis/nerd-fonts'
-
-
 ""Plug 'neoclide/coc.nvim' " Auto Completado
 Plug 'rhysd/vim-clang-format' " Formato para c++, javascript
 Plug 'junegunn/fzf'
@@ -22,7 +27,7 @@ Plug 'preservim/nerdtree' " Arbol de archivos
 Plug 'vim-scripts/ctrlp.vim' " Buscador de archivos
 Plug 'vim-airline/vim-airline' " Barra de estado
 Plug 'pseewald/anyfold' " Folding para todos los lenguajes
-""Plug 'airblade/vim-gitgutter' " Barra lateral que muestra los cambios de Git
+Plug 'airblade/vim-gitgutter' " Barra lateral que muestra los cambios de Git
 call plug#end()
 
 " Numeros Laterales
@@ -37,6 +42,11 @@ inoremap [ []<Esc>i
 inoremap { {}<Esc>i
 inoremap " ""<Esc>i
 inoremap ' ''<Esc>i
+""
+
+
+"" Si el async no es 0, el gitgutter deja el cpu al 100%
+let g:gitgutter_async=0
 ""
 
 
@@ -66,6 +76,8 @@ filetype plugin indent on
 syntax on                
 autocmd Filetype * AnyFoldActivate               
 set foldlevel=99 
+hi Folded term=underline
+
 ""
 
 
@@ -87,7 +99,6 @@ map <silent> <C-b> :NERDTreeToggle<CR>
 ""
 
 
-
 " Configuracion Ctrl-P
 set wildignore+=node_modules,*.o,*.swp,*.pyc
 let g:ctrlp_show_hidden = 1
@@ -95,13 +106,16 @@ let g:ctrlp_show_hidden = 1
 
 
 " Estilos 
-colorscheme onedark 
+colorscheme onedark
 set termguicolors " habilita los 24 bit de colores
 
+
+""let g:airline#extensions#tabline#enabled = 1
 hi CursorLineNr guifg=#fd9845
+hi Folded          guifg=#656f80 guibg=#2c333f
+hi TabLineFill  guibg=#1f2127
 hi TabLine      guifg=#444a57 guibg=#1f2127 gui=none 
 hi TabLineSel   guifg=#e5c07b guibg=#282c34 gui=bold
-hi TabLineFill  guibg=#1f2127
 ""
 
 
