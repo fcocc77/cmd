@@ -50,9 +50,9 @@ let mapleader = ","
 
 " Auto guardado de espacio de trabajo
 let g:workspace_session_name = 'session.vim'
-autocmd VimLeave * NERDTreeClose " Cierra el nerdtree antes de salir, por que da conflicto con la session
-nnoremap <Leader>s :ToggleWorkspace<CR>
-""
+autocmd VimLeave * tabdo NERDTreeClose " Cierra todos los nerdtree antes de salir, por que da conflicto con la session
+nnoremap <Leader>ss :ToggleWorkspace<CR>
+"
 
 
 
@@ -74,11 +74,11 @@ set relativenumber
 set encoding=UTF-8
 
 " Autocompletar parentesis, llaves, corchete, comillas
-inoremap ( ()<Esc>i
-inoremap [ []<Esc>i
-inoremap { {}<Esc>i
-inoremap " ""<Esc>i
-inoremap ' ''<Esc>i
+" inoremap ( ()<Esc>i
+" inoremap [ []<Esc>i
+" inoremap { {}<Esc>i
+" inoremap " ""<Esc>i
+" inoremap ' ''<Esc>i
 ""
 
 " Coc - para que el autocompletado se pueda cambiar con Tab
@@ -139,7 +139,7 @@ set shiftwidth=4 " Espacios que se generan al presioar tab
 
 
 " ignorar archivos y carpeta para NerdTree y ctrlp
-set wildignore+=node_modules,*.o,*.swp,*.pyc,.git,.undodir
+set wildignore+=node_modules,*.o,*.swp,*.pyc,.git,.undodir,session.vim
 ""
 
 
@@ -162,11 +162,14 @@ let g:ctrlp_show_hidden = 1
 let g:airline_powerline_fonts = 1 " Para que los rectangulos tengan puntas
 let g:airline_theme = 'onedark'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t' "Solo muestra el nombre en los 'tabs'
+let g:airline#extensions#tabline#show_buffers = 0 " Desabilita el buffer ( historial )
+let g:airline#extensions#tabline#show_splits = 1 " Habilita el buffer de splits que esta a la derecha
 ""
 
 
 
-" Estilos 
+" Estilos
 colorscheme onedark
 set termguicolors " habilita los 24 bit de colores
 set fillchars+=vert:\▏
