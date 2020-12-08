@@ -5,3 +5,4 @@
 *.swp
 *.swk
 centos/xf86-input-mtrack/
+session.vim

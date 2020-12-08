@@ -28,7 +28,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 ""
 
-" Plug 'thaerkh/vim-workspace' " Espacios de Trabajo
+Plug 'thaerkh/vim-workspace' " Espacios de Trabajo
 
 
 " Complementos
@@ -41,6 +41,20 @@ Plug 'vim-scripts/ctrlp.vim' " Buscador de archivos
 Plug 'pseewald/anyfold' " Folding para todos los lenguajes
 Plug 'airblade/vim-gitgutter' " Barra lateral que muestra los cambios de Git
 call plug#end()
+
+
+" leader mapeado con 'coma', sirve para el 'todo-task'
+let mapleader = ","
+""
+
+
+" Auto guardado de espacio de trabajo
+let g:workspace_session_name = 'session.vim'
+autocmd VimLeave * NERDTreeClose " Cierra el nerdtree antes de salir, por que da conflicto con la session
+nnoremap <Leader>s :ToggleWorkspace<CR>
+""
+
+
 
 " Sintaxis JSX
 let g:vim_jsx_pretty_colorful_config = 1 " default 0
@@ -67,7 +81,6 @@ inoremap " ""<Esc>i
 inoremap ' ''<Esc>i
 ""
 
-
 " Coc - para que el autocompletado se pueda cambiar con Tab
 function! s:check_back_space() abort
 	let col = col('.') - 1
@@ -87,9 +100,6 @@ set backspace=indent,eol,start
 ""
 
 
-" leader mapeado con 'coma', sirve para el 'todo-task'
-let mapleader = ","
-""
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
@@ -116,7 +126,7 @@ set cursorline
 filetype plugin indent on
 syntax on                
 autocmd Filetype * AnyFoldActivate               
-set foldlevel=99 
+set foldlevel=99
 hi Folded term=underline
 
 ""
@@ -134,14 +144,14 @@ set wildignore+=node_modules,*.o,*.swp,*.pyc
 
 
 " NerdTree Configuracion
-" autocmd vimenter * NERDTree " NerdTree visible al inicio
+autocmd vimenter * NERDTree " NerdTree visible al inicio
 let NERDTreeShowLineNumbers = 1 " Habilita los numeros
 let NERDTreeRespectWildIgnore = 1 " Ignora los archivos que estan en 'wildignore'
 autocmd FileType nerdtree setlocal relativenumber " Numeros relativos
 let g:NERDTreeWinSize = 35
 let NERDTreeShowHidden = 1
 silent! map <F2> :NERDTreeFind<CR>
-map <silent> <C-b> :NERDTreeToggle<CR>  
+map <silent> <C-b> :NERDTreeToggle<CR>
 ""
 
 
@@ -164,7 +174,7 @@ set fillchars+=vert:\▏
 au Syntax * syn match cOperator "[+=*%^&|<>-]" " Cambia el color de los operadores
 
 hi CursorLineNr guifg=#fd9845
-hi Folded          guifg=#656f80 guibg=#2c333f
+hi Folded guifg=#656f80 guibg=#2c333f
 ""
 
 
