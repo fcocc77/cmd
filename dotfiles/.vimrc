@@ -139,12 +139,11 @@ set shiftwidth=4 " Espacios que se generan al presioar tab
 
 
 " ignorar archivos y carpeta para NerdTree y ctrlp
-set wildignore+=node_modules,*.o,*.swp,*.pyc
+set wildignore+=node_modules,*.o,*.swp,*.pyc,.git,.undodir
 ""
 
 
 " NerdTree Configuracion
-autocmd vimenter * NERDTree " NerdTree visible al inicio
 let NERDTreeShowLineNumbers = 1 " Habilita los numeros
 let NERDTreeRespectWildIgnore = 1 " Ignora los archivos que estan en 'wildignore'
 autocmd FileType nerdtree setlocal relativenumber " Numeros relativos
