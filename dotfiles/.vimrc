@@ -16,6 +16,7 @@ Plug 'suy/vim-qmake' " Syntaxis para archivos .pro
 Plug 'irrationalistic/vim-tasks' " Syntaxis para to-do Tasks
 Plug 'maxmellon/vim-jsx-pretty' " Jsx Syntaxis
 Plug 'bfrg/vim-cpp-modern' " Sintaxis para c++
+Plug 'zainin/vim-mikrotik' " MikroTik Syntaxis
 Plug 'pangloss/vim-javascript'
 ""
 
@@ -36,6 +37,7 @@ Plug 'xuyuanp/nerdtree-git-plugin' " Muestra los cambios de git en nerdtree
 ""
 
 " Complementos
+Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter' " Comentarios de codigo
 Plug 'rhysd/vim-clang-format' " Formato para c++, javascript
 Plug 'junegunn/fzf'
