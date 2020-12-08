@@ -30,14 +30,17 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'thaerkh/vim-workspace' " Espacios de Trabajo
 
+" NerdTree
+Plug 'preservim/nerdtree' " Arbol de archivos
+Plug 'xuyuanp/nerdtree-git-plugin' " Muestra los cambios de git en nerdtree
+""
 
 " Complementos
 Plug 'scrooloose/nerdcommenter' " Comentarios de codigo
 Plug 'rhysd/vim-clang-format' " Formato para c++, javascript
 Plug 'junegunn/fzf'
 Plug 'yggdroot/indentline'
-Plug 'preservim/nerdtree' " Arbol de archivos
-Plug 'vim-scripts/ctrlp.vim' " Buscador de archivos
+Plug 'ctrlpvim/ctrlp.vim' " Buscador de archivos
 Plug 'pseewald/anyfold' " Folding para todos los lenguajes
 Plug 'airblade/vim-gitgutter' " Barra lateral que muestra los cambios de Git
 call plug#end()
@@ -139,7 +142,7 @@ set shiftwidth=4 " Espacios que se generan al presioar tab
 
 
 " ignorar archivos y carpeta para NerdTree y ctrlp
-set wildignore+=node_modules,*.o,*.swp,*.pyc,.git,.undodir,session.vim
+set wildignore+=node_modules,*/node_modules/*,*.o,*.swp,*.swo,*.pyc,.git,.undodir,*/.undodir/*,session.vim
 ""
 
 
