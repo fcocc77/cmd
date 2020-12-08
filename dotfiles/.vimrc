@@ -28,8 +28,11 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 ""
 
+" Plug 'thaerkh/vim-workspace' " Espacios de Trabajo
+
 
 " Complementos
+Plug 'scrooloose/nerdcommenter' " Comentarios de codigo
 Plug 'rhysd/vim-clang-format' " Formato para c++, javascript
 Plug 'junegunn/fzf'
 Plug 'yggdroot/indentline'
@@ -39,11 +42,15 @@ Plug 'pseewald/anyfold' " Folding para todos los lenguajes
 Plug 'airblade/vim-gitgutter' " Barra lateral que muestra los cambios de Git
 call plug#end()
 
-
-
 " Sintaxis JSX
 let g:vim_jsx_pretty_colorful_config = 1 " default 0
 ""
+
+
+" Nerd Commenter
+let g:NERDSpaceDelims = 1 " Agrega un espacio despues del comentario
+""
+
 
 
 " Numeros Laterales
@@ -83,6 +90,10 @@ set backspace=indent,eol,start
 " leader mapeado con 'coma', sirve para el 'todo-task'
 let mapleader = ","
 ""
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " IndentLine Configuracion
 let g:indentLine_color_gui = '#3b414d'
@@ -99,11 +110,6 @@ let g:python_highlight_all = 1
 set cursorline
 ""
 
-
-" Desabilita swap files y backups
-set noswapfile
-set nobackup
-""
 
 
 " Folding
@@ -122,10 +128,15 @@ set shiftwidth=4 " Espacios que se generan al presioar tab
 ""
 
 
+" ignorar archivos y carpeta para NerdTree y ctrlp
+set wildignore+=node_modules,*.o,*.swp,*.pyc
+""
+
+
 " NerdTree Configuracion
-autocmd vimenter * NERDTree
+" autocmd vimenter * NERDTree " NerdTree visible al inicio
 let NERDTreeShowLineNumbers = 1 " Habilita los numeros
-let NERDTreeIgnore = ['\.git$', 'node_modules']
+let NERDTreeRespectWildIgnore = 1 " Ignora los archivos que estan en 'wildignore'
 autocmd FileType nerdtree setlocal relativenumber " Numeros relativos
 let g:NERDTreeWinSize = 35
 let NERDTreeShowHidden = 1
@@ -135,7 +146,6 @@ map <silent> <C-b> :NERDTreeToggle<CR>
 
 
 " Configuracion Ctrl-P
-set wildignore+=node_modules,*.o,*.swp,*.pyc
 let g:ctrlp_show_hidden = 1
 ""
 
@@ -153,14 +163,10 @@ set termguicolors " habilita los 24 bit de colores
 set fillchars+=vert:\▏
 au Syntax * syn match cOperator "[+=*%^&|<>-]" " Cambia el color de los operadores
 
-
-
 hi CursorLineNr guifg=#fd9845
 hi Folded          guifg=#656f80 guibg=#2c333f
-au ColorScheme * hi TabLineFill  guibg=#1f2127
-hi TabLine      guifg=#444a57 guibg=#1f2127 gui=none 
-hi TabLineSel   guifg=#e5c07b guibg=#282c34 gui=bold
 ""
+
 
 
 " Permite que con el escape se terminen los textos resaltados
