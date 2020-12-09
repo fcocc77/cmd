@@ -30,6 +30,7 @@ Plug 'vim-airline/vim-airline-themes'
 ""
 
 Plug 'thaerkh/vim-workspace' " Espacios de Trabajo
+Plug 'majutsushi/tagbar' " Lista de funciones
 
 " NerdTree
 Plug 'preservim/nerdtree' " Arbol de archivos
@@ -70,6 +71,9 @@ let g:vim_jsx_pretty_colorful_config = 1 " default 0
 let g:NERDSpaceDelims = 1 " Agrega un espacio despues del comentario
 ""
 
+
+" Tag Bar
+nmap <F8> :TagbarToggle<CR>
 
 
 " Numeros Laterales
@@ -155,7 +159,7 @@ autocmd FileType nerdtree setlocal relativenumber " Numeros relativos
 let g:NERDTreeWinSize = 35
 let NERDTreeShowHidden = 1
 silent! map <F2> :NERDTreeFind<CR>
-map <silent> <C-b> :NERDTreeToggle<CR>
+map <silent> <F3> :NERDTreeToggle<CR>
 ""
 
 
