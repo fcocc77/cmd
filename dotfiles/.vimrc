@@ -37,6 +37,11 @@ Plug 'preservim/nerdtree' " Arbol de archivos
 Plug 'xuyuanp/nerdtree-git-plugin' " Muestra los cambios de git en nerdtree
 ""
 
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter' " Barra lateral que muestra los cambios de Git
+
+
 " Complementos
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter' " Comentarios de codigo
@@ -45,7 +50,6 @@ Plug 'junegunn/fzf'
 Plug 'yggdroot/indentline'
 Plug 'ctrlpvim/ctrlp.vim' " Buscador de archivos
 Plug 'pseewald/anyfold' " Folding para todos los lenguajes
-Plug 'airblade/vim-gitgutter' " Barra lateral que muestra los cambios de Git
 call plug#end()
 
 
@@ -143,7 +147,7 @@ hi Folded term=underline
 
 " Identacion
 set tabstop=4
-set shiftwidth=4 " Espacios que se generan al presioar tab 
+set shiftwidth=4 " Espacios que se generan al presioar tab
 ""
 
 
@@ -174,6 +178,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t' "Solo muestra el nombre en los 'tabs'
 let g:airline#extensions#tabline#show_buffers = 0 " Desabilita el buffer ( historial )
 let g:airline#extensions#tabline#show_splits = 1 " Habilita el buffer de splits que esta a la derecha
+let g:airline#extensions#tabline#tab_nr_type = 1 " Index del tab
 ""
 
 
