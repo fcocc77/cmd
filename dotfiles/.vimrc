@@ -162,8 +162,8 @@ let NERDTreeRespectWildIgnore = 1 " Ignora los archivos que estan en 'wildignore
 autocmd FileType nerdtree setlocal relativenumber " Numeros relativos
 let g:NERDTreeWinSize = 35
 let NERDTreeShowHidden = 1
-silent! map <F2> :NERDTreeFind<CR>
-map <silent> <F3> :NERDTreeToggle<CR>
+nmap <F2> :NERDTreeFind<CR>
+nmap <F3> :NERDTreeToggle<CR>
 ""
 
 
