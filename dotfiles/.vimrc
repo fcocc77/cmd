@@ -25,7 +25,7 @@ Plug 'neoclide/coc.nvim' "Auto Completado
 ""
 
 " AirLine
-Plug 'vim-airline/vim-airline' 
+Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 ""
 
@@ -61,6 +61,7 @@ let mapleader = ","
 " Auto guardado de espacio de trabajo
 let g:workspace_session_name = 'session.vim'
 autocmd VimLeave * tabdo NERDTreeClose " Cierra todos los nerdtree antes de salir, por que da conflicto con la session
+autocmd VimLeave * tabdo TagbarClose " Cierra todos los tagbar
 nnoremap <Leader>ss :ToggleWorkspace<CR>
 "
 
