@@ -137,8 +137,8 @@ set cursorline
 
 " Folding
 filetype plugin indent on
-syntax on                
-autocmd Filetype * AnyFoldActivate               
+syntax on
+autocmd Filetype * AnyFoldActivate
 set foldlevel=99
 hi Folded term=underline
 
