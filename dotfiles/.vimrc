@@ -70,7 +70,7 @@ nnoremap <Leader>ss :ToggleWorkspace<CR>
 
 " FZF
 let g:fzf_layout = { 'down': '~40%' } " Abre la venatana en un split en la parte inferior
-nmap <C-F> :BLines<CR> /
+nmap <C-F> :BLines<CR>
 " GFiles ignora los archivos de .gitignore
 map <C-P> :GFiles<CR>
 ""
