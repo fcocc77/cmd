@@ -21,7 +21,7 @@ Plug 'pangloss/vim-javascript'
 ""
 
 " Auto Completado
-Plug 'neoclide/coc.nvim' "Auto Completado
+Plug 'neoclide/coc.nvim', {'branch': 'release'} "Auto Completado
 ""
 
 " AirLine
@@ -37,6 +37,9 @@ Plug 'preservim/nerdtree' " Arbol de archivos
 Plug 'xuyuanp/nerdtree-git-plugin' " Muestra los cambios de git en nerdtree
 ""
 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter' " Barra lateral que muestra los cambios de Git
@@ -46,9 +49,8 @@ Plug 'airblade/vim-gitgutter' " Barra lateral que muestra los cambios de Git
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter' " Comentarios de codigo
 Plug 'rhysd/vim-clang-format' " Formato para c++, javascript
-Plug 'junegunn/fzf'
 Plug 'yggdroot/indentline'
-Plug 'ctrlpvim/ctrlp.vim' " Buscador de archivos
+" Plug 'ctrlpvim/ctrlp.vim' " Buscador de archivos
 Plug 'pseewald/anyfold' " Folding para todos los lenguajes
 call plug#end()
 
@@ -65,6 +67,13 @@ autocmd VimLeave * tabdo TagbarClose " Cierra todos los tagbar
 nnoremap <Leader>ss :ToggleWorkspace<CR>
 "
 
+
+" FZF
+let g:fzf_layout = { 'down': '~40%' } " Abre la venatana en un split en la parte inferior
+nmap <C-F> :BLines<CR> /
+" GFiles ignora los archivos de .gitignore
+map <C-P> :GFiles<CR>
+""
 
 
 " Sintaxis JSX
@@ -108,16 +117,23 @@ inoremap <silent><expr> <Tab>
 ""
 
 
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+""
+
+" coc rename
+nmap <leader>rn <Plug>(coc-rename)
+""
+
+
 
 " Para que funcione el borrado con la tecla 'backspace'
 set backspace=indent,eol,start
 ""
 
 
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
 
 " IndentLine Configuracion
 let g:indentLine_color_gui = '#3b414d'
@@ -138,8 +154,8 @@ set cursorline
 
 " Folding
 filetype plugin indent on
-syntax on
-autocmd Filetype * AnyFoldActivate
+syntax on                
+autocmd Filetype * AnyFoldActivate               
 set foldlevel=99
 hi Folded term=underline
 
