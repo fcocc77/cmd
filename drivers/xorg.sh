@@ -1,5 +1,6 @@
 # instala driver x11, esto es para que funciones el mouse, teclado y otros
 xorg_drv=(
+	xorg-x11-xinit # para inicializar session
     xorg-x11-drv-libinput
     xorg-x11-drv-mouse
     xorg-x11-drv-keyboard
