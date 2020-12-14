@@ -1,9 +1,4 @@
 packages=(
-    # Buscador de aplicaciones
-    xfce4-appfinder
-    wmctrl
-    xdotool
-
     # Google Chrome
     google-chrome-stable
 
@@ -16,14 +11,10 @@ packages=(
     ntfsprogs
     rclone
     unar
-    htop       # Top con colores
+    htop       # monitor de actividad
     bind-utils # para usar 'nslookup' ( resuelve dns a ips )
-
-    # Descarga de Youtube
-    youtube-dl
-
-    # Audio
-    alsa-plugins-pulseaudio
+    youtube-dl # descarga de youtube
+    alsa-plugins-pulseaudio # driver de audio
 
     # Reproductores de Video:
     mpv

@@ -60,6 +60,13 @@ let mapleader = ","
 ""
 
 
+
+" asigna el tipo de sintxis segun la extencion
+autocmd BufEnter *.conf :setlocal filetype=xf86conf
+""
+
+
+
 " Auto guardado de espacio de trabajo
 let g:workspace_session_name = 'session.vim'
 autocmd VimLeave * tabdo NERDTreeClose " Cierra todos los nerdtree antes de salir, por que da conflicto con la session

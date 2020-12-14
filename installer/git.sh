@@ -1,6 +1,4 @@
-user="pancho"
+yum -y install https://packages.endpoint.com/rhel/7/os/x86_64/endpoint-repo-1.7-1.x86_64.rpm
 
+yum -y erase git
 yum -y install git
-
-git config --global user.email "fcocc77@gmail.com"
-git config --global user.name "Francisco Contreras"
