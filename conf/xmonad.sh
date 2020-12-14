@@ -2,5 +2,5 @@ user=pancho
 
 yum -y install xmonad
 
-echo "exec /usr/bin/gnome-session" >>~/.xinitrc # Inicio de xmonad por defecto
-su $user -c "echo exec /usr/bin/gnome-session >> ~/.xinitrc"
+echo "exec /usr/bin/xmonad" >>~/.xinitrc # Inicio de xmonad por defecto
+su $user -c "echo exec /usr/bin/xmonad >> ~/.xinitrc"
