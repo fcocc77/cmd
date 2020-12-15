@@ -15,6 +15,7 @@ packages=(
     bind-utils # para usar 'nslookup' ( resuelve dns a ips )
     youtube-dl # descarga de youtube
     alsa-plugins-pulseaudio # driver de audio
+	sudo # ejecuta comandos de root en usuario
 
     # Reproductores de Video:
     mpv

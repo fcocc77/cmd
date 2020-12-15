@@ -1,0 +1,4 @@
+# Integrar usuario al sudores file,
+# se requiere reiniciar para que cobre efecto.efecto
+
+usermod -aG wheel
