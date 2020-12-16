@@ -1,6 +1,6 @@
 # usar terminal 'gnome-terminal' que soporta 24 bit de colores
 
-sudo yum -y remove vim-minimal vim-common vim-enhanced sudo
+sudo yum -y remove vim-common vim-enhanced
 sudo yum install gcc make ncurses ncurses-devel
 
 cd /tmp
@@ -10,7 +10,7 @@ cd vim
 ./configure --with-features=huge --enable-pythoninterp
 make -j4
 
-make install
+sudo make install
 
 # instalacion de vim-plug, sirve para poder instalar mas facilmente plugins en vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

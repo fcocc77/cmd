@@ -7,4 +7,4 @@ packages=(
 	file-roller-nautilus 	# Extraer archivos comprimidos
 	eog 					# Visor de imagenes
 )
-yum -y install ${packages[@]}
+sudo yum -y install ${packages[@]}
