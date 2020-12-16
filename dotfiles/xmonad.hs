@@ -16,6 +16,10 @@ import Data.Monoid (mappend)
 
 import XMonad.Config.Gnome
 import XMonad.Hooks.ManageHelpers -- isFullscreen
+import XMonad.Hooks.EwmhDesktops -- fullscreenEventHook
+import XMonad.Layout.NoBorders
+import XMonad.Actions.SinkAll
+
 
 my_workspaces = ["CODE", "WEB", "SOCIAL", "VFX", "FILES"]
 
@@ -30,10 +34,12 @@ cyan = "#56b6c2"
 grey = "#abb2bf"
 --
 
-my_layouts = spacing 10 $ layout_tall ||| layout_full
+-- smartSpacing y smartBorders solo pone espacios cuando hay mas de 1 ventana
+my_layouts = smartBorders $ smartSpacing 10 $ layout_tall ||| layout_grid ||| layout_full
 	where
 		layout_tall = Tall 1 (3/100) (1/2)
-		layout_full = Grid 
+		layout_grid = Grid
+		layout_full = Full
 
 alt_key = mod1Mask
 win_key = mod4Mask
@@ -53,7 +59,10 @@ shortcut = keys defaultConfig `mappend` \c -> fromList
 		((win_key, xK_g), spawn "google-chrome"),
 		((win_key, xK_t), spawn "gnome-terminal"),
 		((win_key, xK_v), spawn "gnome-terminal -e \"vim\""),
-		((win_key, xK_c), spawn "gnome-calculator")
+		((win_key, xK_c), spawn "gnome-calculator"),
+
+		((win_key .|. shiftMask, xK_f), sinkAll) -- Encaja nuevamente todas las ventanas flotantes
+
 	]
 
 myTitleColor = pink -- color of window title
@@ -75,5 +84,6 @@ myConfig = defaultConfig
 		terminal = "gnome-terminal", -- terminal predeterminado
 		workspaces = my_workspaces,
 		layoutHook = my_layouts,
+		handleEventHook = fullscreenEventHook, -- permite que funcione el fullscreen
 		keys = shortcut
 	}
