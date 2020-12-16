@@ -12,4 +12,14 @@ cabal install xmonad-contrib
 cabal install -f -use_target_attributes cryptonite
 cabal install xmobar
 
+
+sudo yum -y install alsa-lib-devel
+
+# c2hs es una dependencia de xmonad-extras, se tiene que instalar con
+# new-install, con esto sobre escribimos algunos symolic-links, para que no
+# de conflicto al instalar xmonad-extras.
+cabal new-install c2hs
+cabal install xmonad-extras
+
+
 echo "exec ~/.cabal/bin/xmonad" > ~/.xinitrc # Inicio de xmonad por defecto
