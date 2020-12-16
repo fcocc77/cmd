@@ -17,8 +17,18 @@ import Data.Monoid (mappend)
 import XMonad.Config.Gnome
 import XMonad.Hooks.ManageHelpers -- isFullscreen
 
-my_workspaces = ["1 - code", "2 - web", "shell", "misc1", "irc", "im", "misc2"]
+my_workspaces = ["CODE", "WEB", "SOCIAL", "VFX", "FILES"]
 
+-- paleta de colores de 'onedark'
+black = "#282c34"
+pink = "#e06c75"
+green = "#98c379"
+yellow = "#e5c07b"
+blue = "#61afef"
+magent = "#c678dd"
+cyan = "#56b6c2"
+grey = "#abb2bf"
+--
 
 my_layouts = spacing 10 $ layout_tall ||| layout_full
 	where
@@ -29,7 +39,7 @@ alt_key = mod1Mask
 win_key = mod4Mask
 
 main = do
-	xmonad =<< statusBar myBar myPP toggleStrutsKey myConfig
+	xmonad =<< statusBar "xmobar" myPP toggleStrutsKey myConfig
 
 -- Atajos de teclado
 shortcut = keys defaultConfig `mappend` \c -> fromList
@@ -46,20 +56,21 @@ shortcut = keys defaultConfig `mappend` \c -> fromList
 		((win_key, xK_c), spawn "gnome-calculator")
 	]
 
-myBar = "xmobar"
 
--- Custom PP, configure it as you like. It determines what is being written to the bar.
--- myPP = xmobarPP { ppCurrent = xmobarColor "#429942" "" . wrap "<" ">" }
-myPP = xmobarPP { ppCurrent = xmobarColor "#429942" "" }
+myPP = xmobarPP 
+	{ 
+		ppCurrent = xmobarColor yellow "",
+		ppHidden = xmobarColor grey "" -- color de tab no visible
+	}
 
 -- Key binding to toggle the gap for the bar.
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
--- Main configuration, override the defaults to your liking.
-myConfig = def
-		{ modMask = win_key -- usar tecla windows en vez de alt
-		, terminal = "gnome-terminal" -- terminal predeterminado
-		, workspaces = my_workspaces
-		, layoutHook = my_layouts
-		, keys = shortcut
-		}
+myConfig = defaultConfig
+	{
+		modMask = win_key, -- usar tecla windows en vez de alt
+		terminal = "gnome-terminal", -- terminal predeterminado
+		workspaces = my_workspaces,
+		layoutHook = my_layouts,
+		keys = shortcut
+	}
