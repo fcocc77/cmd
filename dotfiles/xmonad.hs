@@ -56,9 +56,12 @@ shortcut = keys defaultConfig `mappend` \c -> fromList
 		((win_key, xK_c), spawn "gnome-calculator")
 	]
 
+myTitleColor = pink -- color of window title
+myTitleLength = 80 -- truncate window title to this length
 
-myPP = xmobarPP 
+myPP = xmobarPP
 	{ 
+		ppTitle = xmobarColor myTitleColor "" . shorten myTitleLength,
 		ppCurrent = xmobarColor yellow "",
 		ppHidden = xmobarColor grey "" -- color de tab no visible
 	}

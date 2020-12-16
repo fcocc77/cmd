@@ -25,19 +25,20 @@ Config { font    = "xft:Arial:size=30"
 			, Run Memory ["-t", "mem: <used>M (<usedratio>%)"] 20
 			, Run DiskU [("/", "hdd: <free> free")] [] 60
         	, Run CoreTemp       [ "--template" , "Temp: <core0>°C|<core1>°C"
-                             , "--Low"      , "70"        -- units: °C
+                             , "--Low"      , "50"        -- units: °C
                              , "--High"     , "80"        -- units: °C
-                             , "--low"      , "darkgreen"
-                             , "--normal"   , "darkorange"
-                             , "--high"     , "darkred"
+                             , "--low"      , "#98c379"
+                             , "--normal"   , "#e5c07b"
+                             , "--high"     , "red"
                              ] 50
+			, Run CpuFreq ["-t","Freq:<cpu0>|<cpu1>GHz","-L","0","-H","2","-l","lightblue","-n","white","-h","red"] 50
 
 			, Run Battery        [ "--template" , "Batt: <acstatus>"
 				   			, "--Low"      , "10"        -- units: %
 							, "--High"     , "80"        -- units: %
 					 		, "--low"      , "darkred"
 					  		, "--normal"   , "darkorange"
-					   		, "--high"     , "darkgreen"
+					   		, "--high"     , "#98c379"
 
 							, "--" -- battery specific options
 							-- discharging status
@@ -45,11 +46,11 @@ Config { font    = "xft:Arial:size=30"
 			 				-- AC "on" status
 		 					, "-O"	, "<fc=#dAA520>Charging</fc>"
 	 						-- charged status
- 							, "-i"	, "<fc=#006000>Charged</fc>"
+ 							, "-i"	, "<fc=##98c379>Charged</fc>"
 							] 50
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader% }{ <fc=#e06c75>%cpu%</fc>  |  <fc=#98c379>%memory%</fc>  |  %disku%  |  %coretemp%  |  <fc=#61afef>%date%</fc>   |  %battery% "
+       , template = " %StdinReader% }{ <fc=#e06c75>%cpu%</fc> %cpufreq%  |  <fc=#98c379>%memory%</fc>  |  %disku%  |  %coretemp%  |  <fc=#61afef>%date%</fc>   |  %battery% "
        }
 

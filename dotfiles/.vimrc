@@ -18,10 +18,11 @@ Plug 'maxmellon/vim-jsx-pretty' " Jsx Syntaxis
 Plug 'bfrg/vim-cpp-modern' " Sintaxis para c++
 Plug 'zainin/vim-mikrotik' " MikroTik Syntaxis
 Plug 'pangloss/vim-javascript'
+Plug 'neovimhaskell/haskell-vim'
 ""
 
 " Auto Completado
-Plug 'neoclide/coc.nvim', {'branch': 'release'} "Auto Completado
+" Plug 'neoclide/coc.nvim', {'branch': 'release'} "Auto Completado
 ""
 
 " AirLine
@@ -46,6 +47,7 @@ Plug 'airblade/vim-gitgutter' " Barra lateral que muestra los cambios de Git
 
 
 " Complementos
+Plug 'lilydjwg/colorizer' " Resalta los colores
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter' " Comentarios de codigo
 Plug 'rhysd/vim-clang-format' " Formato para c++, javascript
@@ -65,7 +67,8 @@ let mapleader = ","
 autocmd BufEnter *.conf :setlocal filetype=xf86conf
 ""
 
-
+" archivo de configuracion de la barra de de xmonad
+autocmd BufEnter .xmobarrc :setlocal filetype=haskell
 
 " Auto guardado de espacio de trabajo
 let g:workspace_session_name = 'session.vim'
@@ -112,27 +115,27 @@ set encoding=UTF-8
 ""
 
 " Coc - para que el autocompletado se pueda cambiar con Tab
-function! s:check_back_space() abort
-	let col = col('.') - 1
-	return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
+" function! s:check_back_space() abort
+	" let col = col('.') - 1
+	" return !col || getline('.')[col - 1]  =~ '\s'
+" endfunction
 
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
-""
+" inoremap <silent><expr> <Tab>
+      " \ pumvisible() ? "\<C-n>" :
+      " \ <SID>check_back_space() ? "\<Tab>" :
+      " \ coc#refresh()
+"
 
 
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-""
+" nmap <silent> gd <Plug>(coc-definition)
+" nmap <silent> gy <Plug>(coc-type-definition)
+" nmap <silent> gi <Plug>(coc-implementation)
+" nmap <silent> gr <Plug>(coc-references)
+"
 
 " coc rename
-nmap <leader>rn <Plug>(coc-rename)
-""
+" nmap <leader>rn <Plug>(coc-rename)
+"
 
 
 
@@ -211,7 +214,8 @@ let g:airline#extensions#tabline#tab_nr_type = 1 " Index del tab
 colorscheme onedark
 set termguicolors " habilita los 24 bit de colores
 set fillchars+=vert:\▏
-au Syntax * syn match cOperator "[+=*%^&|<>-]" " Cambia el color de los operadores
+
+" au Syntax * syn match cOperator "[+=*%^&|<>-]" " Cambia el color de los operadores
 
 hi CursorLineNr guifg=#fd9845
 hi Folded guifg=#656f80 guibg=#2c333f
