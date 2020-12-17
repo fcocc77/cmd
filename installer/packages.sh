@@ -7,6 +7,7 @@ packages=(
     net-tools
     wget
     ffmpeg
+	pciutils # lspci
     ntfs-3g
     ntfsprogs
     rclone

@@ -22,7 +22,7 @@ Plug 'neovimhaskell/haskell-vim'
 ""
 
 " Auto Completado
-" Plug 'neoclide/coc.nvim', {'branch': 'release'} "Auto Completado
+Plug 'neoclide/coc.nvim', {'branch': 'release'} "Auto Completado
 ""
 
 " AirLine
@@ -69,6 +69,7 @@ autocmd BufEnter *.conf :setlocal filetype=xf86conf
 
 " archivo de configuracion de la barra de de xmonad
 autocmd BufEnter .xmobarrc :setlocal filetype=haskell
+autocmd BufEnter .xinitrc :setlocal filetype=sh
 
 " Auto guardado de espacio de trabajo
 let g:workspace_session_name = 'session.vim'
@@ -115,27 +116,27 @@ set encoding=UTF-8
 ""
 
 " Coc - para que el autocompletado se pueda cambiar con Tab
-" function! s:check_back_space() abort
-	" let col = col('.') - 1
-	" return !col || getline('.')[col - 1]  =~ '\s'
-" endfunction
+function! s:check_back_space() abort
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
 
-" inoremap <silent><expr> <Tab>
-      " \ pumvisible() ? "\<C-n>" :
-      " \ <SID>check_back_space() ? "\<Tab>" :
-      " \ coc#refresh()
-"
+inoremap <silent><expr> <Tab>
+	  \ pumvisible() ? "\<C-n>" :
+	  \ <SID>check_back_space() ? "\<Tab>" :
+	  \ coc#refresh()
 
 
-" nmap <silent> gd <Plug>(coc-definition)
-" nmap <silent> gy <Plug>(coc-type-definition)
-" nmap <silent> gi <Plug>(coc-implementation)
-" nmap <silent> gr <Plug>(coc-references)
-"
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
 
 " coc rename
-" nmap <leader>rn <Plug>(coc-rename)
-"
+nmap <leader>rn <Plug>(coc-rename)
+
 
 
 

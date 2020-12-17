@@ -3,6 +3,7 @@ sudo yum -y install snapd
 
 # habilita del servicio de snapd
 sudo systemctl enable --now snapd.socket
+sudo systemctl start snapd
 
 # To enable classic snap support, enter the following to create a symbolic link
 sudo ln -s /var/lib/snapd/snap /snap
