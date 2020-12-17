@@ -23,3 +23,7 @@ cabal install xmonad-extras
 
 
 echo "exec ~/.cabal/bin/xmonad" > ~/.xinitrc # Inicio de xmonad por defecto
+
+# feh es necesario para agregar wallpapers
+sudo yum -y --nogpg install https://mirror.ghettoforge.org/distributions/gf/gf-release-latest.gf.el7.noarch.rpm
+sudo yum -y install feh

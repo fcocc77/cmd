@@ -46,7 +46,7 @@ Config { font    = "xft:Arial:size=30"
 			 				-- AC "on" status
 		 					, "-O"	, "<fc=#dAA520>Charging</fc>"
 	 						-- charged status
- 							, "-i"	, "<fc=##98c379>Charged</fc>"
+ 							, "-i"	, "<fc=#61afef>Charged</fc>"
 							] 50
                     ]
        , sepChar = "%"

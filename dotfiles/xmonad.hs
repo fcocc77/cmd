@@ -21,6 +21,7 @@ import XMonad.Layout.NoBorders
 import XMonad.Actions.SinkAll
 
 
+
 my_workspaces = ["CODE", "WEB", "SOCIAL", "VFX", "FILES"]
 
 -- paleta de colores de 'onedark'
