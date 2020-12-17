@@ -51,7 +51,14 @@ Config {
 
 
 		-- cpu frecuencia
-		, Run CpuFreq ["-t","Freq:<cpu0>|<cpu1>GHz","-L","0","-H","2","-l","lightblue","-n","white","-h","red"] 50
+		, Run CpuFreq [
+			"--template", "Freq: <cpu0>|<cpu1> GHz"
+			,"--Low"       , "0"
+			,"--High"      , "2"
+			,"--low"       , "lightblue"
+			,"--normal"    , "white"
+			,"--high"      , "red"
+		] 50
 
 		
 		-- bateria
@@ -59,7 +66,7 @@ Config {
 			"--template" , "Batt: <acstatus>"
 			, "--Low"      , "10"        -- units: %
 			, "--High"     , "80"        -- units: %
-			, "--low"      , "darkred"
+			, "--low"      , "red"
 			, "--normal"   , "darkorange"
 			, "--high"     , "#98c379"
 
