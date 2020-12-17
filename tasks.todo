@@ -1,0 +1,13 @@
+xmonad:
+	☐ Crear shortcuts para cada programa de un espacio de trabajo se pueda isolar
+	☐ Shortcut para ocultar todas las ventanas
+	☐ Shortcut para inicializar un espacio de trabajo, y que se abran todos los programas que correspondan al espacio de trabajo
+	☐ Crear unos diferentes 4 layout
+xmobar:
+	☐ Que los tab de los espacios de trabajo siempre esten visibles todos
+	☐ Poner una fuente mejor
+	☐ Poner iconos
+	☐ Que la frecuencia del cpu la muestre con numero flotante
+	☐ Sumar monitor de iowait de disco
+	☐ Que la ram tambien muestra la memoria cache
+
