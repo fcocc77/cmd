@@ -9,48 +9,71 @@
 -- grey = "#abb2bf"
 --
 --
-Config { font    = "xft:Arial:size=30"
-       , bgColor = "#282c34"
-       , fgColor = "#abb2bf"
-       , position = Static { xpos = 0 , ypos = 0, width = 1920, height = 24 }
-       , lowerOnStart = True
-       , hideOnStart = False
-       , allDesktops = True
-       , persistent = True
-       , commands = [
-			-- Entrada de Xmonad
-			Run StdinReader
-			, Run Date "%b %d %Y - (%H:%M)" "date" 50
-			, Run Cpu ["-t", "cpu: (<total>%)","-H","50","--high","red"] 20
-			, Run Memory ["-t", "mem: <used>M (<usedratio>%)"] 20
-			, Run DiskU [("/", "hdd: <free> free")] [] 60
-        	, Run CoreTemp       [ "--template" , "Temp: <core0>°C|<core1>°C"
-                             , "--Low"      , "50"        -- units: °C
-                             , "--High"     , "80"        -- units: °C
-                             , "--low"      , "#98c379"
-                             , "--normal"   , "#e5c07b"
-                             , "--high"     , "red"
-                             ] 50
-			, Run CpuFreq ["-t","Freq:<cpu0>|<cpu1>GHz","-L","0","-H","2","-l","lightblue","-n","white","-h","red"] 50
+Config { 
+	font = "xft:Arial:size=30"
+	, bgColor = "#282c34"
+	, fgColor = "#abb2bf"
+	, position = TopSize L 100 24
+	, lowerOnStart = True
+	, hideOnStart = False
+	, allDesktops = True
+	, persistent = True
+	, commands = [
+		-- Entrada de Xmonad
+		Run StdinReader
 
-			, Run Battery        [ "--template" , "Batt: <acstatus>"
-				   			, "--Low"      , "10"        -- units: %
-							, "--High"     , "80"        -- units: %
-					 		, "--low"      , "darkred"
-					  		, "--normal"   , "darkorange"
-					   		, "--high"     , "#98c379"
 
-							, "--" -- battery specific options
-							-- discharging status
-						 	, "-o"	, "<left>% (<timeleft>)"
-			 				-- AC "on" status
-		 					, "-O"	, "<fc=#dAA520>Charging</fc>"
-	 						-- charged status
- 							, "-i"	, "<fc=#61afef>Charged</fc>"
-							] 50
-                    ]
-       , sepChar = "%"
-       , alignSep = "}{"
-       , template = " %StdinReader% }{ <fc=#e06c75>%cpu%</fc> %cpufreq%  |  <fc=#98c379>%memory%</fc>  |  %disku%  |  %coretemp%  |  <fc=#61afef>%date%</fc>   |  %battery% "
-       }
+		-- fecha y hora
+		, Run Date "%b %d %Y - (%H:%M)" "date" 50
+
+
+		-- memoria ram
+		, Run Memory ["-t", "mem: <used>M (<usedratio>%)"] 20
+
+
+		-- espacio libre en disco
+		, Run DiskU [("/", "hdd: <free> free")] [] 60
+
+
+		-- uso cpu
+		, Run Cpu ["-t", "cpu: (<total>%)","-H","50","--high","red"] 20
+
+
+		-- cpu temperatura
+		, Run CoreTemp [
+			"--template" , "Temp: <core0>°C|<core1>°C"
+			, "--Low"      , "50"        -- units: °C
+			, "--High"     , "80"        -- units: °C
+			, "--low"      , "#98c379"
+			, "--normal"   , "#e5c07b"
+			, "--high"     , "red"
+		] 50
+
+
+		-- cpu frecuencia
+		, Run CpuFreq ["-t","Freq:<cpu0>|<cpu1>GHz","-L","0","-H","2","-l","lightblue","-n","white","-h","red"] 50
+
+		
+		-- bateria
+		, Run Battery [
+			"--template" , "Batt: <acstatus>"
+			, "--Low"      , "10"        -- units: %
+			, "--High"     , "80"        -- units: %
+			, "--low"      , "darkred"
+			, "--normal"   , "darkorange"
+			, "--high"     , "#98c379"
+
+			, "--" -- battery specific options
+			-- discharging status
+			, "-o"	, "<left>% (<timeleft>)"
+			-- AC "on" status
+			, "-O"	, "<fc=#dAA520>Charging</fc>"
+			-- charged status
+			, "-i"	, "<fc=#61afef>Charged</fc>"
+		] 50
+	]
+	, sepChar = "%"
+	, alignSep = "}{"
+	, template = " %StdinReader% }{ <fc=#e06c75>%cpu%</fc> %cpufreq%  |  <fc=#98c379>%memory%</fc>  |  %disku%  |  %coretemp%  |  <fc=#61afef>%date%</fc>   |  %battery% "
+}
 

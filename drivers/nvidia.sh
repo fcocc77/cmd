@@ -19,7 +19,7 @@ cd ~/Downloads
 # funciona con este kernel: 5.4.6-1.el7.elrepo
 
 # 1 - agregar la linea "modprobe.blacklist=nouveau" en GRUB_CMDLINE_LINUX en el archivo /etc/default/grub
-# grub2-mkconfig -o /boot/grub2/grub.cfg
+# sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 # 2 - instalar los driver oficiales de nvidia, por que solo esos funcionan en el kernel-ml
 # 3 - Hay que cambiar en el /etc/bumblebee/bumblebee.conf "Driver=nvidia"
 

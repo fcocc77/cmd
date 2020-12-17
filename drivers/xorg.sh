@@ -13,3 +13,6 @@ xorg_drv=(
 sudo yum -y install ${xorg_drv[@]}
 
 sudo cp ../xorg/* /etc/X11/xorg.conf.d
+
+# inicio en modo grafico 'init 5'
+sudo systemctl set-default graphical.target
