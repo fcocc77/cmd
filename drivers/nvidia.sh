@@ -1,22 +1,22 @@
 #!/usr/bin/env sh
 
+sudo yum -y install https://www.elrepo.org/elrepo-release-7.el7.elrepo.noarch.rpm
+
 packages=(
     # Nvidia Optimus
     bumblebee
     primus
-    glx-utils
 )
-yum -y install ${packages[@]}
+sudo yum -y install ${packages[@]}
 
 # añade el usuario al grupo bumblebee
-gpasswd -a $USER bumblebee
+sudo gpasswd -a $USER bumblebee
 # --------------------------
 
 # driver nvidia
-cd /home/$USER/Downloads
-wget http://us.download.nvidia.com/XFree86/Linux-x86_64/440.100/NVIDIA-Linux-x86_64-440.100.run
+cd ~/Downloads
+# wget http://us.download.nvidia.com/XFree86/Linux-x86_64/440.100/NVIDIA-Linux-x86_64-440.100.run
 # funciona con este kernel: 5.4.6-1.el7.elrepo
-# --------------------------
 
 # 1 - agregar la linea "modprobe.blacklist=nouveau" en GRUB_CMDLINE_LINUX en el archivo /etc/default/grub
 # grub2-mkconfig -o /boot/grub2/grub.cfg
@@ -44,7 +44,7 @@ echo "[Desktop Entry]
 Name=Nvidia Settings
 Exec=optirun nvidia-settings -c :8.0
 Icon=nvidia-settings
-Type=Application" >"/usr/share/applications/nvidia-settings.desktop"
+Type=Application" | sudo tee "/usr/share/applications/nvidia-settings.desktop"
 # ---------------
 
 # nvidia xorg para bumblebee
@@ -74,5 +74,5 @@ Section "Device"
     Option "NoLogo" "true"
     Option "UseEDID" "false"
     Option "UseDisplayDevice" "none"
-EndSection' >"/etc/bumblebee/xorg.conf.nvidia"
+EndSection' | sudo tee "/etc/bumblebee/xorg.conf.nvidia"
 # -------------------------------

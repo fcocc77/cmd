@@ -24,9 +24,6 @@ sudo yum -y install ${packages[@]}
 
 # con esto funciona el qDebug para QT5
 sudo mkdir /etc/xdg/QtProject
-sudo cat <<EOF >>/etc/xdg/QtProject/qtlogging.ini
-[Rules]
+echo "[Rules]
 *.debug=true
-qt.*.debug=false
-EOF
-# --------------------------------------
+qt.*.debug=false" | sudo tee "/etc/xdg/QtProject/qtlogging.ini"
