@@ -9,11 +9,16 @@
 -- grey = "#abb2bf"
 --
 --
-Config { 
-	font = "xft:Arial:size=30"
+Config {
+	font = "xft:Cousine for Powerline:size=10"
+	, additionalFonts = 
+		[ 
+			"xft:Mononoki Nerd Font:pixelsize=14:antialias=true:hinting=true"
+			,"xft:Mononoki Nerd Font:pixelsize=16:antialias=true:hinting=true"
+		]
 	, bgColor = "#282c34"
 	, fgColor = "#abb2bf"
-	, position = TopSize L 100 24
+	, position = TopSize L 100 30
 	, lowerOnStart = True
 	, hideOnStart = False
 	, allDesktops = True
@@ -24,24 +29,25 @@ Config {
 
 
 		-- fecha y hora
-		, Run Date "%b %d %Y - (%H:%M)" "date" 50
+		-- , Run Date "%b %d %Y - (%H:%M)" "date" 50
+		,Run Date "<fn=1> </fn> %b %d %Y - (%H:%M)" "date" 50
 
 
 		-- memoria ram
-		, Run Memory ["-t", "mem: <used>M (<usedratio>%)"] 20
+		, Run Memory ["-t", "<fn=2> </fn>Mem: <used>M (<usedratio>%)"] 20
 
 
 		-- espacio libre en disco
-		, Run DiskU [("/", "hdd: <free> free")] [] 60
+		, Run DiskU [("/", "<fn=1> </fn>Hdd: <free> free")] [] 60
 
 
 		-- uso cpu
-		, Run Cpu ["-t", "cpu: (<total>%)","-H","50","--high","red"] 20
+		, Run Cpu ["-t", "<fn=1> </fn> Cpu: (<total>%)","-H","50","--high","red"] 20
 
 
 		-- cpu temperatura
 		, Run CoreTemp [
-			"--template" , "Temp: <core0>°C|<core1>°C"
+			"--template" , "Cpu-Temp: <core0>°C"
 			, "--Low"      , "50"        -- units: °C
 			, "--High"     , "80"        -- units: °C
 			, "--low"      , "#98c379"
@@ -52,18 +58,18 @@ Config {
 
 		-- cpu frecuencia
 		, Run CpuFreq [
-			"--template", "Freq: <cpu0>|<cpu1> GHz"
+			"--template", "Freq: <cpu0>GHz"
 			,"--Low"       , "0"
 			,"--High"      , "2"
 			,"--low"       , "lightblue"
 			,"--normal"    , "white"
-			,"--high"      , "red"
+			,"--high"      , "#61afef"
 		] 50
 
-		
+
 		-- bateria
 		, Run Battery [
-			"--template" , "Batt: <acstatus>"
+			"--template" , "<fn=1> </fn>Batt: <acstatus>"
 			, "--Low"      , "10"        -- units: %
 			, "--High"     , "80"        -- units: %
 			, "--low"      , "red"
@@ -81,6 +87,6 @@ Config {
 	]
 	, sepChar = "%"
 	, alignSep = "}{"
-	, template = " %StdinReader% }{ <fc=#e06c75>%cpu%</fc> %cpufreq%  |  <fc=#98c379>%memory%</fc>  |  %disku%  |  %coretemp%  |  <fc=#61afef>%date%</fc>   |  %battery% "
+	, template = " %StdinReader% }{ <fc=#e06c75>%cpu%</fc> %cpufreq%  |  <fc=#98c379>%memory%</fc>  |  %disku%  |  %coretemp%  |  <fc=#61afef>%date%</fc>  |  %battery% "
 }
 
