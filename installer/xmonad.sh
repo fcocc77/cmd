@@ -1,7 +1,7 @@
 # repositorio del compilador de hashkel
 sudo yum -y install wget
 sudo wget https://copr.fedorainfracloud.org/coprs/petersen/ghc-8.6.5/repo/epel-7/petersen-ghc-8.6.5-epel-7.repo -P /etc/yum.repos.d/
-sudo yum -y install ghc cabal-install 
+sudo yum -y install ghc cabal-install
 
 sudo yum -y install libXrandr-devel libXScrnSaver-devel alsa-lib-devel libXpm-devel
 
