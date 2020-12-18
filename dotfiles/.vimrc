@@ -4,9 +4,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'joshdick/onedark.vim'
 Plug 'sonph/onehalf'
 
-""Plug 'ryanoasis/vim-devicons'
-""Plug 'ryanoasis/nerd-fonts'
-""Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/nerd-fonts'
 
 
 " Syntaxis
@@ -222,6 +221,10 @@ hi CursorLineNr guifg=#fd9845
 hi Folded guifg=#656f80 guibg=#2c333f
 ""
 
+
+" evita los caracteres feos que aparecen despues de la version 8.22 de vim '>4;2m'
+let &t_TI = ""
+let &t_TE = ""
 
 
 " Permite que con el escape se terminen los textos resaltados
