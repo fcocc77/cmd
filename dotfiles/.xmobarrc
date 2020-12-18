@@ -11,7 +11,7 @@
 --
 Config {
 	font = "xft:Cousine for Powerline:size=10"
-	, additionalFonts = 
+	, additionalFonts =
 		[ 
 			"xft:Mononoki Nerd Font:pixelsize=14:antialias=true:hinting=true"
 			,"xft:Mononoki Nerd Font:pixelsize=16:antialias=true:hinting=true"
@@ -24,13 +24,14 @@ Config {
 	, allDesktops = True
 	, persistent = True
 	, commands = [
-		-- Entrada de Xmonad
-		Run StdinReader
+		-- el 'StdinReader' no permite que los tab sean clickables
+		-- por eso se usa 'UnsafeStdinReader'
+		Run UnsafeStdinReader -- Entrada de Xmonad
 
 
 		-- fecha y hora
 		-- , Run Date "%b %d %Y - (%H:%M)" "date" 50
-		,Run Date "<fn=1> </fn> %b %d %Y - (%H:%M)" "date" 50
+		,Run Date "<fn=1> </fn> %b %d %Y - (<fc=#abb2bf>%H:%M</fc>)" "date" 50
 
 
 		-- memoria ram
@@ -87,6 +88,6 @@ Config {
 	]
 	, sepChar = "%"
 	, alignSep = "}{"
-	, template = " %StdinReader% }{ <fc=#e06c75>%cpu%</fc> %cpufreq%  |  <fc=#98c379>%memory%</fc>  |  %disku%  |  %coretemp%  |  <fc=#61afef>%date%</fc>  |  %battery% "
+	, template = " %UnsafeStdinReader% }{ <fc=#e06c75>%cpu%</fc> %cpufreq%  |  <fc=#98c379>%memory%</fc>  |  %disku%  |  %coretemp%  |  <fc=#61afef>%date%</fc>  |  %battery% "
 }
 

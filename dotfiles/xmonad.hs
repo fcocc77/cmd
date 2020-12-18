@@ -20,9 +20,11 @@ import XMonad.Hooks.EwmhDesktops -- fullscreenEventHook
 import XMonad.Layout.NoBorders
 import XMonad.Actions.SinkAll
 
+import Graphics.X11.ExtraTypes.XF86
 
-
-my_workspaces = ["CODE", "WEB", "SOCIAL", "VFX", "FILES"]
+my_workspaces = clickable $ ["CODE", "WEB", "SOCIAL", "VFX", "FILES"]
+	-- con esto permitimos que cada tab sea clickable
+	where clickable l = ["<action=`xdotool key super+" ++ show (n) ++ "`>" ++ ws ++ "</action>" | (i,ws) <- zip [1..9] l, let n = i ]
 
 -- paleta de colores de 'onedark'
 black = "#282c34"
@@ -52,8 +54,9 @@ main = do
 shortcut = keys defaultConfig `mappend` \c -> fromList
 	[
 		-- Volumen
-		((0, xK_F11), lowerVolume 4 >> return ()),
-		((0, xK_F12), raiseVolume 4 >> return ()),
+		((0, xF86XK_AudioMute), spawn "amixer set Master toggle"),
+		((0, xF86XK_AudioLowerVolume), spawn "amixer -q sset Master 4%-"),
+		((0, xF86XK_AudioRaiseVolume), spawn "amixer -q sset Master 4%+"),
 
 		-- Aplicaciones
 		((win_key, xK_f), spawn "nautilus"),
@@ -72,8 +75,9 @@ myTitleLength = 80 -- truncate window title to this length
 myPP = xmobarPP
 	{ 
 		ppTitle = xmobarColor myTitleColor "" . shorten myTitleLength,
-		ppCurrent = xmobarColor yellow "",
-		ppHidden = xmobarColor grey "" -- color de tab no visible
+		ppCurrent = xmobarColor yellow  "" ,
+		ppHidden = xmobarColor grey "", -- color de tab no visible
+		ppHiddenNoWindows = xmobarColor grey "" -- matiene siempre visible todos los tabs
 	}
 
 -- Key binding to toggle the gap for the bar.
