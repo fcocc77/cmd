@@ -14,6 +14,10 @@ else
 fi
 
 
+# cambia el cursor a flecha
+xsetroot -cursor_name left_ptr
+
+
 # cambia el fondo de pantalla
 feh --bg-scale ~/Pictures/wallpaper.jpg
 
