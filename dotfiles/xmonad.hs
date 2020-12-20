@@ -64,17 +64,19 @@ shortcut = keys defaultConfig `mappend` \c -> fromList
 		((win_key, xK_t), spawn "gnome-terminal"),
 		((win_key, xK_v), spawn "gnome-terminal -e \"vim\""),
 		((win_key, xK_c), spawn "gnome-calculator"),
+		((win_key, xK_o), spawn "sh ~/Documents/develop/my-config/conf/appfinder.sh"),
 
 		((win_key .|. shiftMask, xK_f), sinkAll) -- Encaja nuevamente todas las ventanas flotantes
 
+
 	]
 
-myTitleColor = pink -- color of window title
-myTitleLength = 80 -- truncate window title to this length
+title_color = pink  -- color de titulo de aplicacion
+title_length = 80 -- largo maximo de titulo de aplicacion
 
 myPP = xmobarPP
-	{ 
-		ppTitle = xmobarColor myTitleColor "" . shorten myTitleLength,
+	{
+		ppTitle = xmobarColor title_color "" . shorten title_length,
 		ppCurrent = xmobarColor yellow  "" ,
 		ppHidden = xmobarColor grey "", -- color de tab no visible
 		ppHiddenNoWindows = xmobarColor grey "" -- matiene siempre visible todos los tabs
@@ -88,6 +90,8 @@ myConfig = defaultConfig
 		modMask = win_key, -- usar tecla windows en vez de alt
 		terminal = "gnome-terminal", -- terminal predeterminado
 		workspaces = my_workspaces,
+		normalBorderColor = black,
+		focusedBorderColor = yellow,
 		layoutHook = my_layouts,
 		handleEventHook = fullscreenEventHook, -- permite que funcione el fullscreen
 		keys = shortcut

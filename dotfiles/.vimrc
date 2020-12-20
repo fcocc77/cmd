@@ -61,14 +61,14 @@ let mapleader = ","
 ""
 
 
-
-" asigna el tipo de sintxis segun la extencion
-autocmd BufEnter *.conf :setlocal filetype=xf86conf
-""
-
-" archivo de configuracion de la barra de de xmonad
+" asigna el tipo de sintxis segun la extencion o nombre
 autocmd BufEnter .xmobarrc :setlocal filetype=haskell
 autocmd BufEnter .xinitrc :setlocal filetype=sh
+autocmd BufEnter *.conf :setlocal filetype=xf86conf
+autocmd BufEnter *.txt :setlocal filetype=sh
+autocmd Bufenter requirements.txt :setlocal filetype=requirements
+
+
 
 " Auto guardado de espacio de trabajo
 let g:workspace_session_name = 'session.vim'

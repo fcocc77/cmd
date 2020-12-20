@@ -3,14 +3,16 @@ xmonad:
 	☐ Shortcut para ocultar todas las ventanas
 	☐ Shortcut para inicializar un espacio de trabajo, y que se abran todos los programas que correspondan al espacio de trabajo
 	☐ Crear unos diferentes 4 layout
-	☐ Usar 'picom' o 'compton' para evitar lo flickers
+	✔ Usar 'picom' o 'compton' para evitar lo flickers @done(2020-12-20 16:57) @project(xmonad)
 	☐ Integrar buscador 'rofi' en vez de 'dmenu'
 xmobar:
-	☐ Que los tab de los espacios de trabajo siempre esten visibles todos
+	✔ Que los tab de los espacios de trabajo siempre esten visibles todos @done(2020-12-20 16:57) @project(xmobar)
 	✔ oner una fuente mejor @done(2020-12-17 21:44) @project(xmobar)
 	✔ Poner iconos @done(2020-12-17 21:44) @project(xmobar)
 	☐ Que la frecuencia del cpu la muestre con numero flotante
 	☐ Sumar monitor de iowait de disco
 	☐ Que la ram tambien muestra la memoria cache
-	☐ Corregir hora, esta desfasada 2 horas
+	✔ Corregir hora, esta desfasada 2 horas @done(2020-12-20 16:56) @project(xmobar)
+	☐ Mostar volumen
+	☐ Mostrar si el wifi esta conectado
 

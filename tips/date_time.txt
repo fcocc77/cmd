@@ -1,0 +1,2 @@
+# cambiar la zona horaria:
+sudo timedatectl set-timezone America/Santiago

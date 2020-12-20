@@ -21,6 +21,8 @@ xsetroot -cursor_name left_ptr
 # cambia el fondo de pantalla
 feh --bg-scale ~/Pictures/wallpaper.jpg
 
+# compositor
+picom -b --experimental-backend --config ~/.picom.conf
 
 # arranca el entorno de escritorio xmonad
 exec ~/.cabal/bin/xmonad
