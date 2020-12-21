@@ -19,8 +19,10 @@ import XMonad.Hooks.ManageHelpers -- isFullscreen
 import XMonad.Hooks.EwmhDesktops -- fullscreenEventHook
 import XMonad.Layout.NoBorders
 import XMonad.Actions.SinkAll
-
+import XMonad.Hooks.Place
 import Graphics.X11.ExtraTypes.XF86
+import XMonad.Layout.MultiToggle
+import XMonad.Layout.MultiToggle.Instances
 
 my_workspaces = clickable $ ["CODE", "WEB", "SOCIAL", "VFX", "FILES"]
 	-- con esto permitimos que cada tab sea clickable
@@ -38,11 +40,13 @@ grey = "#abb2bf"
 --
 
 -- smartSpacing y smartBorders solo pone espacios cuando hay mas de 1 ventana
-my_layouts = smartBorders $ smartSpacing 10 $ layout_tall ||| layout_grid ||| layout_full
+my_layouts = smartBorders 
+	$ mkToggle (NOBORDERS ?? FULL ?? EOT) -- Isolar ventana
+	$ smartSpacing 10 
+	$ layout_tall ||| layout_grid 
 	where
 		layout_tall = Tall 1 (3/100) (1/2)
 		layout_grid = Grid
-		layout_full = Full
 
 alt_key = mod1Mask
 win_key = mod4Mask
@@ -66,9 +70,9 @@ shortcut = keys defaultConfig `mappend` \c -> fromList
 		((win_key, xK_c), spawn "gnome-calculator"),
 		((win_key, xK_o), spawn "sh ~/Documents/develop/my-config/conf/appfinder.sh"),
 
-		((win_key .|. shiftMask, xK_f), sinkAll) -- Encaja nuevamente todas las ventanas flotantes
+		((win_key .|. shiftMask, xK_f), sinkAll), -- Encaja nuevamente todas las ventanas flotantes
 
-
+		((win_key, xK_f), sendMessage $ Toggle FULL) -- Isolar ventana
 	]
 
 title_color = pink  -- color de titulo de aplicacion
@@ -85,14 +89,21 @@ myPP = xmobarPP
 -- Key binding to toggle the gap for the bar.
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
+myManageHook = composeAll
+	[
+ 		className =?  "Gnome-calculator" --> doFloat,
+ 		className =?  "Xfce4-appfinder" --> doFloat
+	]
+
 myConfig = defaultConfig
 	{
 		modMask = win_key, -- usar tecla windows en vez de alt
 		terminal = "gnome-terminal", -- terminal predeterminado
 		workspaces = my_workspaces,
 		normalBorderColor = black,
-		focusedBorderColor = yellow,
+		-- focusedBorderColor = pink,
 		layoutHook = my_layouts,
 		handleEventHook = fullscreenEventHook, -- permite que funcione el fullscreen
-		keys = shortcut
+		keys = shortcut,
+		manageHook = myManageHook
 	}

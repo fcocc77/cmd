@@ -1,4 +1,4 @@
-# nvidia driver funciona bien con kernel 3.10
+# nvidia driver funciona bien con kernel 3.10.0-1160
 
 # 1 - Hay que cambiar en el /etc/bumblebee/bumblebee.conf "Driver=nvidia"
 # 2 - el Display del bumblebee.conf "VirtualDisplay=:8" no puede tener el mismo numero que la
