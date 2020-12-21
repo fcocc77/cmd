@@ -24,6 +24,12 @@ feh --bg-scale ~/Pictures/wallpaper.jpg
 # compositor
 picom -b --experimental-backend --config ~/.picom.conf
 
+
+# el audio a veces falla, asi que con esto reiniciamos el audio
+killall pulseaudio
+pulseaudio --start
+
+
 # arranca el entorno de escritorio xmonad
 exec ~/.cabal/bin/xmonad
 
