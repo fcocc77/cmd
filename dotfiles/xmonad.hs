@@ -68,6 +68,17 @@ shortcut = keys defaultConfig `mappend` \c -> fromList
 		((0, xF86XK_AudioLowerVolume), spawn "amixer -q sset Master 4%-"),
 		((0, xF86XK_AudioRaiseVolume), spawn "amixer -q sset Master 4%+"),
 
+
+		-- Brillo de pantalla
+		((0, xF86XK_MonBrightnessUp), spawn "xbacklight -inc 10"),
+		((0, xF86XK_MonBrightnessDown), spawn "xbacklight -dec 10"),
+
+
+		-- Brillo de teclado
+		((0, xF86XK_KbdBrightnessUp), spawn "echo vfx | sudo -S brightnessctl --device='asus::kbd_backlight' set 1+"),
+		((0, xF86XK_KbdBrightnessDown), spawn "echo vfx | sudo -S brightnessctl --device='asus::kbd_backlight' set 1-"),
+
+
 		-- Aplicaciones
 		((win_key, xK_f), spawn "nautilus"),
 		((win_key, xK_g), spawn "google-chrome"),
