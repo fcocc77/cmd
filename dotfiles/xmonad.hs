@@ -6,6 +6,8 @@ import XMonad.Layout.Spacing
 import Data.Ratio ((%))
 import XMonad.Layout.Grid
 import XMonad.Util.Run(spawnPipe)
+import XMonad.Layout.MultiColumns
+import XMonad.Layout.ThreeColumns
 
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
@@ -23,6 +25,7 @@ import XMonad.Hooks.Place
 import Graphics.X11.ExtraTypes.XF86
 import XMonad.Layout.MultiToggle
 import XMonad.Layout.MultiToggle.Instances
+
 
 my_workspaces = clickable $ ["CODE", "WEB", "SOCIAL", "VFX", "FILES"]
 	-- con esto permitimos que cada tab sea clickable
@@ -42,11 +45,14 @@ grey = "#abb2bf"
 -- smartSpacing y smartBorders solo pone espacios cuando hay mas de 1 ventana
 my_layouts = smartBorders 
 	$ mkToggle (NOBORDERS ?? FULL ?? EOT) -- Isolar ventana
-	$ smartSpacing 10 
-	$ layout_tall ||| layout_grid 
+	$ smartSpacing 5 
+	$ layout_tall ||| layout_grid ||| layout_multi ||| layout_three_col ||| layout_mirror
 	where
 		layout_tall = Tall 1 (3/100) (1/2)
 		layout_grid = Grid
+		layout_multi = multiCol [1] 1 0.01 (-0.5)
+		layout_three_col = ThreeCol 1 (3/100) (1/2)
+		layout_mirror = Mirror (Tall 1 (3/100) (3/5))
 
 alt_key = mod1Mask
 win_key = mod4Mask
