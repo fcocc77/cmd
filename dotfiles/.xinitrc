@@ -29,6 +29,9 @@ picom -b --experimental-backend --config ~/.picom.conf
 killall pulseaudio
 pulseaudio --start
 
+# para que funcione las teclas del F1-F12 en el teclado Keychron
+echo $root_password | sudo -S sh -c "tee /sys/module/hid_apple/parameters/fnmode <<< 0"
+
 
 # arranca el entorno de escritorio xmonad
 exec ~/.cabal/bin/xmonad
