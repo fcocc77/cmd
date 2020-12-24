@@ -2,7 +2,6 @@
 call plug#begin('~/.vim/plugged')
 " Temas
 Plug 'joshdick/onedark.vim'
-Plug 'sonph/onehalf'
 
 Plug 'ryanoasis/vim-devicons'
 Plug 'ryanoasis/nerd-fonts'
@@ -18,6 +17,7 @@ Plug 'bfrg/vim-cpp-modern' " Sintaxis para c++
 Plug 'zainin/vim-mikrotik' " MikroTik Syntaxis
 Plug 'pangloss/vim-javascript'
 Plug 'neovimhaskell/haskell-vim'
+Plug 'cakebaker/scss-syntax.vim'
 ""
 
 " Auto Completado
@@ -44,14 +44,16 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter' " Barra lateral que muestra los cambios de Git
 
+Plug 'jiangmiao/auto-pairs' " Completa los signos par como comillas parentesis y otros
+
 
 " Complementos
 Plug 'lilydjwg/colorizer' " Resalta los colores
+" Plug 'shmargum/vim-sass-colors' "Resalta colores y tambien colores en variables de sass
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter' " Comentarios de codigo
 Plug 'rhysd/vim-clang-format' " Formato para c++, javascript
 Plug 'yggdroot/indentline'
-" Plug 'ctrlpvim/ctrlp.vim' " Buscador de archivos
 Plug 'pseewald/anyfold' " Folding para todos los lenguajes
 call plug#end()
 
@@ -106,13 +108,6 @@ set relativenumber
 ""
 set encoding=UTF-8
 
-" Autocompletar parentesis, llaves, corchete, comillas
-" inoremap ( ()<Esc>i
-" inoremap [ []<Esc>i
-" inoremap { {}<Esc>i
-" inoremap " ""<Esc>i
-" inoremap ' ''<Esc>i
-""
 
 " Coc - para que el autocompletado se pueda cambiar con Tab
 function! s:check_back_space() abort
@@ -164,18 +159,17 @@ set cursorline
 
 " Folding
 filetype plugin indent on
-syntax on                
+syntax on
 autocmd Filetype * AnyFoldActivate               
 set foldlevel=99
 hi Folded term=underline
-
 ""
 
 
-" Identacion
-set tabstop=4
-set shiftwidth=4 " Espacios que se generan al presioar tab
-""
+" La sintaxis de json, oculta las comillas, con esta opcion lo desabilitamos esa opcion
+let g:vim_json_conceal=0
+
+
 
 
 " ignorar archivos y carpeta para NerdTree y ctrlp
@@ -193,10 +187,6 @@ nmap <F2> :NERDTreeFind<CR>
 nmap <F3> :NERDTreeToggle<CR>
 ""
 
-
-" Configuracion Ctrl-P
-let g:ctrlp_show_hidden = 1
-""
 
 " AirLine
 let g:airline_powerline_fonts = 1 " Para que los rectangulos tengan puntas
@@ -232,3 +222,12 @@ set hlsearch " Resalta los textos encontrados
 nnoremap <esc> :noh<return><esc>
 nnoremap <esc>^[ <esc>^[
 ""
+
+
+" indentacion
+autocmd BufRead,BufNewFile *.sass set shiftwidth=4 "para que funcione la indentacion en los .sass al leer o al crear un archivo sass
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+""
+
