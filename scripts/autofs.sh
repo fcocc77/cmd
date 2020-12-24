@@ -29,6 +29,3 @@ fi
 	
 systemctl enable autofs
 systemctl restart autofs
-    
-
-

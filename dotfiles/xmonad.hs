@@ -85,8 +85,8 @@ shortcut = keys defaultConfig `mappend` \c -> fromList
 		((win_key, xK_t), spawn "gnome-terminal"),
 		((win_key, xK_v), spawn "gnome-terminal -e \"vim\""),
 		((win_key, xK_c), spawn "gnome-calculator"),
-		((win_key, xK_o), spawn "sh ~/Documents/develop/my-config/conf/appfinder.sh"),
-
+		((win_key, xK_o), spawn "sh ~/Documents/develop/my-config/scripts/appfinder.sh"),
+		((win_key .|. shiftMask, xK_m), spawn "sh ~/Documents/develop/my-config/scripts/display_switch.sh"),
 		((win_key .|. shiftMask, xK_f), sinkAll), -- Encaja nuevamente todas las ventanas flotantes
 
 		((win_key, xK_f), sendMessage $ Toggle FULL) -- Isolar ventana

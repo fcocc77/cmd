@@ -6,12 +6,7 @@ echo $root_password | sudo -S cpupower frequency-set -g performance
 
 
 # si el monitor HDMI1 esta conectado, deja ese como principal y apaga el del notebook y viceversa
-hdmi=$(xrandr | grep HDMI1)
-if [[ $hdmi =~ connected ]]; then
-    xrandr --output eDP1 --off --output HDMI1 --mode 2560x1440 --primary
-else
-    xrandr --output HDMI1 --off --output eDP1 --mode 1920x1080 --primary
-fi
+sh ~/Documents/develop/my-config/scripts/display_switch.sh init
 
 
 # cambia el cursor a flecha
