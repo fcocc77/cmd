@@ -3,24 +3,17 @@ xmonad:
 	☐ Shortcut para ocultar todas las ventanas
 	☐ Shortcut para inicializar un espacio de trabajo, y que se abran todos los programas que correspondan al espacio de trabajo
 	☐ Crear unos diferentes 4 layout
-	✔ Usar 'picom' o 'compton' para evitar lo flickers @done(2020-12-20 16:57) @project(xmonad)
 	☐ Integrar buscador 'rofi' en vez de 'dmenu'
 	☐ Shortcut para 'toggle' entre bordes y sin bordes
 	☐ Parpadeo al cambiar espacio de trabajo; https://github.com/yshui/picom/issues/16   https://github.com/xmonad/xmonad-contrib/issues/316
-	☐ Corregir el tamaño del puntero
 	☐ Integrar los temas de gtk3 a las app de gnome
 	☐ Al cambiar de ventana iluminar la ventana completa para identificarla.
 	☐ Crear shortcut que muestre la ventana actual igual que al cambiar iluiminandola
-	☐ Ya que la venana se iluminara al cambiar, quitar todos los bordes y ponerle sombra o bordes a la ventana con picom
-	☐ Shortcut para permutar entre la pantalla 'dell' y la del notebook usando 'xrandr'
+	☐ Ya que la ventana se iluminara al cambiar, quitar todos los bordes y ponerle sombra o bordes a la ventana con picom
 xmobar:
-	✔ Que los tab de los espacios de trabajo siempre esten visibles todos @done(2020-12-20 16:57) @project(xmobar)
-	✔ oner una fuente mejor @done(2020-12-17 21:44) @project(xmobar)
-	✔ Poner iconos @done(2020-12-17 21:44) @project(xmobar)
 	☐ Que la frecuencia del cpu la muestre con numero flotante
 	☐ Sumar monitor de iowait de disco
 	☐ Que la ram tambien muestra la memoria cache
-	✔ Corregir hora, esta desfasada 2 horas @done(2020-12-20 16:56) @project(xmobar)
 	☐ Mostar volumen
 	☐ Mostrar si el wifi esta conectado
 	☐ Mostrar la cepu y la ram con barra, y la ram con 2 colores uso y cache
@@ -29,3 +22,13 @@ general:
 vim:
 	☐ que el fzf busque en el directorio actual y no en el git
 	☐ buscar la forma de ignorar algunos archivos en fzf
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+	✔ Usar 'picom' o 'compton' para evitar lo flickers @done(2020-12-20 16:57) @project(xmonad)
+	✔ Corregir el tamaño del puntero @done(2020-12-24 20:06) @project(xmonad)
+	✔ Shortcut para permutar entre la pantalla 'dell' y la del notebook usando 'xrandr' @done(2020-12-24 19:12) @project(xmonad)
+	✔ Que los tab de los espacios de trabajo siempre esten visibles todos @done(2020-12-20 16:57) @project(xmobar)
+	✔ oner una fuente mejor @done(2020-12-17 21:44) @project(xmobar)
+	✔ Poner iconos @done(2020-12-17 21:44) @project(xmobar)
+	✔ Corregir hora, esta desfasada 2 horas @done(2020-12-20 16:56) @project(xmobar)

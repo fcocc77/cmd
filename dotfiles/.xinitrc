@@ -8,6 +8,9 @@ echo $root_password | sudo -S cpupower frequency-set -g performance
 # si el monitor HDMI1 esta conectado, deja ese como principal y apaga el del notebook y viceversa
 sh ~/Documents/develop/my-config/scripts/display_switch.sh init
 
+# archivo de recursos de X11
+xrdb -merge ~/.Xresources
+
 
 # cambia el cursor a flecha
 xsetroot -cursor_name left_ptr

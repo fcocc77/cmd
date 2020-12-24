@@ -1,0 +1,7 @@
+! recursos de X11
+
+! Tamaño del cursor
+Xcursor*size: 24
+
+! dpi de la pantalla
+Xft.dpi: 100
