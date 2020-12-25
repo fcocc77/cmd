@@ -11,12 +11,12 @@ xmonad:
 	☐ Crear shortcut que muestre la ventana actual igual que al cambiar iluiminandola
 	☐ Ya que la ventana se iluminara al cambiar, quitar todos los bordes y ponerle sombra o bordes a la ventana con picom
 xmobar:
-	☐ Que la frecuencia del cpu la muestre con numero flotante
+	✔ Que la frecuencia del cpu la muestre con numero flotante @done(2020-12-24 21:22) @project(xmobar)
 	☐ Sumar monitor de iowait de disco
 	☐ Que la ram tambien muestra la memoria cache
 	☐ Mostar volumen
 	☐ Mostrar si el wifi esta conectado
-	☐ Mostrar la cepu y la ram con barra, y la ram con 2 colores uso y cache
+	☐ Mostrar la cpu y la ram con barra, y la ram con 2 colores uso y cache
 general:
 	☐  La tarjena nvidia no funciona despues de suspender el pc
 vim:

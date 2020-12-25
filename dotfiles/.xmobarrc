@@ -1,5 +1,5 @@
 -- paleta de colores de 'onedark'
--- black = "#282c34"
+-- black = "#1F2229"
 -- pink = "#e06c75"
 -- green = "#98c379"
 -- yellow = "#e5c07b"
@@ -16,7 +16,7 @@ Config {
 			"xft:Mononoki Nerd Font:pixelsize=14:antialias=true:hinting=true"
 			,"xft:Mononoki Nerd Font:pixelsize=16:antialias=true:hinting=true"
 		]
-	, bgColor = "#282c34"
+	, bgColor = "#1F2229"
 	, fgColor = "#abb2bf"
 	, position = TopSize L 100 30
 	, lowerOnStart = True
@@ -59,11 +59,11 @@ Config {
 
 		-- cpu frecuencia
 		, Run CpuFreq [
-			"--template", "Freq: <cpu0>GHz"
+			"--template"   , "Freq: <cpu0>-GHz"
+			,"--ddigits"   , "1"
 			,"--Low"       , "0"
 			,"--High"      , "2"
-			,"--low"       , "lightblue"
-			,"--normal"    , "white"
+			,"--normal"    , "#98c379"
 			,"--high"      , "#61afef"
 		] 50
 
