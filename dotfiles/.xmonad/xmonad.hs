@@ -43,9 +43,9 @@ grey = "#abb2bf"
 --
 
 -- smartSpacing y smartBorders solo pone espacios cuando hay mas de 1 ventana
-my_layouts = smartBorders
+my_layouts = smartBorders 
 	$ mkToggle (NOBORDERS ?? FULL ?? EOT) -- Isolar ventana
-	$ smartSpacing 5
+	$ smartSpacing 5 
 	$ layout_tall ||| layout_grid ||| layout_multi ||| layout_three_col ||| layout_mirror
 	where
 		layout_tall = Tall 1 (3/100) (1/2)
