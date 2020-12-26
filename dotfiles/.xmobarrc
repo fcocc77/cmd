@@ -35,20 +35,23 @@ Config {
 
 
 		-- memoria ram
-		, Run Memory ["-t", "<fn=2> </fn>Mem: <used>M (<usedratio>%)"] 20
-
-
-		-- espacio libre en disco
-		, Run DiskU [("/", "<fn=1> </fn>Hdd: <free> free")] [] 60
+		, Run Memory [
+			"--template"    , "<fn=2> </fn>Mem: <usedbar> <usedratio>% / Cache: <cache>:MB"
+		] 20
 
 
 		-- uso cpu
-		, Run Cpu ["-t", "<fn=1> </fn> Cpu: (<total>%)","-H","50","--high","red"] 20
+		, Run Cpu [
+			"--template"   , "<fn=1> </fn> Cpu: <bar> <total>%  | <fc=#c678dd><fn=1> </fn> IOWait: <iowait>%</fc>"
+			, "--High"      , "50"
+			, "--normal"    , "#e5c07b"
+			, "--high"      , "red"
+		] 20
 
 
 		-- cpu temperatura
 		, Run CoreTemp [
-			"--template" , "Cpu-Temp: <core0>°C"
+			"--template"   , "/ <core0>°C"
 			, "--Low"      , "50"        -- units: °C
 			, "--High"     , "80"        -- units: °C
 			, "--low"      , "#98c379"
@@ -59,7 +62,7 @@ Config {
 
 		-- cpu frecuencia
 		, Run CpuFreq [
-			"--template"   , "Freq: <cpu0>-GHz"
+			"--template"   , " /  <cpu0>:GHz"
 			,"--ddigits"   , "1"
 			,"--Low"       , "0"
 			,"--High"      , "2"
@@ -70,7 +73,7 @@ Config {
 
 		-- bateria
 		, Run Battery [
-			"--template" , "<fn=1> </fn>Batt: <acstatus>"
+			"--template" , "<fn=1> </fn> Batt: <acstatus>"
 			, "--Low"      , "10"        -- units: %
 			, "--High"     , "80"        -- units: %
 			, "--low"      , "red"
@@ -88,6 +91,6 @@ Config {
 	]
 	, sepChar = "%"
 	, alignSep = "}{"
-	, template = " %UnsafeStdinReader% }{ <fc=#e06c75>%cpu%</fc> %cpufreq%  |  <fc=#98c379>%memory%</fc>  |  %disku%  |  %coretemp%  |  <fc=#61afef>%date%</fc>  |  %battery% "
+	, template = " %UnsafeStdinReader% }{ <fc=#e5c07b>%cpu%</fc> %cpufreq%  %coretemp%  |  <fc=#98c379>%memory%</fc>  |  <fc=#61afef>%date%</fc>  |  %battery% "
 }
 

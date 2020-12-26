@@ -14,6 +14,8 @@ depencences=(
 	alsa-lib-devel 
 	xbacklight # Para manejar el brillo de la pantalla
 	brightnessctl # Para manejar el brillo del teclado
+	arc-theme # Tema gtk-3
+	flattr-icons # Tema de iconos
 )
 
 sudo yum -y install ${depencences[@]}
