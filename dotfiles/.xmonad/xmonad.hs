@@ -15,7 +15,7 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Actions.Volume
 import Data.Map    (fromList)
 import Data.Monoid (mappend)
-
+import XMonad.Actions.CycleWS
 import XMonad.Config.Gnome
 import XMonad.Hooks.ManageHelpers -- isFullscreen
 import XMonad.Hooks.EwmhDesktops -- fullscreenEventHook
@@ -27,7 +27,7 @@ import XMonad.Layout.MultiToggle
 import XMonad.Layout.MultiToggle.Instances
 
 
-my_workspaces = clickable $ ["CODE", "WEB", "SOCIAL", "VFX", "FILES"]
+my_workspaces = clickable $ ["CODE", "FILES", "VFX", "WEB", "SOCIAL", "ORG"]
 	-- con esto permitimos que cada tab sea clickable
 	where clickable l = ["<action=`xdotool key super+" ++ show (n) ++ "`>" ++ ws ++ "</action>" | (i,ws) <- zip [1..9] l, let n = i ]
 
@@ -43,9 +43,9 @@ grey = "#abb2bf"
 --
 
 -- smartSpacing y smartBorders solo pone espacios cuando hay mas de 1 ventana
-my_layouts = smartBorders 
+my_layouts = smartBorders
 	$ mkToggle (NOBORDERS ?? FULL ?? EOT) -- Isolar ventana
-	$ smartSpacing 5 
+	$ smartSpacing 5
 	$ layout_tall ||| layout_grid ||| layout_multi ||| layout_three_col ||| layout_mirror
 	where
 		layout_tall = Tall 1 (3/100) (1/2)
@@ -88,7 +88,12 @@ shortcut = keys defaultConfig `mappend` \c -> fromList
 		((win_key .|. shiftMask, xK_m), spawn "sh ~/Documents/develop/my-config/scripts/display_switch.sh"),
 		((win_key .|. shiftMask, xK_f), sinkAll), -- Encaja nuevamente todas las ventanas flotantes
 
-		((win_key, xK_f), sendMessage $ Toggle FULL) -- Isolar ventana
+		((win_key, xK_f), sendMessage $ Toggle FULL), -- Isolar ventana
+
+		-- Workstation Navegation
+		((win_key .|. controlMask, xK_k), nextWS),
+		((win_key .|. controlMask, xK_j), prevWS),
+		((win_key, xK_z), toggleWS)
 	]
 
 title_color = pink  -- color de titulo de aplicacion

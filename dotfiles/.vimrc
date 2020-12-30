@@ -156,10 +156,18 @@ set cursorline
 ""
 
 
+" Cambia los shortcut de las flechas para poder navegar en modo insercion
+" con las letras hjkl
+inoremap <c-k> <up>
+inoremap <c-j> <down>
+inoremap <c-h> <left>
+inoremap <c-l> <right>
+
+
 
 " Folding
 filetype plugin indent on
-syntax on
+syntax on                
 autocmd Filetype * AnyFoldActivate               
 set foldlevel=99
 hi Folded term=underline
