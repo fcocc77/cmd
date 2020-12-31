@@ -17,6 +17,8 @@ xmobar:
 	☐ Mostar volumen
 	☐ Mostrar si el wifi esta conectado
 	✔ Mostrar la cpu y la ram con barra, y la ram con 2 colores uso y cache @done(2020-12-26 18:26) @project(xmobar)
+picom:
+	☐ Ponerle sombra solo a las ventanas flotantes
 general:
 	☐ La tarjena nvidia no funciona despues de suspender el pc
 	☐ Al suspender la luz del teclado queda apagada
