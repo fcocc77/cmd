@@ -95,8 +95,9 @@ let g:vim_jsx_pretty_colorful_config = 1 " default 0
 
 " Commenter
 let g:NERDSpaceDelims = 1 " Agrega un espacio despues del comentario
-set formatoptions-=cr " Desabilita el comentario al pasar a la siguiente linea
+au FileType * set fo-=c fo-=r fo-=o " Desabilita el comentario al pasar a la siguiente linea
 ""
+
 
 
 " Tag Bar
