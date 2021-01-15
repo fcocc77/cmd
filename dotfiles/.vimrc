@@ -93,8 +93,9 @@ let g:vim_jsx_pretty_colorful_config = 1 " default 0
 ""
 
 
-" Nerd Commenter
+" Commenter
 let g:NERDSpaceDelims = 1 " Agrega un espacio despues del comentario
+set formatoptions-=cr " Desabilita el comentario al pasar a la siguiente linea
 ""
 
 
