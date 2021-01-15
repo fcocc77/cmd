@@ -25,6 +25,7 @@ general:
 vim:
 	☐ que el fzf busque en el directorio actual y no en el git
 	☐ buscar la forma de ignorar algunos archivos en fzf
+	☐ buscar con fzf dentro de vim ':'
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:

@@ -50,6 +50,7 @@ Plug 'jiangmiao/auto-pairs' " Completa los signos par como comillas parentesis y
 " Complementos
 Plug 'lilydjwg/colorizer' " Resalta los colores
 " Plug 'shmargum/vim-sass-colors' "Resalta colores y tambien colores en variables de sass
+Plug 'szw/vim-maximizer' " Toogle para maximizar sin perder el split
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter' " Comentarios de codigo
 Plug 'rhysd/vim-clang-format' " Formato para c++, javascript
@@ -88,6 +89,16 @@ map <C-P> :GFiles<CR>
 ""
 
 
+" al reescalar vim, siempre mantiene los split del mismo tamaño
+autocmd VimResized * wincmd =
+"
+
+
+" Toogle para maximizar un ventana el diseño de splits
+let g:maximizer_default_mapping_key = '<F4>'
+"""
+
+
 " Sintaxis JSX
 let g:vim_jsx_pretty_colorful_config = 1 " default 0
 ""
@@ -101,7 +112,9 @@ au FileType * set fo-=c fo-=r fo-=o " Desabilita el comentario al pasar a la sig
 
 
 " Tag Bar
+let g:tagbar_show_linenumbers = 1
 nmap <F8> :TagbarToggle<CR>
+"
 
 
 " Numeros Laterales
@@ -169,8 +182,8 @@ inoremap <c-l> <right>
 
 " Folding
 filetype plugin indent on
-syntax on                
-autocmd Filetype * AnyFoldActivate               
+syntax on
+autocmd Filetype * AnyFoldActivate
 set foldlevel=99
 hi Folded term=underline
 ""
