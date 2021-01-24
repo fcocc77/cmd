@@ -18,6 +18,7 @@ Plug 'zainin/vim-mikrotik' " MikroTik Syntaxis
 Plug 'pangloss/vim-javascript'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'plasticboy/vim-markdown'
 ""
 
 " Auto Completado
@@ -51,6 +52,7 @@ Plug 'jiangmiao/auto-pairs' " Completa los signos par como comillas parentesis y
 Plug 'lilydjwg/colorizer' " Resalta los colores
 " Plug 'shmargum/vim-sass-colors' "Resalta colores y tambien colores en variables de sass
 Plug 'szw/vim-maximizer' " Toogle para maximizar sin perder el split
+Plug 'djoshea/vim-autoread' " Carga los archivos en el buffer si se modifico en otro lugar
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter' " Comentarios de codigo
 Plug 'rhysd/vim-clang-format' " Formato para c++, javascript
@@ -67,6 +69,7 @@ let mapleader = ","
 " asigna el tipo de sintxis segun la extencion o nombre
 autocmd BufEnter .xmobarrc :setlocal filetype=haskell
 autocmd BufEnter .xinitrc :setlocal filetype=sh
+autocmd BufEnter *.vina :setlocal filetype=json
 autocmd BufEnter *.conf :setlocal filetype=xf86conf
 autocmd BufEnter *.txt :setlocal filetype=sh
 autocmd Bufenter requirements.txt :setlocal filetype=requirements
@@ -87,6 +90,12 @@ nmap <C-F> :BLines<CR>
 " GFiles ignora los archivos de .gitignore
 map <C-P> :GFiles<CR>
 ""
+
+
+" desabilita la ocultacion en markdown
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
+"
 
 
 " al reescalar vim, siempre mantiene los split del mismo tamaño
@@ -110,7 +119,6 @@ au FileType * set fo-=c fo-=r fo-=o " Desabilita el comentario al pasar a la sig
 ""
 
 
-
 " Tag Bar
 let g:tagbar_show_linenumbers = 1
 nmap <F8> :TagbarToggle<CR>
@@ -124,7 +132,12 @@ set relativenumber
 set encoding=UTF-8
 
 
-" Coc - para que el autocompletado se pueda cambiar con Tab
+" habilita la corrección de ortografía en español
+set spelllang=es
+"
+
+
+" Coc - para que el auto completado se pueda cambiar con Tab
 function! s:check_back_space() abort
 	let col = col('.') - 1
 	return !col || getline('.')[col - 1]  =~ '\s'
@@ -183,7 +196,7 @@ inoremap <c-l> <right>
 " Folding
 filetype plugin indent on
 syntax on
-autocmd Filetype * AnyFoldActivate
+autocmd Filetype * AnyFoldActivate               
 set foldlevel=99
 hi Folded term=underline
 ""
