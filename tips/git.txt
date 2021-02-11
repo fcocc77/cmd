@@ -7,3 +7,9 @@ git reset --hard 'commit_hash'
 
 # con la '-u' dejamos el remote y branch por defecto
 git push -u <remote> <branch>
+
+# acutaliza una rama remota para poder trabajarla en local
+git checkout origin 'branch name'
+
+# actualiza los submodulos
+git submodule update --init --recursive

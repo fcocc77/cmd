@@ -3,16 +3,22 @@
 
 toggle_file=/tmp/toggle_display
 
+laptop_screen='LVDS'
+laptop_format='1366x768'
+
+hdmi_screen='HDMI-0'
+hdmi_format='1920x1080'
+
 function init_display()
 {
 	# si el monitor HDMI1 esta conectado, deja ese como principal y apaga el del notebook y viceversa
-	hdmi=$(xrandr | grep HDMI1)
+	hdmi=$(xrandr | grep $hdmi_screen)
 	if [[ $hdmi =~ connected ]]; then
 		echo 0 > $toggle_file
-		xrandr --output eDP1 --off --output HDMI1 --mode 2560x1440 --primary
+		xrandr --output $laptop_screen --off --output $hdmi_screen --mode $hdmi_format --primary
 	else
 		echo 1 > $toggle_file
-		xrandr --output HDMI1 --off --output eDP1 --mode 1920x1080 --primary
+		xrandr --output $hdmi_screen --off --output $laptop_screen --mode $laptop_format --primary
 	fi
 }
 
@@ -20,10 +26,10 @@ function toggle_display()
 {
 	if [ $(cat $toggle_file) == "0" ]; then
 		echo 1 > $toggle_file
-		xrandr --output HDMI1 --off --output eDP1 --mode 1920x1080 --primary
+		xrandr --output $hdmi_screen --off --output $laptop_screen --mode $laptop_format --primary
 	else
 		echo 0 > $toggle_file
-		xrandr --output eDP1 --off --output HDMI1 --mode 2560x1440 --primary
+		xrandr --output $laptop_screen --off --output $hdmi_screen --mode $hdmi_format --primary
 	fi
 }
 
