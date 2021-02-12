@@ -9,6 +9,7 @@ depencences=(
 	libXrandr-devel 
 	libXScrnSaver-devel 
 	libXpm-devel 
+	libXft-devel
 	xdotool 
 	dmenu
 	alsa-lib-devel 
@@ -29,7 +30,7 @@ cabal install xmonad-contrib
 # la dependecia cryptonite-0.27 de xmobar tiene un conflicto de compilacion, con la
 # opcion '-f -use_target_attributes' funciona, se tiene que instalar antes que xmobar para que funcione.
 cabal install -f -use_target_attributes cryptonite
-cabal install --fwith_xft xmobar
+cabal install -fwith_xft xmobar
 
 # c2hs es una dependencia de xmonad-extras, se tiene que instalar con
 # new-install, con esto sobre escribimos algunos symolic-links, para que no
