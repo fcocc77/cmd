@@ -16,4 +16,8 @@ sudo make install
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # instala los plugins que estan en '.vimrc'
+cp ../dotfiles/.vimrc ~/.vimrc
 vim +PlugInstall
+
+# copia las nerd-fonts a la carpeta compartida de fuentes
+cp ~/.vim/plugged/nerd-fonts/patched-fonts/*/**/*.ttf ~/.local/share/fonts
