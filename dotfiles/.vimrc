@@ -150,12 +150,6 @@ inoremap <silent><expr> <Tab>
 
 
 
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-
 " coc rename
 nmap <leader>rn <Plug>(coc-rename)
 
@@ -186,10 +180,12 @@ set cursorline
 
 " Cambia los shortcut de las flechas para poder navegar en modo insercion
 " con las letras hjkl
-inoremap <c-k> <up>
-inoremap <c-j> <down>
-inoremap <c-h> <left>
-inoremap <c-l> <right>
+let g:AutoPairsMapCh = 0 " desabilita el shortcut Control-h del plugin auto-pairs
+imap <c-k> <up>
+imap <c-j> <down>
+imap <c-h> <left>
+imap <c-l> <right>
+
 
 
 
@@ -241,7 +237,8 @@ colorscheme onedark
 set termguicolors " habilita los 24 bit de colores
 set fillchars+=vert:\▏
 
-" au Syntax * syn match cOperator "[+=*%^&|<>-]" " Cambia el color de los operadores
+" au Syntax *.cpp syn match cOperator "[+=*%^&|<>-]"
+
 
 hi CursorLineNr guifg=#fd9845
 hi Folded guifg=#656f80 guibg=#2c333f
