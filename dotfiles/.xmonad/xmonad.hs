@@ -12,6 +12,10 @@ import XMonad.Layout.NoBorders (smartBorders)
 -- Hooks
 import XMonad.Hooks.DynamicLog (ppTitle, ppCurrent, ppHidden, ppHiddenNoWindows, statusBar, xmobarPP, xmobarColor, shorten)
 import XMonad.Hooks.EwmhDesktops (fullscreenEventHook)
+import XMonad.Hooks.ManageHelpers (doRectFloat)
+import qualified XMonad.StackSet as W
+
+
  -- Actions
 import XMonad.Actions.CycleWS (nextWS, prevWS, toggleWS)
 import XMonad.Actions.SinkAll (sinkAll)
@@ -42,7 +46,7 @@ grey   = "#abb2bf"
 
 
 -- Layout
-my_workspaces = clickable $ ["CODE", "FILES", "VFX", "WEB", "SOCIAL", "ORG", "MISC"]
+my_workspaces = clickable $ ["WEB", "CODE", "FILES", "VFX", "SOCIAL", "ORG", "MISC"]
 	-- con esto permitimos que cada tab sea clickable
 	where clickable l = ["<action=`xdotool key super+" ++ show (n) ++ "`>" ++ ws ++ "</action>" | (i,ws) <- zip [1..9] l, let n = i ]
 -----------------------------------------------------------------------------------
@@ -125,8 +129,8 @@ toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 -- Composicion de cada aplicacion
 myManageHook = composeAll
 	[
- 		className =?  "Gnome-calculator" --> doFloat,
- 		className =?  "Xfce4-appfinder" --> doFloat
+		className =?  "Gnome-calculator" --> doFloat,
+		className =?  "Xfce4-appfinder" --> doRectFloat(W.RationalRect 0.25 0.25 0.5 0.5) --x y w h
 	]
 -----------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------
