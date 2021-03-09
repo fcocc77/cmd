@@ -9,7 +9,7 @@ git reset --hard 'commit_hash'
 git push -u <remote> <branch>
 
 # acutaliza una rama remota para poder trabajarla en local
-git checkout origin 'branch name'
+git fetch origin dev:dev
 
 # actualiza los submodulos
 git submodule update --init --recursive
