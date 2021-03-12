@@ -19,6 +19,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'plasticboy/vim-markdown'
+Plug 'leafgarland/typescript-vim'
 ""
 
 " Auto Completado
@@ -64,7 +65,6 @@ call plug#end()
 " leader mapeado con 'coma', sirve para el 'todo-task'
 let mapleader = ","
 ""
-
 
 " asigna el tipo de sintxis segun la extencion o nombre
 autocmd BufEnter .xmobarrc :setlocal filetype=haskell
@@ -149,12 +149,14 @@ inoremap <silent><expr> <Tab>
 	  \ coc#refresh()
 
 
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
-" coc rename
-nmap <leader>rn <Plug>(coc-rename)
 
-
-
+let g:coc_global_extensions = [ 'coc-json', 'coc-tsserver', 'coc-python' ]
+" coc-clang
 
 " Para que funcione el borrado con la tecla 'backspace'
 set backspace=indent,eol,start
