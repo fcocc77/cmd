@@ -1,0 +1,15 @@
+{
+	"diagnostic.enable": true,
+	"languageserver": {
+		"ccls": {
+			"command": "ccls",
+			"filetypes": ["cc", "cpp", "c++"],
+			"rootPatterns": [".ccls"],
+			"initializationOptions": {
+				"cache": {
+					"directory": "/tmp/ccls"
+				}
+			}
+		}
+	}
+}
