@@ -19,6 +19,10 @@ packages=(
 sudo yum -y groupinstall "Development Tools"
 sudo yum -y install ${packages[@]}
 
+# autocompletado de python para vim coc
+sudo pip3 install jedi
+
+
 # con esto funciona el qDebug para QT5
 sudo mkdir /etc/xdg/QtProject
 echo "[Rules]
