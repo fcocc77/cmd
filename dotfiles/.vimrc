@@ -164,6 +164,10 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
 " Renombra variable o funcion en todas partes donde se esta usando
 nmap <leader>rn <Plug>(coc-rename)
 
@@ -289,6 +293,7 @@ nnoremap <esc>^[ <esc>^[
 
 
 " indentacion
+set expandtab " solo se usan espacios para las tabulaciones
 autocmd BufRead,BufNewFile *.sass set shiftwidth=4 "para que funcione la indentacion en los .sass al leer o al crear un archivo sass
 set tabstop=4
 set shiftwidth=4
