@@ -30,3 +30,12 @@ alias vinacomp="cd $user/Documents/develop/vinacomp"
 alias bashrc="vim /root/.bashrc"
 alias desk="cd /root/Desktop"
 alias natron_plugins="cd /usr/share/Natron/Plugins"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# OneDark theme para FZF
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+--color=dark
+--color=fg:#abb2bf,bg:#252a31,hl:#56b6c2,fg+:#abb2bf,bg+:#2c313a,hl+:#e06c75
+--color=info:#61afef,prompt:#98c379,pointer:#e5c07b
+'

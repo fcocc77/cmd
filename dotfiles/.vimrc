@@ -26,15 +26,6 @@ Plug 'leafgarland/typescript-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "Auto Completado
 ""
 
-" Coc Python
-" Plug 'davidhalter/jedi-vim' "Auto Completado python"
-" Plug 'Shougo/deoplete.nvim'
-" Plug 'roxma/nvim-yarp'
-" Plug 'roxma/vim-hug-neovim-rpc'
-" further plugin for autocompletion
-" Plug 'deoplete-plugins/deoplete-jedi'
-"""
-
 
 " AirLine
 Plug 'vim-airline/vim-airline'
@@ -96,6 +87,7 @@ nnoremap <Leader>ss :ToggleWorkspace<CR>
 
 " FZF
 let g:fzf_layout = { 'down': '~40%' } " Abre la venatana en un split en la parte inferior
+
 nmap <C-F> :BLines<CR>
 " GFiles ignora los archivos de .gitignore
 map <C-P> :GFiles<CR>
@@ -134,6 +126,9 @@ let g:tagbar_show_linenumbers = 1
 nmap <F8> :TagbarToggle<CR>
 "
 
+" Al rodar la barra de scroll del mouse, mueve la pantalla y no el el cursor de vim
+set mouse=a
+
 
 " Numeros Laterales
 set number
@@ -162,6 +157,15 @@ inoremap <silent><expr> <Tab>
 " GoTo code navigation.
 nmap <silent> <C-]> <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gi <Plug>(coc-implementation)
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" Renombra variable o funcion en todas partes donde se esta usando
+nmap <leader>rn <Plug>(coc-rename)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -200,9 +204,6 @@ let g:python_highlight_all = 1
 set cursorline
 ""
 
-" los signos de diagnostico de 'coc-python' parpadean, por eso
-" para que no se noten tanto los parpadeos de baja este numero, por defecto es 4000
-set updatetime=30
 
 set signcolumn=yes " siempre muestra la columna de signos
 " autocmd FileType nerdtree setlocal signcolumn=no " desabilita la columna de signos en nerdtree
