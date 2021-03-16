@@ -1,4 +1,6 @@
 {
+	"python.linting.pylintEnabled": true,
+	"python.linting.mypyEnabled": true,
 	"diagnostic.enable": true,
 	"languageserver": {
 		"ccls": {

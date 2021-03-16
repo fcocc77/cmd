@@ -26,6 +26,16 @@ Plug 'leafgarland/typescript-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "Auto Completado
 ""
 
+" Coc Python
+" Plug 'davidhalter/jedi-vim' "Auto Completado python"
+" Plug 'Shougo/deoplete.nvim'
+" Plug 'roxma/nvim-yarp'
+" Plug 'roxma/vim-hug-neovim-rpc'
+" further plugin for autocompletion
+" Plug 'deoplete-plugins/deoplete-jedi'
+"""
+
+
 " AirLine
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -168,7 +178,6 @@ endfunctio
 
 
 let g:coc_global_extensions = [ 'coc-json', 'coc-tsserver', 'coc-python' ]
-" coc-clang
 
 " Para que funcione el borrado con la tecla 'backspace'
 set backspace=indent,eol,start
@@ -190,6 +199,10 @@ let g:python_highlight_all = 1
 " Linea horizontal que muestra donde esta el cursor
 set cursorline
 ""
+
+" los signos de diagnostico de 'coc-python' parpadean, por eso
+" para que no se noten tanto los parpadeos de baja este numero, por defecto es 4000
+set updatetime=30
 
 set signcolumn=yes " siempre muestra la columna de signos
 " autocmd FileType nerdtree setlocal signcolumn=no " desabilita la columna de signos en nerdtree
