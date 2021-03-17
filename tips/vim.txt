@@ -1,0 +1,2 @@
+# cambiar espacios o tab, por la configuracion de .vimrc
+:retab

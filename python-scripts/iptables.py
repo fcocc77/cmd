@@ -18,52 +18,54 @@ os.system("iptables -A INPUT -i lo -j ACCEPT")
 os.system("iptables -A OUTPUT -o lo -j ACCEPT")
 #-------------------------
 
+
 def rulesRun(ports=None, incoming=None, outgoing=None, tcp=None, udp=None, src=None, dst=None):
 
-	ports=ports.split(",")
+    ports = ports.split(",")
 
-	for port in ports:
+    for port in ports:
 
-		if src:
-			out_src=" -s "+src
-			in_src=" -d "+src
-		else:
-			in_src=""
-			in_dst="" 
-			out_src=""
-			out_dst=""
+        if src:
+            out_src = " -s "+src
+            in_src = " -d "+src
+        else:
+            in_src = ""
+            in_dst = ""
+            out_src = ""
+            out_dst = ""
 
-		if dst:
-			out_dst=" -d "+dst
-			in_dst=" -s "+dst
-		else:
-			in_src=""
-			in_dst="" 
-			out_src=""
-			out_dst=""
+        if dst:
+            out_dst = " -d "+dst
+            in_dst = " -s "+dst
+        else:
+            in_src = ""
+            in_dst = ""
+            out_src = ""
+            out_dst = ""
 
-		if incoming==1:
+        if incoming == 1:
 
-			if tcp==1:
-				cmd="iptables -A INPUT -p tcp"+in_src+in_dst+" --dport "+port+"  -j ACCEPT" 
-				os.system(cmd)
-				print cmd
+            if tcp == 1:
+                cmd = "iptables -A INPUT -p tcp"+in_src+in_dst+" --dport "+port+"  -j ACCEPT"
+                os.system(cmd)
+                print cmd
 
-			if udp==1:
-				cmd="iptables -A INPUT -p udp"+in_src+in_dst+" --dport "+port+" -j ACCEPT" 
-				os.system(cmd)
+            if udp == 1:
+                cmd = "iptables -A INPUT -p udp"+in_src+in_dst+" --dport "+port+" -j ACCEPT"
+                os.system(cmd)
 
-		if outgoing == 1:
-			if tcp==1:
-				cmd="iptables -A OUTPUT -p tcp"+out_src+out_dst+" --dport "+port+" -j ACCEPT" 
-				os.system(cmd)
+        if outgoing == 1:
+            if tcp == 1:
+                cmd = "iptables -A OUTPUT -p tcp"+out_src+out_dst+" --dport "+port+" -j ACCEPT"
+                os.system(cmd)
 
-			if udp==1:
-				cmd="iptables -A OUTPUT -p udp"+out_src+out_dst+" --dport "+port+" -j ACCEPT" 
-				os.system(cmd)
+            if udp == 1:
+                cmd = "iptables -A OUTPUT -p udp"+out_src+out_dst+" --dport "+port+" -j ACCEPT"
+                os.system(cmd)
 
-srcHost="192.168.10.43"
-dstHost1="192.168.10.45"
+
+srcHost = "192.168.10.43"
+dstHost1 = "192.168.10.45"
 
 #------------------http------------------------
 rulesRun(ports="80", incoming=1, outgoing=1, tcp=1, udp=0)
@@ -114,4 +116,3 @@ rulesRun(ports="587", incoming=1, outgoing=1, tcp=1, udp=1)
 
 
 os.system("service iptables save")
-
