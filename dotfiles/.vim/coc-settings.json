@@ -1,7 +1,10 @@
 {
-	"python.linting.pylintEnabled": true,
-	"python.linting.mypyEnabled": true,
-	"diagnostic.enable": true,
+    "python.linting.pylintEnabled": false,
+	"python.linting.mypyEnabled": false,
+    "python.linting.enabled": false,
+    "pyright.enable": true,
+    "python.pythonPath": "python3",
+    "diagnostic.enable": true,
 	"languageserver": {
 		"ccls": {
 			"command": "ccls",
