@@ -185,7 +185,7 @@ function! s:show_documentation()
 endfunctio
 
 
-let g:coc_global_extensions = [ 'coc-json', 'coc-tsserver', 'coc-python' ]
+let g:coc_global_extensions = [ 'coc-json', 'coc-tsserver', 'coc-pyright' ]
 
 " Para que funcione el borrado con la tecla 'backspace'
 set backspace=indent,eol,start
