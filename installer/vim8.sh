@@ -1,13 +1,18 @@
 # usar terminal 'gnome-terminal' que soporta 24 bit de colores
 
 sudo yum -y remove vim-common vim-enhanced
-sudo yum install gcc make ncurses ncurses-devel
+sudo yum -y install gcc make ncurses ncurses-devel
+sudo yum -y install xorg-x11-server-devel libX11-devel libXt-devel
+
+sudo yum install builddep
 
 cd /tmp
 git clone https://github.com/vim/vim.git
 cd vim
 
-./configure --with-features=huge --enable-pythoninterp
+# '--with-x' y ' --enable-gui' son para que vim se comunique con X11 y con eso
+# poder copiear desde vim hacia afuera con 'clipboard'
+./configure --with-features=huge --enable-pythoninterp --with-x --enable-gui
 make -j4
 
 sudo make install
