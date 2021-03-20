@@ -11,6 +11,7 @@ packages=(
 	mtdev-devel
 	dkms
 	nodejs
+    go
 
 	python3-devel
 	python36
