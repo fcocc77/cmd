@@ -1,302 +1,322 @@
+" Plugins
+    call plug#begin('~/.vim/plugged')
 
-call plug#begin('~/.vim/plugged')
-" Temas
-Plug 'joshdick/onedark.vim'
+    " Temas
+    Plug 'joshdick/onedark.vim'
 
-Plug 'ryanoasis/vim-devicons'
-Plug 'ryanoasis/nerd-fonts'
+    " Fuentes e Iconos
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'ryanoasis/nerd-fonts'
 
+    " Sintaxis Python
+    Plug 'vim-python/python-syntax'
 
-" Syntaxis
-Plug 'vim-python/python-syntax'
-Plug 'raimon49/requirements.txt.vim' " Syntaxis para los requerimientos para python pip
-Plug 'suy/vim-qmake' " Syntaxis para archivos .pro
-Plug 'irrationalistic/vim-tasks' " Syntaxis para to-do Tasks
-Plug 'maxmellon/vim-jsx-pretty' " Jsx Syntaxis
-Plug 'bfrg/vim-cpp-modern' " Sintaxis para c++
-Plug 'zainin/vim-mikrotik' " MikroTik Syntaxis
-Plug 'pangloss/vim-javascript'
-Plug 'neovimhaskell/haskell-vim'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'plasticboy/vim-markdown'
-Plug 'leafgarland/typescript-vim'
-""
+    " Sintaxis para requirements.txt
+    Plug 'raimon49/requirements.txt.vim'
 
-" Auto Completado
-Plug 'neoclide/coc.nvim', {'branch': 'release'} "Auto Completado
-""
+    " Sintaxis para archivos .pro
+    Plug 'suy/vim-qmake'
 
+    " Sintaxis para to-do Tasks
+    Plug 'irrationalistic/vim-tasks'
 
-" AirLine
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-""
+    " Sintaxis para Javascript y react JSX
+    Plug 'maxmellon/vim-jsx-pretty'
+    Plug 'pangloss/vim-javascript'
 
-Plug 'thaerkh/vim-workspace' " Espacios de Trabajo
-Plug 'majutsushi/tagbar' " Lista de funciones
+    " Sintaxis para c++
+    Plug 'bfrg/vim-cpp-modern'
 
-" NerdTree
-Plug 'preservim/nerdtree' " Arbol de archivos
-Plug 'xuyuanp/nerdtree-git-plugin' " Muestra los cambios de git en nerdtree
-""
+    " Sintaxis MikroTik
+    Plug 'zainin/vim-mikrotik'
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+    " Sintaxis para HasKell
+    Plug 'neovimhaskell/haskell-vim'
 
-" Git
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter' " Barra lateral que muestra los cambios de Git
+    " Sintaxis para SASS
+    Plug 'cakebaker/scss-syntax.vim'
 
-Plug 'jiangmiao/auto-pairs' " Completa los signos par como comillas parentesis y otros
+    " Sintaxis MarkDown
+    Plug 'plasticboy/vim-markdown'
 
+    " Sintaxis TypeScript
+    Plug 'leafgarland/typescript-vim'
 
-" Complementos
-Plug 'lilydjwg/colorizer' " Resalta los colores
-" Plug 'shmargum/vim-sass-colors' "Resalta colores y tambien colores en variables de sass
-Plug 'szw/vim-maximizer' " Toogle para maximizar sin perder el split
-Plug 'djoshea/vim-autoread' " Carga los archivos en el buffer si se modifico en otro lugar
-Plug 'tpope/vim-surround'
-Plug 'scrooloose/nerdcommenter' " Comentarios de codigo
-Plug 'rhysd/vim-clang-format' " Formato para c++, javascript
-Plug 'yggdroot/indentline'
-Plug 'pseewald/anyfold' " Folding para todos los lenguajes
-call plug#end()
+    " Sintaxis YAML
+    Plug 'stephpy/vim-yaml'
 
+    " COC
+    Plug 'neoclide/coc.nvim', {'branch': 'release'} "Auto Completado
 
-" leader mapeado con 'coma', sirve para el 'todo-task'
-let mapleader = ","
-""
+    " AirLine
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
 
-" asigna el tipo de sintxis segun la extencion o nombre
-autocmd BufEnter .xmobarrc :setlocal filetype=haskell
-autocmd BufEnter .xinitrc :setlocal filetype=sh
-autocmd BufEnter *.vina :setlocal filetype=json
-autocmd BufEnter *.conf :setlocal filetype=xf86conf
-autocmd BufEnter *.txt :setlocal filetype=sh
-autocmd Bufenter requirements.txt :setlocal filetype=requirements
+    " Espacios de Trabajo
+    Plug 'thaerkh/vim-workspace'
 
+    " Barra de Etiquetas
+    Plug 'majutsushi/tagbar'
 
+    " NerdTree
+    Plug 'preservim/nerdtree'
+    Plug 'xuyuanp/nerdtree-git-plugin' " Muestra los cambios de git en nerdtree
 
-" Auto guardado de espacio de trabajo
-let g:workspace_session_name = 'session.vim'
-autocmd VimLeave * tabdo NERDTreeClose " Cierra todos los nerdtree antes de salir, por que da conflicto con la session
-autocmd VimLeave * tabdo TagbarClose " Cierra todos los tagbar
-nnoremap <Leader>ss :ToggleWorkspace<CR>
-"
+    " Buscador FZF
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
 
+    " Git
+    Plug 'tpope/vim-fugitive'
+    Plug 'airblade/vim-gitgutter' " Barra lateral que muestra los cambios de Git
 
-" FZF
-let g:fzf_layout = { 'down': '~40%' } " Abre la venatana en un split en la parte inferior
+    " Completa los signos par como comillas parentesis y otros
+    Plug 'jiangmiao/auto-pairs'
 
-nmap <C-F> :BLines<CR>
-" GFiles ignora los archivos de .gitignore
-map <C-P> :GFiles<CR>
-""
+    " Resalta los colores en el codigo
+    Plug 'lilydjwg/colorizer'
 
+    " Toogle para maximizar sin perder el split
+    Plug 'szw/vim-maximizer'
 
-" desabilita la ocultacion en markdown
-let g:vim_markdown_conceal = 0
-let g:vim_markdown_conceal_code_blocks = 0
-"
+    " Carga los archivos en el buffer si se modifico en otro lugar
+    Plug 'djoshea/vim-autoread'
 
+    " Completa par de signos, comillas, parentesis, etc
+    Plug 'tpope/vim-surround'
 
-" al reescalar vim, siempre mantiene los split del mismo tamaño
-autocmd VimResized * wincmd =
-"
+    " Comentarios de codigo
+    Plug 'scrooloose/nerdcommenter'
 
+    " Da Formato a archivos c++, con el arhivo .clang-format
+    Plug 'rhysd/vim-clang-format'
 
-" Toogle para maximizar un ventana el diseño de splits
-let g:maximizer_default_mapping_key = '<F4>'
+    " Muestra las lineas de Indentacion
+    Plug 'yggdroot/indentline'
+
+    " Folding para todo los lenguajes
+    Plug 'pseewald/anyfold'
+
+    call plug#end()
 """
 
+" Extenciones
+    " Asigna el tipo de sintxis segun la extencion o nombre
+    autocmd BufEnter .xmobarrc :setlocal filetype=haskell
+    autocmd BufEnter .xinitrc :setlocal filetype=sh
+    autocmd BufEnter *.vina :setlocal filetype=json
+    autocmd BufEnter *.conf :setlocal filetype=xf86conf
+    autocmd BufEnter *.txt :setlocal filetype=sh
+    autocmd BufEnter *.clang-format :setlocal filetype=yaml
+    autocmd Bufenter requirements.txt :setlocal filetype=requirements
+"""
 
-" Sintaxis JSX
-let g:vim_jsx_pretty_colorful_config = 1 " default 0
-""
+" Configuracion de Plugins
 
+    " MarkDown archivos
+    let g:vim_markdown_conceal = 0 " Desabilita la ocultacion"
+    let g:vim_markdown_conceal_code_blocks = 0
+    """
 
-" Commenter
-let g:NERDSpaceDelims = 1 " Agrega un espacio despues del comentario
-au FileType * set fo-=c fo-=r fo-=o " Desabilita el comentario al pasar a la siguiente linea
-""
+    " Nerd Commenter
+    let g:NERDSpaceDelims = 1 " Agrega un espacio despues del comentario
+    au FileType * set fo-=c fo-=r fo-=o " Desabilita el comentario al pasar a la siguiente linea
+    """
 
+    " Tag Bar
+    let g:tagbar_show_linenumbers = 1
+    """
 
-" Tag Bar
-let g:tagbar_show_linenumbers = 1
-nmap <F8> :TagbarToggle<CR>
-"
+    " Habilita el highlight de python
+    let g:python_highlight_all = 1
+    ""
 
-" Al rodar la barra de scroll del mouse, mueve la pantalla y no el el cursor de vim
-set mouse=a
+    " AutoPair
+    let g:AutoPairsMapCh = 0 " desabilita el shortcut Control-h del plugin auto-pairs
+    """
 
+    " La sintaxis de json, oculta las comillas, con esta opcion lo desabilitamos esa opcion
+    let g:vim_json_conceal=0
+    """
 
-" Numeros Laterales
-set number
-set relativenumber
-""
-set encoding=UTF-8
+    " IndentLine
+    let g:indentLine_color_gui = '#3b414d'
+    let g:indentLine_char = '▏'
+    """
 
+    " Sintaxis JSX
+    let g:vim_jsx_pretty_colorful_config = 1 " default 0
+    """
 
-" habilita la corrección de ortografía en español
-set spelllang=es
-"
+    " FZF
+    let g:fzf_layout = { 'down': '~40%' } " Abre la venatana en un split en la parte inferior
+    ""
 
+    " NerdTree
+    let NERDTreeShowLineNumbers = 1 " Habilita los numeros
+    let NERDTreeRespectWildIgnore = 1 " Ignora los archivos que estan en 'wildignore'
+    autocmd FileType nerdtree setlocal relativenumber " Numeros relativos
+    let g:NERDTreeWinSize = 35
+    let NERDTreeShowHidden = 1
+    """
 
-" Coc - para que el auto completado se pueda cambiar con Tab
-function! s:check_back_space() abort
-	let col = col('.') - 1
-	return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
+" Configuracion VIM
+    " Al rodar la barra de scroll del mouse, mueve la pantalla y no el el cursor de vim
+    set mouse=a
 
-inoremap <silent><expr> <Tab>
-	  \ pumvisible() ? "\<C-n>" :
-	  \ <SID>check_back_space() ? "\<Tab>" :
-	  \ coc#refresh()
+    " Numeros Laterales
+    set number
+    set relativenumber
 
+    set encoding=UTF-8
 
-" GoTo code navigation.
-nmap <silent> <C-]> <Plug>(coc-definition)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> gi <Plug>(coc-implementation)
+    " habilita la corrección de ortografía en español
+    set spelllang=es
 
-" Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+    " Para que funcione el borrado con la tecla 'backspace'
+    set backspace=indent,eol,start
 
-" Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+    " Linea horizontal que muestra donde esta el cursor
+    set cursorline
 
-" Renombra variable o funcion en todas partes donde se esta usando
-nmap <leader>rn <Plug>(coc-rename)
+    " Siempre muestra la columna de signos
+    set signcolumn=yes
 
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+    " Al reescalar vim, siempre mantiene los split del mismo tamaño
+    autocmd VimResized * wincmd =
 
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
-endfunctio
+    " Resalta los textos encontrados
+    set hlsearch
 
+    " Folding
+    filetype plugin indent on
+    syntax on
+    autocmd Filetype * AnyFoldActivate
+    set foldlevel=99
+    hi Folded term=underline
 
-let g:coc_global_extensions = [ 'coc-json', 'coc-tsserver', 'coc-pyright' ]
+    " indentacion
+    set expandtab " solo se usan espacios para las tabulaciones
+    autocmd BufRead,BufNewFile *.sass set shiftwidth=4 "para que funcione la indentacion en los .sass al leer o al crear un archivo sass
+    set tabstop=4
+    set shiftwidth=4
+    set softtabstop=4
 
-" Para que funcione el borrado con la tecla 'backspace'
-set backspace=indent,eol,start
-""
+    " Ignorar archivos y carpeta para NerdTree
+    set wildignore+=node_modules,*/node_modules/*,*.o,*.swp,*.swo,*.pyc,.git,.undodir,*/.undodir/*,session.vim
+    ""
 
+    " Auto guardado de espacio de trabajo
+    let g:workspace_session_name = 'session.vim'
+    autocmd VimLeave * tabdo NERDTreeClose " Cierra todos los nerdtree antes de salir, por que da conflicto con la session
+    autocmd VimLeave * tabdo TagbarClose " Cierra todos los tagbar
+    "
+"""
 
+" COC
+    " Para que el auto completado se pueda cambiar con Tab
+    function! s:check_back_space() abort
+        let col = col('.') - 1
+        return !col || getline('.')[col - 1]  =~ '\s'
+    endfunction
 
-" IndentLine Configuracion
-let g:indentLine_color_gui = '#3b414d'
-let g:indentLine_char = '▏'
-""
+    inoremap <silent><expr> <Tab>
+        \ pumvisible() ? "\<C-n>" :
+        \ <SID>check_back_space() ? "\<Tab>" :
+        \ coc#refresh()
 
+    function! s:show_documentation()
+        if (index(['vim','help'], &filetype) >= 0)
+            execute 'h '.expand('<cword>')
+            elseif (coc#rpc#ready())
+            call CocActionAsync('doHover')
+        else
+            execute '!' . &keywordprg . " " . expand('<cword>')
+        endif
+    endfunctio
 
-" Habilita el highlight de python
-let g:python_highlight_all = 1
-""
-
-
-" Linea horizontal que muestra donde esta el cursor
-set cursorline
-""
-
-
-set signcolumn=yes " siempre muestra la columna de signos
-" autocmd FileType nerdtree setlocal signcolumn=no " desabilita la columna de signos en nerdtree
-
-
-" Cambia los shortcut de las flechas para poder navegar en modo insercion
-" con las letras hjkl
-let g:AutoPairsMapCh = 0 " desabilita el shortcut Control-h del plugin auto-pairs
-imap <c-k> <up>
-imap <c-j> <down>
-imap <c-h> <left>
-imap <c-l> <right>
-
-
-
-
-" Folding
-filetype plugin indent on
-syntax on
-autocmd Filetype * AnyFoldActivate               
-set foldlevel=99
-hi Folded term=underline
-""
-
-
-" La sintaxis de json, oculta las comillas, con esta opcion lo desabilitamos esa opcion
-let g:vim_json_conceal=0
-
-
-
-
-" ignorar archivos y carpeta para NerdTree y ctrlp
-set wildignore+=node_modules,*/node_modules/*,*.o,*.swp,*.swo,*.pyc,.git,.undodir,*/.undodir/*,session.vim
-""
-
-
-" NerdTree Configuracion
-let NERDTreeShowLineNumbers = 1 " Habilita los numeros
-let NERDTreeRespectWildIgnore = 1 " Ignora los archivos que estan en 'wildignore'
-autocmd FileType nerdtree setlocal relativenumber " Numeros relativos
-let g:NERDTreeWinSize = 35
-let NERDTreeShowHidden = 1
-nmap <F2> :NERDTreeFind<CR>
-nmap <F3> :NERDTreeToggle<CR>
-""
-
-
-" AirLine
-let g:airline_powerline_fonts = 1 " Para que los rectangulos tengan puntas
-let g:airline_theme = 'onedark'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t' "Solo muestra el nombre en los 'tabs'
-let g:airline#extensions#tabline#show_buffers = 0 " Desabilita el buffer ( historial )
-let g:airline#extensions#tabline#show_splits = 1 " Habilita el buffer de splits que esta a la derecha
-let g:airline#extensions#tabline#tab_nr_type = 1 " Index del tab
-""
-
-
+    let g:coc_global_extensions = [ 'coc-json', 'coc-tsserver', 'coc-pyright' , 'coc-go']
+"""
 
 " Estilos
-colorscheme onedark
-set termguicolors " habilita los 24 bit de colores
-set fillchars+=vert:\▏
+    " AirLine
+    let g:airline_powerline_fonts = 1 " Para que los rectangulos tengan puntas
+    let g:airline_theme = 'onedark'
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#tabline#fnamemod = ':t' "Solo muestra el nombre en los 'tabs'
+    let g:airline#extensions#tabline#show_buffers = 0 " Desabilita el buffer ( historial )
+    let g:airline#extensions#tabline#show_splits = 1 " Habilita el buffer de splits que esta a la derecha
+    let g:airline#extensions#tabline#tab_nr_type = 1 " Index del tab
+    ""
 
-" au Syntax *.cpp syn match cOperator "[+=*%^&|<>-]"
+    " Tema
+    colorscheme onedark
+    set termguicolors " habilita los 24 bit de colores
+    set fillchars+=vert:\▏
 
+    " au Syntax *.cpp syn match cOperator "[+=*%^&|<>-]"
 
-hi CursorLineNr guifg=#fd9845
-hi Folded guifg=#656f80 guibg=#2c333f
-""
+    hi CursorLineNr guifg=#fd9845
+    hi Folded guifg=#656f80 guibg=#2c333f
+"""
 
+" Vim Errores
+    " Evita los caracteres feos que aparecen despues de la version 8.22 de vim '>4;2m'
+    let &t_TI = ""
+    let &t_TE = ""
+"""
 
-" evita los caracteres feos que aparecen despues de la version 8.22 de vim '>4;2m'
-let &t_TI = ""
-let &t_TE = ""
+" ShortCuts
+    " leader mapeado con 'coma', sirve para el 'todo-task'
+    let mapleader = ","
 
+    " Encuenta 'string' en el archivo actual
+    nmap <C-F> :BLines<CR>
 
-" Permite que con el escape se terminen los textos resaltados
-set hlsearch " Resalta los textos encontrados
-nnoremap <esc> :noh<return><esc>
-nnoremap <esc>^[ <esc>^[
-""
+    " GFiles ignora los archivos de .gitignore
+    map <C-P> :GFiles<CR>
 
+    " Toggle WorkSpace
+    nnoremap <Leader>ss :ToggleWorkspace<CR>
 
-" indentacion
-set expandtab " solo se usan espacios para las tabulaciones
-autocmd BufRead,BufNewFile *.sass set shiftwidth=4 "para que funcione la indentacion en los .sass al leer o al crear un archivo sass
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-""
+    " Permite que con el escape se terminen los textos resaltados
+    nnoremap <esc> :noh<return><esc>
+    nnoremap <esc>^[ <esc>^[
 
+    " Permite copiar hacia el sistema operativo
+    vmap <leader>y "+y
+
+    " Toogle para maximizar un ventana el diseño de splits
+    let g:maximizer_default_mapping_key = '<F4>'
+
+    " Barra de etiquetas
+    nmap <F8> :TagbarToggle<CR>
+
+    " Saltar hacia la definicion
+    nmap <silent> <C-]> <Plug>(coc-definition)
+    nmap <silent> gr <Plug>(coc-references)
+
+    " Saltar a lineas con errores
+    nmap <silent> [g <Plug>(coc-diagnostic-prev)
+    nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+    " Da formato al codigo
+    xmap <leader>f  <Plug>(coc-format-selected)
+    nmap <leader>f  <Plug>(coc-format-selected)
+
+    " Renombra variable o funcion en todas partes donde se este usando
+    nmap <leader>rn <Plug>(coc-rename)
+
+    " Visualizar la documentacion o el tipo de dato
+    nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+    " Poder navegar con 'lkjh' en modo Insert
+    imap <c-k> <up>
+    imap <c-j> <down>
+    imap <c-h> <left>
+    imap <c-l> <right>
+
+    " NerdTree
+    nmap <F2> :NERDTreeFind<CR>
+    nmap <F3> :NERDTreeToggle<CR>
+"""
