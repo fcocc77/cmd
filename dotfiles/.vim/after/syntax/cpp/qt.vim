@@ -1,4 +1,10 @@
 syn keyword cppUserStructs QMenuBar
+syn keyword cppUserStructs QJsonObject
+syn keyword cppUserStructs QTimeLine
+syn keyword cppUserStructs QJsonArray
+syn keyword cppUserStructs QJsonValue
+syn keyword cppUserStructs QTreeWidget
+syn keyword cppUserStructs QTreeWidgetItem
 syn keyword cppUserStructs QWidget
 syn keyword cppUserStructs QLayoutItem
 syn keyword cppUserStructs QLayout
@@ -338,3 +344,4 @@ syn keyword cppUserStructs QPPDWidget
 syn keyword cppUserStructs QtCUPS
 
 hi cppUserStructs guifg=#E5C07B
+
