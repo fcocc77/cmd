@@ -7,6 +7,8 @@
     " Fuentes e Iconos
     Plug 'ryanoasis/vim-devicons'
     Plug 'ryanoasis/nerd-fonts'
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
 
     " Sintaxis Python
     Plug 'vim-python/python-syntax'
@@ -47,6 +49,9 @@
 
     " COC
     Plug 'neoclide/coc.nvim', {'branch': 'release'} "Auto Completado
+
+    " Convierte JSON a estructura de GO
+    Plug 'meain/vim-jsontogo'
 
     " AirLine
     Plug 'vim-airline/vim-airline'
@@ -109,6 +114,7 @@
     autocmd BufEnter *.txt :setlocal filetype=sh
     autocmd BufEnter *.clang-format :setlocal filetype=yaml
     autocmd Bufenter requirements.txt :setlocal filetype=requirements
+    autocmd Bufenter go.mod :setlocal filetype=go
 """
 
 " Configuracion de Plugins
@@ -155,6 +161,7 @@
     " NerdTree
     let NERDTreeShowLineNumbers = 1 " Habilita los numeros
     let NERDTreeRespectWildIgnore = 1 " Ignora los archivos que estan en 'wildignore'
+    let NERDTreeHighlightCursorline = 0 " Desabilita el cursor
     autocmd FileType nerdtree setlocal relativenumber " Numeros relativos
     let g:NERDTreeWinSize = 35
     let NERDTreeShowHidden = 1
@@ -254,7 +261,7 @@
     set termguicolors " habilita los 24 bit de colores
     set fillchars+=vert:\▏
 
-    " au Syntax *.cpp syn match cOperator "[+=*%^&|<>-]"
+    au Syntax cpp syn match cOperator "[+=*%^&|<>-]"
 
     hi CursorLineNr guifg=#fd9845
     hi Folded guifg=#656f80 guibg=#2c333f
@@ -267,11 +274,11 @@
 """
 
 " ShortCuts
-    " leader mapeado con 'coma', sirve para el 'todo-task'
+    " leader Tecla
     let mapleader = ","
 
     " Encuenta 'string' en el archivo actual
-    nmap <C-F> :BLines<CR>
+    nmap <C-F> :History:<CR>
 
     " GFiles ignora los archivos de .gitignore
     map <C-P> :GFiles<CR>
