@@ -3,6 +3,7 @@
 # 1 - Hay que cambiar en el /etc/bumblebee/bumblebee.conf "Driver=nvidia"
 # 2 - el Display del bumblebee.conf "VirtualDisplay=:8" no puede tener el mismo numero que la
 # pantalla principal (echo $DISPLAY) si no da un error
+# 3 - añadir el usuario al gruoi de bumblebee y reiniciar: gpasswd -a 'user' bumblebee
 
 # con esto se puede ver el debug:
 #     "optirun -vv glxgears -info"

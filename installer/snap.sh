@@ -11,7 +11,7 @@ sudo ln -s /var/lib/snapd/snap /snap
 sudo snap install whatsdesk
 sudo snap install spotify
 sudo snap install blender --channel=2.83lts/stable --classic
-snap install ccls --classic # Servidor de Lenguaje c++
+sudo snap install ccls --classic # Servidor de Lenguaje c++
 
 # para ver versiones disponible:
 #   snap info 'app name'

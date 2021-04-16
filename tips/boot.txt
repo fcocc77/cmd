@@ -1,4 +1,9 @@
 # Boot Ajustes
 sudo grub2-set-default 0
+
+# bios
 sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+
+# efi
+sudo grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg
 
