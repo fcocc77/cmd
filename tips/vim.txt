@@ -1,2 +1,5 @@
 # cambiar espacios o tab, por la configuracion de .vimrc
 :retab
+
+# guardar con sudo
+:w !sudo tee %
