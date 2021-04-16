@@ -9,9 +9,13 @@
 #     "optirun -vv glxgears -info"
 
 sudo yum -y install https://www.elrepo.org/elrepo-release-7.el7.elrepo.noarch.rpm
+sudo yum install centos-release-scl
+
+wget https://es.download.nvidia.com/XFree86/Linux-x86_64/460.73.01/NVIDIA-Linux-x86_64-460.73.01.run -P ~/Downloads
+# visualizar con nvidia-smi
 
 packages=(
-	kmod-nvidia
+    devtoolset-9
     bumblebee
     primus
 )
