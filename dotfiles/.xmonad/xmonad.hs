@@ -115,8 +115,8 @@ shortcut = keys defaultConfig `mappend` \c -> fromList
 title_length = 80 -- largo maximo de titulo de aplicacion
 myPP = xmobarPP
     {
-        ppTitle = xmobarColor pink "" . shorten title_length,
-        ppCurrent = xmobarColor yellow  "" ,
+        ppTitle = xmobarColor green "" . shorten title_length,
+        ppCurrent = xmobarColor pink  "" ,
         ppHidden = xmobarColor grey "", -- color de tab no visible
         ppHiddenNoWindows = xmobarColor grey "" -- matiene siempre visible todos los tabs
     }
