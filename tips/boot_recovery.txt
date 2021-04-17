@@ -1,0 +1,16 @@
+# ! el 'thinkpad' al dejarlo po defecto borra la opcion
+# de centos del arranque y solo funciona el de windows
+
+# 1 - arrancar usb centos en 'Troubleshooting -> Rescue Mode'
+
+# 2 - montar el centos actual:
+    chroot /mnt/sysimage
+# 3 - conectar a internet: 
+    nmtui
+# 4 - reinstalar grub2-efi: 
+    yum reinstall grub2-efi
+# 5 - clear arrange:
+    grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg
+
+# si no llega a funcionar hay que borrar la particion de 100 mb de windows
+# y reinstalar el windows, y en las opciones de boot de thinkpad, poner centos primero

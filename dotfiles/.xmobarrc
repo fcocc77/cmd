@@ -10,7 +10,7 @@
 --
 --
 Config {
-    font = "xft:Cousine for Powerline:size=9"
+    font = "xft:Cousine for Powerline:size=8"
     , additionalFonts =
         [
             "xft:Mononoki Nerd Font:pixelsize=14:antialias=true:hinting=true"
@@ -18,7 +18,7 @@ Config {
         ]
     , bgColor = "#1F2229"
     , fgColor = "#abb2bf"
-    , position = TopSize L 100 35
+    , position = TopSize L 100 33
     , lowerOnStart = True
     , hideOnStart = False
     , allDesktops = True
