@@ -6,6 +6,7 @@ packages=(
 	make
 	patch
 	gcc
+    gcc-c++
 	perl
 	xorg-x11-server-devel
 	mtdev-devel
