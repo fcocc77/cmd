@@ -18,6 +18,7 @@ packages=(
     alsa-plugins-pulseaudio # driver de audio
 	xfce4-appfinder # buscador de aplicaciones
 	gparted # administrador de discos
+    the_silver_searcher # buscador ag para fzf vim
 
     # Reproductores de Video:
     mpv
