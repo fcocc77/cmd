@@ -5,12 +5,10 @@
 
 # 2 - montar el centos actual:
     chroot /mnt/sysimage
-# 3 - conectar a internet: 
-    nmtui
-# 4 - reinstalar grub2-efi: 
-    yum reinstall grub2-efi
-# 5 - clear arrange:
-    grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg
 
-# si no llega a funcionar hay que borrar la particion de 100 mb de windows
-# y reinstalar el windows, y en las opciones de boot de thinkpad, poner centos primero
+# 3 - reinstallar grub2 en la particion
+    grub2-install /dev/nvme0n1
+
+# 4 - regenerar configuracion
+    grub2-mkconfig -o /boot/grub2/grub.cfg
+    grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg
