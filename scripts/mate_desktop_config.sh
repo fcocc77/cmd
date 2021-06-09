@@ -31,6 +31,6 @@ add_custom_key() {
     dconf write /org/mate/desktop/keybindings/custom$1/action \'"$4"\'
 }
 
-add_custom_key 0 'app_finder' '<Mod4>o' "sh $path/appfinder.sh"
+add_custom_key 0 'app_finder' '<Mod4>o' "sh $path/appfinder.sh mate"
 add_custom_key 1 'gnome_terminal' '<Shift><Mod4>Return' 'gnome-terminal'
 add_custom_key 2 'chrome' '<Mod4>g' 'google-chrome-stable'
