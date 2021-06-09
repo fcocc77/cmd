@@ -1,7 +1,7 @@
 import os
 import re
 import subprocess
-   
+
 def window_is_fullscreen(window: str) ->bool:
     result = subprocess.run(['xprop', '-name', window, '_NET_WM_STATE'], stdout=subprocess.PIPE)
     result = str(result.stdout)
@@ -71,16 +71,4 @@ def get_windows(workspace: int) -> list:
     return windows
 
 
-
-
-ws, width, height = get_current_workspace();
-windows = get_windows(ws)
-
-window_width: int = int(width / len(windows))
-
-pos_x: int = 0
-for window in windows:
-
-    move_window(window, pos_x, 0, window_width, 500)
-    pos_x += window_width
 

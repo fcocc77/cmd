@@ -7,3 +7,4 @@
 centos/xf86-input-mtrack/
 session.vim
 .undodir
+__pycache__
