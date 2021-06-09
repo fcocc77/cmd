@@ -13,3 +13,7 @@ git fetch origin dev:dev
 
 # actualiza los submodulos
 git submodule update --init --recursive
+
+# añadir nuevo submodulo
+git submodule add <remote_url> <destination_folder>
+

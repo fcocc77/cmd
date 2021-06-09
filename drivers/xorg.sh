@@ -4,8 +4,8 @@ xorg_drv=(
 	glx-utils
 	xorg-x11-xinit # para inicializar session
 	xorg-x11-drv-libinput
-	xorg-x11-drv-mouse
-	xorg-x11-drv-keyboard
+	# xorg-x11-drv-mouse
+	# xorg-x11-drv-keyboard
 	xorg-x11-drv-wacom
 	xorg-x11-drv-intel
 	xorg-x11-drv-synaptics

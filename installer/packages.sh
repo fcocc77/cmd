@@ -11,7 +11,7 @@ packages=(
     ntfs-3g
     ntfsprogs
     rclone
-    unar
+    unrar
     htop       # monitor de actividad
     bind-utils # para usar 'nslookup' ( resuelve dns a ips )
     youtube-dl # descarga de youtube

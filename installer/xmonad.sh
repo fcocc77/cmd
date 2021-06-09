@@ -11,12 +11,9 @@ depencences=(
 	libXpm-devel 
 	libXft-devel
 	xdotool 
-	dmenu
-	alsa-lib-devel 
+	alsa-lib-devel
 	xbacklight # Para manejar el brillo de la pantalla
-	brightnessctl # Para manejar el brillo del teclado
-	arc-theme # Tema gtk-3
-	flattr-icons # Tema de iconos
+	# brightnessctl # Para manejar el brillo del teclado
 )
 
 sudo yum -y install ${depencences[@]}
@@ -37,9 +34,6 @@ cabal install -fwith_xft xmobar
 # de conflicto al instalar xmonad-extras.
 cabal new-install c2hs
 cabal install xmonad-extras
-
-
-echo "exec ~/.cabal/bin/xmonad" > ~/.xinitrc # Inicio de xmonad por defecto
 
 # feh es necesario para agregar wallpapers
 sudo yum -y --nogpg install https://mirror.ghettoforge.org/distributions/gf/gf-release-latest.gf.el7.noarch.rpm
