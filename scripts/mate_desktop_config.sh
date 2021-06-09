@@ -7,6 +7,9 @@ gsettings set org.mate.interface enable-animations false
 # desabilita el movimiento de ventanas con el modificador <Alt>
 gsettings set org.mate.Marco.general mouse-button-modifier ''
 
+# centra la ventana al inicio
+gsettings set org.mate.Marco.general center-new-windows true
+
 
 # shortcuts
 gsettings set org.mate.Marco.global-keybindings switch-to-workspace-left '<Control><Mod4>J'
