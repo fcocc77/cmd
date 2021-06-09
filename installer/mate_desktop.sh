@@ -5,7 +5,7 @@ packages=(
     NetworkManager-bluetooth
     NetworkManager-libreswan-gnome
     NetworkManager-openvpn-gnome 
-    NetworkManager-ovs 
+    NetworkManager-ovs
     NetworkManager-ppp 
     NetworkManager-team 
     NetworkManager-wifi 
@@ -70,7 +70,7 @@ packages=(
     mate-system-log 
     mate-system-monitor 
     mate-terminal 
-    mate-themes 
+    mate-themes
     mate-user-admin 
     mate-user-guide 
     mozo network-manager-applet 
