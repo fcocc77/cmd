@@ -25,6 +25,8 @@ gsettings set org.mate.Marco.window-keybindings move-to-workspace-2 '<Shift><Mod
 gsettings set org.mate.Marco.window-keybindings move-to-workspace-3 '<Shift><Mod4>3'
 gsettings set org.mate.Marco.window-keybindings move-to-workspace-4 '<Shift><Mod4>4'
 
+gsettings set org.mate.Marco.global-keybindings cycle-windows '<Mod4>j'
+
 gsettings set org.mate.Marco.window-keybindings close '<Shift><Mod4>c'
 gsettings set org.mate.Marco.window-keybindings maximize '<Shift><Mod4>f'
 
@@ -39,3 +41,4 @@ add_custom_key 1 'gnome_terminal' '<Shift><Mod4>Return' 'gnome-terminal'
 add_custom_key 2 'chrome' '<Mod4>g' 'google-chrome-stable'
 add_custom_key 3 'calc' '<Mod4>c' 'mate-calc'
 add_custom_key 4 'logout' '<Shift><Mod4>q' 'mate-session-save --logout'
+add_custom_key 5 'tiling' '<Mod4>space' "python3 $path/tiling.py"
