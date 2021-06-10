@@ -4,7 +4,8 @@
 
 cd /tmp
 
-sudo yum -y install zsh
+sudo dnf install util-linux-user # chsh
+sudo dnf -y install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 # fuentes necesarias

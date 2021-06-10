@@ -16,14 +16,10 @@ packages=(
 
 	python3-devel
 	python36
-	python36-pip
 )
-sudo yum -y groupinstall "Development Tools"
-sudo yum -y install ${packages[@]}
 
-# autocompletado de python para vim coc
-sudo pip3 install jedi
-
+sudo dnf -y groupinstall "Development Tools"
+sudo dnf -y install ${packages[@]}
 
 # con esto funciona el qDebug para QT5
 sudo mkdir /etc/xdg/QtProject

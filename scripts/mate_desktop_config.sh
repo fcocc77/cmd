@@ -37,8 +37,9 @@ add_custom_key() {
 }
 
 add_custom_key 0 'app_finder' '<Mod4>o' "sh $path/appfinder.sh mate"
-add_custom_key 1 'gnome_terminal' '<Shift><Mod4>Return' 'gnome-terminal'
+add_custom_key 1 'gnome_terminal' '<Shift><Mod4>Return' 'mate-terminal'
 add_custom_key 2 'chrome' '<Mod4>g' 'google-chrome-stable'
 add_custom_key 3 'calc' '<Mod4>c' 'mate-calc'
 add_custom_key 4 'logout' '<Shift><Mod4>q' 'mate-session-save --logout'
 add_custom_key 5 'tiling' '<Mod4>space' "python3 $path/../python_scripts/tiling.py"
+add_custom_key 6 'pluma' '<Mod4>e' 'pluma'

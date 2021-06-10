@@ -6,7 +6,7 @@ packages=(
     tree
     net-tools
     wget
-    ffmpeg
+    # ffmpeg
 	pciutils # lspci
     ntfs-3g
     ntfsprogs
@@ -21,8 +21,8 @@ packages=(
     the_silver_searcher # buscador ag para fzf vim
 
     # Reproductores de Video:
-    mpv
-    vlc
+    # mpv
+    # vlc
 )
 
-sudo yum -y install ${packages[@]}
+sudo dnf -y install ${packages[@]}
