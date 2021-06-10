@@ -29,7 +29,6 @@ gsettings set org.mate.Marco.global-keybindings cycle-windows '<Mod4>j'
 gsettings set org.mate.Marco.window-keybindings toggle-maximized '<Mod4>f'
 
 gsettings set org.mate.Marco.window-keybindings close '<Shift><Mod4>c'
-gsettings set org.mate.Marco.window-keybindings maximize '<Shift><Mod4>f'
 
 add_custom_key() {
     dconf write /org/mate/desktop/keybindings/custom$1/name \'$2\'
