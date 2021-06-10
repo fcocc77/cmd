@@ -1,5 +1,4 @@
 # este archivo se tiene que ejecutar en cada usuario
-
 # source code: https://github.com/ohmyzsh/ohmyzsh
 
 cd /tmp

@@ -1,4 +1,4 @@
-yum -y install VirtualBox-6.1
+dnf -y install VirtualBox-6.1
 
 # configura el virtualbox en el actual kernel
 /sbin/vboxconfig

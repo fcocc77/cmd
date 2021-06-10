@@ -17,3 +17,6 @@ git submodule update --init --recursive
 # añadir nuevo submodulo
 git submodule add <remote_url> <destination_folder>
 
+
+git config --global user.email <email>
+git config --global user.name <name>

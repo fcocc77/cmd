@@ -1,5 +1,5 @@
 # isntala snap, snap es para ejecutar programas de otras distribuciones de linux
-sudo yum -y install snapd
+sudo dnf -y install snapd
 
 # habilita del servicio de snapd
 sudo systemctl enable --now snapd.socket
@@ -10,7 +10,7 @@ sudo ln -s /var/lib/snapd/snap /snap
 
 sudo snap install whatsdesk
 sudo snap install spotify
-sudo snap install blender --channel=2.83lts/stable --classic
+sudo snap install blender --classic
 sudo snap install ccls --classic # Servidor de Lenguaje c++
 
 # para ver versiones disponible:

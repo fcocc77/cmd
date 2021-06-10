@@ -26,6 +26,7 @@ gsettings set org.mate.Marco.window-keybindings move-to-workspace-3 '<Shift><Mod
 gsettings set org.mate.Marco.window-keybindings move-to-workspace-4 '<Shift><Mod4>4'
 
 gsettings set org.mate.Marco.global-keybindings cycle-windows '<Mod4>j'
+gsettings set org.mate.Marco.window-keybindings toggle-maximized '<Mod4>f'
 
 gsettings set org.mate.Marco.window-keybindings close '<Shift><Mod4>c'
 gsettings set org.mate.Marco.window-keybindings maximize '<Shift><Mod4>f'

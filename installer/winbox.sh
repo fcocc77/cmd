@@ -1,4 +1,4 @@
-yum -y install wine
+dnf -y install wine
 
 install_dir="/usr/bin"
 

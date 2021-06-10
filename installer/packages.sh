@@ -1,12 +1,10 @@
 packages=(
-    # Google Chrome
     google-chrome-stable
-
-    # otros
     tree
     net-tools
     wget
-    # ffmpeg
+    wmctrl
+    xdotool
 	pciutils # lspci
     ntfs-3g
     ntfsprogs
@@ -20,9 +18,9 @@ packages=(
 	gparted # administrador de discos
     the_silver_searcher # buscador ag para fzf vim
 
-    # Reproductores de Video:
-    # mpv
-    # vlc
+    ffmpeg
+    mpv
+    vlc
 )
 
 sudo dnf -y install ${packages[@]}
