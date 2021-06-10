@@ -28,6 +28,7 @@ gsettings set org.mate.Marco.window-keybindings move-to-workspace-4 '<Shift><Mod
 gsettings set org.mate.Marco.global-keybindings cycle-windows '<Mod4>j'
 gsettings set org.mate.Marco.window-keybindings toggle-maximized '<Mod4>f'
 
+gsettings set org.mate.Marco.window-keybindings minimize '<Mod4>h' # hide
 gsettings set org.mate.Marco.window-keybindings close '<Shift><Mod4>c'
 
 add_custom_key() {
