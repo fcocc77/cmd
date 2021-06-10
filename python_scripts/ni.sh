@@ -35,7 +35,7 @@ sudo iptables -A OUTPUT -o lo -m owner --gid-owner no-internet -j ACCEPT
 sudo iptables -A OUTPUT -p tcp -d "192.168.10.10" --dport 771 -j ACCEPT
 # -------------------------------
 
-# bloque el acceso a internet el el grupo no-internet
+# bloquea el acceso a internet en el grupo no-internet
 sudo iptables -A OUTPUT -m owner --gid-owner no-internet -j DROP
 # ------------------------
 
