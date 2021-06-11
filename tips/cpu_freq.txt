@@ -15,3 +15,6 @@ sudo dnf install -y throttled
 
 sudo systemctl enable --now throttled
 
+# herramienta para monitorear el cpu
+pip3 install s-tui --user
+python3 -m s_tui.s_tui
