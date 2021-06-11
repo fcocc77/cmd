@@ -1,0 +1,17 @@
+# informacion de frecuencia cpu
+cpupower frequency-info
+
+
+# para que funcione bien el 'cpupower' hay que desabilitar el 'intel_pstate' en el kernel
+# /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT="... intel_pstate=disable"
+sudo grub2-mkconfig -o /boot/efi/EFI/almalinux/grub.cfg
+
+
+# esta es una herramienta para desabilitar el termal throttling,
+# solo funciona con el intel_pstate activado en el kernel
+sudo dnf copr enable abn/throttled
+sudo dnf install -y throttled
+
+sudo systemctl enable --now throttled
+
