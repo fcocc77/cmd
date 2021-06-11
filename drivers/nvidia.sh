@@ -1,5 +1,5 @@
-# nvidia driver funciona bien con kernel 3.10.0-1160
 
+# BumbleBee
 # 1 - Hay que cambiar en el /etc/bumblebee/bumblebee.conf "Driver=nvidia"
 # 2 - el Display del bumblebee.conf "VirtualDisplay=:8" no puede tener el mismo numero que la
 # pantalla principal (echo $DISPLAY) si no da un error
@@ -8,18 +8,16 @@
 # con esto se puede ver el debug:
 #     "optirun -vv glxgears -info"
 
-sudo yum -y install https://www.elrepo.org/elrepo-release-7.el7.elrepo.noarch.rpm
-sudo yum install centos-release-scl
+# copiar xorg nvidia bumblebee
+sudo cp ../xorg/nvidia_bumblebee.conf /etc/bumblebee/xorg.conf.nvidia
+
+# NVIDIA Driver
+# nvidia driver funciona bien con kernel 5.4lt de elrepo
+# 1 - desabilitar nouveau del kernel: rd.driver.blacklist=nouveau nouveau.modeset=0
+# 2 - instalar kernel headers: sudo yum --enablerepo=elrepo-kernel install kernel-lt-headers
+# 3 - visualizar con nvidia-smi
 
 wget https://es.download.nvidia.com/XFree86/Linux-x86_64/460.73.01/NVIDIA-Linux-x86_64-460.73.01.run -P ~/Downloads
-# visualizar con nvidia-smi
-
-packages=(
-    devtoolset-9
-    bumblebee
-    primus
-)
-sudo yum -y install ${packages[@]}
 
 
 # desabilitar selinux; sestatus para ver estado
@@ -32,5 +30,3 @@ Exec=optirun nvidia-settings -c :8.0
 Icon=nvidia-settings
 Type=Application" | sudo tee "/usr/share/applications/nvidia-settings.desktop"
 
-# copiar xorg nvidia
-sudo cp ../xorg/nvidia_bumblebee.conf /etc/bumblebee/xorg.conf.nvidia
