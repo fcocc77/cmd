@@ -10,10 +10,13 @@ sudo grub2-mkconfig -o /boot/efi/EFI/almalinux/grub.cfg
 
 
 # esta es una herramienta para desabilitar el termal throttling,
-# solo funciona con el intel_pstate activado en el kernel
 # !precaucion al usar esto por que la cpu llega a 95 grados
 sudo dnf copr enable abn/throttled
 sudo dnf install -y throttled
+
+# ya que el intel_pstate lo desactivamos el servicio de 'throttled' lanza un error
+# para corregirlo hay que comentar la linea: set_hwp(config.getboolean('ac', 'hwp_mode', fallback=false))
+# del archivo '/usr/bin/throttled' que es un archivo python
 
 sudo systemctl enable --now throttled
 
