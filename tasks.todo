@@ -1,5 +1,6 @@
 mate:
     ☐ crear shortcut para cambiar de foco en las distintas ventanas visibles con Mod4+J y K
+    ☐ crear herramientas para movernos por los workspace sin que salga el panel de workspace, con 'xdotool set_desktop 3'
 
 general:
 	☐ La tarjena nvidia no funciona despues de suspender el pc
