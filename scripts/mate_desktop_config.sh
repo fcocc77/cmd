@@ -12,9 +12,6 @@ gsettings set org.mate.Marco.general center-new-windows true
 
 
 # shortcuts
-gsettings set org.mate.Marco.global-keybindings switch-to-workspace-left '<Control><Mod4>J'
-gsettings set org.mate.Marco.global-keybindings switch-to-workspace-right '<Control><Mod4>K'
-
 gsettings set org.mate.Marco.global-keybindings switch-to-workspace-1 '<Mod4>1'
 gsettings set org.mate.Marco.global-keybindings switch-to-workspace-2 '<Mod4>2'
 gsettings set org.mate.Marco.global-keybindings switch-to-workspace-3 '<Mod4>3'
@@ -44,3 +41,6 @@ add_custom_key 3 'calc' '<Mod4>c' 'mate-calc'
 add_custom_key 4 'logout' '<Shift><Mod4>q' 'mate-session-save --logout'
 add_custom_key 5 'tiling' '<Mod4>space' "python3 $path/../python_scripts/tiling.py"
 add_custom_key 6 'pluma' '<Mod4>e' 'pluma'
+
+add_custom_key 7 'move_left' '<Control><Mod4>j' "python3 $path/../python_scripts/desktop_actions.py workspace_move_left"
+add_custom_key 8 'move_right' '<Control><Mod4>k' "python3 $path/../python_scripts/desktop_actions.py workspace_move_right"

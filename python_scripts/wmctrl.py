@@ -45,6 +45,16 @@ def get_current_workspace():
 
     return (index, width, height)
 
+def workspace_move_left():
+
+    current: int = get_current_workspace()[0]
+    os.system('xdotool set_desktop ' + str(current - 1))
+
+def workspace_move_right():
+
+    current: int = get_current_workspace()[0]
+    os.system('xdotool set_desktop ' + str(current + 1))
+
 
 def get_windows(workspace: int) -> list:
     result = subprocess.run(['wmctrl', '-lx'], stdout=subprocess.PIPE)
