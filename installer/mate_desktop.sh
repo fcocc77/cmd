@@ -62,7 +62,7 @@ packages=(
     mate-panel 
     mate-polkit 
     mate-power-manager 
-    mate-screensaver 
+    mate-screensaver
     mate-screenshot 
     mate-search-tool 
     mate-session-manager 
@@ -84,6 +84,9 @@ packages=(
     brisk-menu
 )
 
-sudo yum -y install ${packages[@]}
+sudo dnf -y install ${packages[@]}
 
+# Zafiro-icons
+icon_folder='/usr/share/icons/Zafiro-icons'
+sudo git clone https://github.com/zayronxio/Zafiro-icons.git $icon_folder
 
