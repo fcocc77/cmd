@@ -145,7 +145,7 @@ position=21
 
 [Object applet-22]
 object-type=applet
-applet-iid=WnckletFactory::ShowDesktopApplet
+applet-iid=BriskMenuFactory::BriskMenu
 toplevel-id=bottom
 panel-right-stick=false
 position=22
@@ -156,4 +156,11 @@ applet-iid=WnckletFactory::WindowListApplet
 toplevel-id=bottom
 panel-right-stick=false
 position=23
+
+[Object applet-24]
+object-type=applet
+applet-iid=WnckletFactory::ShowDesktopApplet
+toplevel-id=bottom
+panel-right-stick=true
+position=24
 

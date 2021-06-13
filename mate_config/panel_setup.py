@@ -151,8 +151,9 @@ add_applet('CPUFreqAppletFactory::CPUFreqApplet', 'top', True)
 add_applet('WnckletFactory::WorkspaceSwitcherApplet', 'top', True)
 add_applet('ClockAppletFactory::ClockApplet', 'top', True)
 
-add_applet('WnckletFactory::ShowDesktopApplet', 'bottom')
+add_applet('BriskMenuFactory::BriskMenu', 'bottom')
 add_applet('WnckletFactory::WindowListApplet', 'bottom')
+add_applet('WnckletFactory::ShowDesktopApplet', 'bottom', True)
 
 f = open('mate_config/panels.layout', "w")
 f.write(layout)
