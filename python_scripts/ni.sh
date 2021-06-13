@@ -48,6 +48,6 @@ sudo usermod -aG no-internet $user
 sg no-internet "$1"
 # ---------------------------
 
-# asi se ejecuta el nuke con ni.sh y optirun
-    # sh /home/pancho/Documents/GitHub/scripts/ni.sh 'optirun "/usr/local/Nuke9.0v9/Nuke9.0" --nukex'
+# asi se ejecuta el nuke con ni.sh y nvidia-prime
+    # sh /home/pancho/Documents/GitHub/scripts/ni.sh 'prime "/usr/local/Nuke9.0v9/Nuke9.0" --nukex'
 # ----------------------------
