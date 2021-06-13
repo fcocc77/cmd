@@ -40,6 +40,8 @@ gsettings set org.mate.Marco.window-keybindings toggle-maximized '<Mod4>f'
 gsettings set org.mate.Marco.window-keybindings minimize '<Mod4>h' # hide
 gsettings set org.mate.Marco.window-keybindings close '<Shift><Mod4>c'
 
+gsettings set com.solus-project.brisk-menu hot-key '<Mod4>o'
+
 add_custom_key() {
     dconf write /org/mate/desktop/keybindings/custom$1/name \'$2\'
     dconf write /org/mate/desktop/keybindings/custom$1/binding \'$3\'
