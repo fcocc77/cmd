@@ -14,11 +14,16 @@ toplevel-id=top
 position=0
 locked=true
 
+[Object separator-1]
+object-type=separator
+toplevel-id=top
+position=10
+
 [Object file-browser]
 object-type=launcher
 launcher-location=/usr/share/applications/caja-browser.desktop
 toplevel-id=top
-position=10
+position=20
 locked=true
 
 [Object terminal]
@@ -32,22 +37,48 @@ locked=true
 object-type=launcher
 launcher-location=/usr/share/applications/firefox.desktop
 toplevel-id=top
-position=130
+position=40
 locked=true
 
-[Object volume-control]
-object-type=applet
-applet-iid=GvcAppletFactory::GvcApplet
+[Object chrome]
+object-type=launcher
+launcher-location=/usr/share/applications/google-chrome.desktop
 toplevel-id=top
-position=20
-panel-right-stick=true
+position=50
 locked=true
 
 [Object notification-area]
 object-type=applet
 applet-iid=NotificationAreaAppletFactory::NotificationArea
 toplevel-id=top
+position=0
+panel-right-stick=true
+locked=true
+
+[Object volume-control]
+object-type=applet
+applet-iid=GvcAppletFactory::GvcApplet
+toplevel-id=top
 position=10
+panel-right-stick=true
+locked=true
+
+[Object system-monitor]
+object-type=applet
+applet-iid= MultiLoadAppletFactory::MultiLoadApplet
+toplevel-id=top
+position=20
+panel-right-stick=true
+locked=true
+
+[Object system-monitor/prefs]
+view-memload=true
+
+[Object workspace-switcher]
+object-type=applet
+applet-iid=WnckletFactory::WorkspaceSwitcherApplet
+toplevel-id=top
+position=30
 panel-right-stick=true
 locked=true
 
@@ -55,9 +86,9 @@ locked=true
 object-type=applet
 applet-iid=ClockAppletFactory::ClockApplet
 toplevel-id=top
-position=0
+position=40
 panel-right-stick=true
-locked=true
+locked=false
 
 [Object show-desktop]
 object-type=applet
@@ -73,10 +104,3 @@ toplevel-id=bottom
 position=20
 locked=true
 
-[Object workspace-switcher]
-object-type=applet
-applet-iid=WnckletFactory::WorkspaceSwitcherApplet
-toplevel-id=bottom
-position=0
-panel-right-stick=true
-locked=true

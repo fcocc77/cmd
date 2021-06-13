@@ -27,7 +27,7 @@ gsettings set org.mate.Marco.window-keybindings move-to-workspace-2 '<Shift><Mod
 gsettings set org.mate.Marco.window-keybindings move-to-workspace-3 '<Shift><Mod4>3'
 gsettings set org.mate.Marco.window-keybindings move-to-workspace-4 '<Shift><Mod4>4'
 
-gsettings set org.mate.Marco.window-keybindings move-to-side-e '<Mod4><Alt>l' # rihgt
+gsettings set org.mate.Marco.window-keybindings move-to-side-e '<Mod4><Alt>l' # right
 gsettings set org.mate.Marco.window-keybindings move-to-side-s '<Mod4><Alt>j' # down
 gsettings set org.mate.Marco.window-keybindings move-to-side-w '<Mod4><Alt>h' # left
 gsettings set org.mate.Marco.window-keybindings move-to-side-n '<Mod4><Alt>k' # up
