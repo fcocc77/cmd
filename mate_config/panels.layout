@@ -71,125 +71,107 @@ launcher-location=/usr/share/applications/gparted.desktop
 toplevel-id=top
 position=10
 
-[Object separator-11]
-object-type=separator
-toplevel-id=top
-panel-right-stick=false
-position=11
-
-[Object separator-12]
-object-type=separator
-toplevel-id=top
-panel-right-stick=false
-position=12
-
-[Object inkscape]
-object-type=launcher
-launcher-location=/usr/share/applications/inkscape.desktop
-toplevel-id=top
-position=13
-
-[Object com-blackmagicdesign-resolve]
-object-type=launcher
-launcher-location=/usr/share/applications/com.blackmagicdesign.resolve.desktop
-toplevel-id=top
-position=14
-
-[Object nukex]
-object-type=launcher
-launcher-location=/usr/share/applications/NukeX.desktop
-toplevel-id=top
-position=15
-
-[Object blender-blender]
-object-type=launcher
-launcher-location=/var/lib/snapd/desktop/applications/blender_blender.desktop
-toplevel-id=top
-position=16
-
-[Object separator-17]
-object-type=separator
-toplevel-id=top
-panel-right-stick=false
-position=17
-
-[Object separator-18]
-object-type=separator
-toplevel-id=top
-panel-right-stick=false
-position=18
-
 [Object spotify-spotify]
 object-type=launcher
 launcher-location=/var/lib/snapd/desktop/applications/spotify_spotify.desktop
 toplevel-id=top
-position=19
+position=11
 
 [Object whatsdesk-whatsdesk]
 object-type=launcher
 launcher-location=/var/lib/snapd/desktop/applications/whatsdesk_whatsdesk.desktop
 toplevel-id=top
+position=12
+
+[Object separator-13]
+object-type=separator
+toplevel-id=top
+panel-right-stick=false
+position=13
+
+[Object separator-14]
+object-type=separator
+toplevel-id=top
+panel-right-stick=false
+position=14
+
+[Object inkscape]
+object-type=launcher
+launcher-location=/usr/share/applications/inkscape.desktop
+toplevel-id=top
+position=15
+
+[Object com-blackmagicdesign-resolve]
+object-type=launcher
+launcher-location=/usr/share/applications/com.blackmagicdesign.resolve.desktop
+toplevel-id=top
+position=16
+
+[Object nukex]
+object-type=launcher
+launcher-location=/usr/share/applications/NukeX.desktop
+toplevel-id=top
+position=17
+
+[Object blender-blender]
+object-type=launcher
+launcher-location=/var/lib/snapd/desktop/applications/blender_blender.desktop
+toplevel-id=top
+position=18
+
+[Object applet-19]
+object-type=applet
+applet-iid=NotificationAreaAppletFactory::NotificationArea
+toplevel-id=top
+panel-right-stick=true
+position=19
+
+[Object applet-20]
+object-type=applet
+applet-iid=GvcAppletFactory::GvcApplet
+toplevel-id=top
+panel-right-stick=true
 position=20
 
 [Object applet-21]
 object-type=applet
-applet-iid=NotificationAreaAppletFactory::NotificationArea
+applet-iid=MultiLoadAppletFactory::MultiLoadApplet
 toplevel-id=top
 panel-right-stick=true
 position=21
 
 [Object applet-22]
 object-type=applet
-applet-iid=GvcAppletFactory::GvcApplet
+applet-iid=CPUFreqAppletFactory::CPUFreqApplet
 toplevel-id=top
 panel-right-stick=true
 position=22
 
 [Object applet-23]
 object-type=applet
-applet-iid=MultiLoadAppletFactory::MultiLoadApplet
+applet-iid=WnckletFactory::WorkspaceSwitcherApplet
 toplevel-id=top
 panel-right-stick=true
 position=23
 
 [Object applet-24]
 object-type=applet
-applet-iid=CPUFreqAppletFactory::CPUFreqApplet
+applet-iid=ClockAppletFactory::ClockApplet
 toplevel-id=top
 panel-right-stick=true
 position=24
 
-[Object separator-25]
-object-type=separator
-toplevel-id=top
+[Object applet-25]
+object-type=applet
+applet-iid=WnckletFactory::ShowDesktopApplet
+toplevel-id=bottom
 panel-right-stick=false
 position=25
 
 [Object applet-26]
 object-type=applet
-applet-iid=WnckletFactory::WorkspaceSwitcherApplet
-toplevel-id=top
-panel-right-stick=true
-position=26
-
-[Object applet-27]
-object-type=applet
-applet-iid=ClockAppletFactory::ClockApplet
-toplevel-id=top
-panel-right-stick=true
-position=27
-
-[Object applet-28]
-object-type=applet
-applet-iid=WnckletFactory::ShowDesktopApplet
-toplevel-id=bottom
-panel-right-stick=false
-position=28
-
-[Object applet-29]
-object-type=applet
 applet-iid=WnckletFactory::WindowListApplet
 toplevel-id=bottom
 panel-right-stick=false
-position=29
+position=26
 
