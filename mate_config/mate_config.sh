@@ -11,7 +11,8 @@ gsettings set org.mate.Marco.general mouse-button-modifier ''
 gsettings set org.mate.Marco.general center-new-windows true
 
 # layout de panel
-sudo cp $path/panels.layout /usr/share/mate-panel/layouts
+python3 $path/panel_setup.py
+sudo cp $path/panels.layout /usr/share/mate-panel/layouts/panels.layout
 gsettings set org.mate.panel default-layout 'panels'
 mate-panel --replace --reset
 
