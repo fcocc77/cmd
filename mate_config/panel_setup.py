@@ -100,8 +100,7 @@ def add_applet(applet_id: str, panel_id: str, right_stick: bool = False):
     position += 1
 
 
-def add_panel(panel_id: str, orientation: str):
-    size: int = 24
+def add_panel(panel_id: str, orientation: str, size: int = 24):
 
     values = {
         'size': size,
@@ -117,12 +116,11 @@ def add_panel(panel_id: str, orientation: str):
     layout += panel
 
 
-add_panel('top', 'top')
+add_panel('top', 'top', 27)
 add_panel('bottom', 'bottom')
 
 add_menu_bar('top')
 
-add_separator('top')
 add_separator('top')
 
 add_launcher('caja-browser', 'top')
@@ -132,13 +130,11 @@ add_launcher('pluma', 'top')
 add_launcher('mate-calc', 'top')
 
 add_separator('top')
-add_separator('top')
 
 add_launcher('gparted', 'top')
 add_launcher('spotify_spotify', 'top')
 add_launcher('whatsdesk_whatsdesk', 'top')
 
-add_separator('top')
 add_separator('top')
 
 add_launcher('inkscape', 'top')
