@@ -154,29 +154,42 @@ position=23
 
 [Object applet-24]
 object-type=applet
-applet-iid=WnckletFactory::WorkspaceSwitcherApplet
+applet-iid=CPUFreqAppletFactory::CPUFreqApplet
 toplevel-id=top
 panel-right-stick=true
 position=24
 
-[Object applet-25]
-object-type=applet
-applet-iid=ClockAppletFactory::ClockApplet
+[Object separator-25]
+object-type=separator
 toplevel-id=top
-panel-right-stick=true
+panel-right-stick=false
 position=25
 
 [Object applet-26]
 object-type=applet
-applet-iid=WnckletFactory::ShowDesktopApplet
-toplevel-id=bottom
-panel-right-stick=false
+applet-iid=WnckletFactory::WorkspaceSwitcherApplet
+toplevel-id=top
+panel-right-stick=true
 position=26
 
 [Object applet-27]
 object-type=applet
+applet-iid=ClockAppletFactory::ClockApplet
+toplevel-id=top
+panel-right-stick=true
+position=27
+
+[Object applet-28]
+object-type=applet
+applet-iid=WnckletFactory::ShowDesktopApplet
+toplevel-id=bottom
+panel-right-stick=false
+position=28
+
+[Object applet-29]
+object-type=applet
 applet-iid=WnckletFactory::WindowListApplet
 toplevel-id=bottom
 panel-right-stick=false
-position=27
+position=29
 

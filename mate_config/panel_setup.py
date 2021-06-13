@@ -1,5 +1,4 @@
-import os, shutil
-
+import os
 
 layout: str = ''
 position: int = 0
@@ -154,9 +153,12 @@ add_launcher('whatsdesk_whatsdesk', 'top')
 add_applet('NotificationAreaAppletFactory::NotificationArea', 'top', True)
 add_applet('GvcAppletFactory::GvcApplet', 'top', True)
 add_applet('MultiLoadAppletFactory::MultiLoadApplet', 'top', True)
+add_applet('CPUFreqAppletFactory::CPUFreqApplet', 'top', True)
+
+add_separator('top')
+
 add_applet('WnckletFactory::WorkspaceSwitcherApplet', 'top', True)
 add_applet('ClockAppletFactory::ClockApplet', 'top', True)
-
 
 add_applet('WnckletFactory::ShowDesktopApplet', 'bottom')
 add_applet('WnckletFactory::WindowListApplet', 'bottom')
