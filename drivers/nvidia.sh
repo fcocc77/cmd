@@ -3,15 +3,16 @@
 # 1 - desabilitar nouveau del kernel: rd.driver.blacklist=nouveau nouveau.modeset=0
 # 2 - instalar kernel headers: sudo yum --enablerepo=elrepo-kernel install kernel-lt-headers
 
-wget https://es.download.nvidia.com/XFree86/Linux-x86_64/460.73.01/NVIDIA-Linux-x86_64-460.73.01.run -P ~/Downloads
+wget https://us.download.nvidia.com/XFree86/Linux-x86_64/450.119.03/NVIDIA-Linux-x86_64-450.119.03.run -P ~/Downloads
+# instalar solo esta version de driver ya que esta permite una mayor temperatura a 94 grados
+# antes del estrangulamiento termico, otras versiones solo se podia llegar a
+# 57 grados, antes de instalar otra version que no sea esta, verificar el valor 'GPU Max Operating Temp'
+# en temperatura: nvidia-smi -q -d Temperature
 
 # gpu-usage: nvidia-smi
 # info: nvidia-smi -q
 # rendimiento: nvidia-smi -q -d PERFORMANCE
 # temperatura: nvidia-smi -q -d Temperature
-
-# !temperatura nvidia de thinkpad, tiene un limite de 
-# 57 grados, y luego se estrangula la frecuencia
 
 # desabilitar selinux; sestatus para ver estado
 sudo sed -i "s|SELINUX=enforcing|SELINUX=disabled|g" /etc/selinux/config
