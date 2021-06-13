@@ -1,4 +1,5 @@
-# NVIDIA Driver
+# NVIDIA Driver: Thinkpad P15s
+
 # nvidia driver funciona bien con kernel 5.4lt de elrepo
 # 1 - desabilitar nouveau del kernel: rd.driver.blacklist=nouveau nouveau.modeset=0
 # 2 - instalar kernel headers: sudo yum --enablerepo=elrepo-kernel install kernel-lt-headers
