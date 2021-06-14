@@ -40,7 +40,7 @@ gsettings set org.mate.Marco.window-keybindings toggle-maximized '<Mod4>f'
 gsettings set org.mate.Marco.window-keybindings maximize-vertically '<Mod4>y'
 gsettings set org.mate.Marco.window-keybindings maximize-horizontally '<Mod4>x'
 
-gsettings set org.mate.Marco.window-keybindings minimize '<Mod4>h' # hide
+gsettings set org.mate.Marco.window-keybindings minimize '<Control><Mod4>h' # hide
 gsettings set org.mate.Marco.window-keybindings close '<Shift><Mod4>c'
 
 gsettings set com.solus-project.brisk-menu hot-key '<Mod4>o'
@@ -58,5 +58,5 @@ add_custom_key 4 'logout' '<Shift><Mod4>q' 'mate-session-save --logout'
 add_custom_key 5 'tiling' '<Mod4>space' "python3 $path/../python_scripts/tiling.py"
 add_custom_key 6 'pluma' '<Mod4>e' 'pluma'
 
-add_custom_key 7 'move_left' '<Control><Mod4>j' "python3 $path/../python_scripts/desktop_actions.py workspace_move_left"
-add_custom_key 8 'move_right' '<Control><Mod4>k' "python3 $path/../python_scripts/desktop_actions.py workspace_move_right"
+add_custom_key 7 'move_left' '<Mod4>h' "python3 $path/../python_scripts/desktop_actions.py workspace_move_left"
+add_custom_key 8 'move_right' '<Mod4>l' "python3 $path/../python_scripts/desktop_actions.py workspace_move_right"

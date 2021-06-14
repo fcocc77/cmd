@@ -4,6 +4,7 @@ mate:
     ☐ crear shortcut para ir agregando terminales en la parte top, left, bottom y right y que los terminales que existe que se ajusten (xmonad)
     ✔ crear herramientas para movernos por los workspace sin que salga el panel de workspace, con 'xdotool set_desktop 3' @done(2021-06-11 21:44)
     ☐ reacer herramienta de restaurar ventanas de session en python, con xprop y wmctrl
+    ☐ crear opcion que cuando abra una aplicacion encaje en el espacio disponible, dejarla en el mismo script de session
 
 general:
 	☐ La tarjena nvidia no funciona despues de suspender el pc
