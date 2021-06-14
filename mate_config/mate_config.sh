@@ -37,6 +37,9 @@ gsettings set org.mate.Marco.window-keybindings move-to-center '<Mod4><Alt>semic
 gsettings set org.mate.Marco.global-keybindings cycle-windows '<Mod4>j'
 gsettings set org.mate.Marco.window-keybindings toggle-maximized '<Mod4>f'
 
+gsettings set org.mate.Marco.window-keybindings maximize-vertically '<Mod4>y'
+gsettings set org.mate.Marco.window-keybindings maximize-horizontally '<Mod4>x'
+
 gsettings set org.mate.Marco.window-keybindings minimize '<Mod4>h' # hide
 gsettings set org.mate.Marco.window-keybindings close '<Shift><Mod4>c'
 
