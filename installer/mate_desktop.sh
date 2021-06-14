@@ -1,39 +1,39 @@
 sudo dnf copr enable stenstorp/MATE
 
 packages=(
-    NetworkManager-adsl 
+    NetworkManager-adsl
     NetworkManager-bluetooth
     NetworkManager-libreswan-gnome
-    NetworkManager-openvpn-gnome 
+    NetworkManager-openvpn-gnome
     NetworkManager-ovs
-    NetworkManager-ppp 
-    NetworkManager-team 
-    NetworkManager-wifi 
-    NetworkManager-wwan 
-    abrt-desktop 
-    abrt-java-connector 
-    adwaita-gtk2-theme 
+    NetworkManager-ppp
+    NetworkManager-team
+    NetworkManager-wifi
+    NetworkManager-wwan
+    abrt-desktop
+    abrt-java-connector
+    adwaita-gtk2-theme
     alsa-plugins-pulseaudio
     atril
-    atril-caja 
-    atril-thumbnailer 
-    caja 
-    caja-actions 
-    caja-image-converter 
-    caja-open-terminal 
-    caja-sendto 
-    caja-wallpaper 
-    caja-xattr-tags 
-    dconf-editor 
-    engrampa 
-    eom 
+    atril-caja
+    atril-thumbnailer
+    caja
+    caja-actions
+    caja-image-converter
+    caja-open-terminal
+    caja-sendto
+    caja-wallpaper
+    caja-xattr-tags
+    dconf-editor
+    engrampa
+    eom
     firewall-config 
     gnome-disk-utility 
     gnome-epub-thumbnailer 
     gstreamer1-plugins-ugly-free 
     gtk2-engines 
     gucharmap 
-    gvfs-afc 
+    gvfs-afc
     gvfs-afp 
     gvfs-archive 
     gvfs-fuse 
