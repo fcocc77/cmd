@@ -28,11 +28,11 @@ gsettings set org.mate.Marco.window-keybindings move-to-workspace-2 '<Shift><Mod
 gsettings set org.mate.Marco.window-keybindings move-to-workspace-3 '<Shift><Mod4>3'
 gsettings set org.mate.Marco.window-keybindings move-to-workspace-4 '<Shift><Mod4>4'
 
-gsettings set org.mate.Marco.window-keybindings move-to-side-e '<Mod4><Alt>l' # right
-gsettings set org.mate.Marco.window-keybindings move-to-side-s '<Mod4><Alt>j' # down
-gsettings set org.mate.Marco.window-keybindings move-to-side-w '<Mod4><Alt>h' # left
-gsettings set org.mate.Marco.window-keybindings move-to-side-n '<Mod4><Alt>k' # up
-gsettings set org.mate.Marco.window-keybindings move-to-center '<Mod4><Alt>semicolon' #semicolon es ;
+gsettings set org.mate.Marco.window-keybindings move-to-side-e '<Control><Mod4>l' # right
+gsettings set org.mate.Marco.window-keybindings move-to-side-s '<Control><Mod4>j' # down
+gsettings set org.mate.Marco.window-keybindings move-to-side-w '<Control><Mod4>h' # left
+gsettings set org.mate.Marco.window-keybindings move-to-side-n '<Control><Mod4>k' # up
+gsettings set org.mate.Marco.window-keybindings move-to-center '<Control><Mod4>semicolon' #semicolon es ;
 
 gsettings set org.mate.Marco.global-keybindings cycle-windows '<Mod4>j'
 gsettings set org.mate.Marco.window-keybindings toggle-maximized '<Mod4>f'
@@ -40,7 +40,7 @@ gsettings set org.mate.Marco.window-keybindings toggle-maximized '<Mod4>f'
 gsettings set org.mate.Marco.window-keybindings maximize-vertically '<Mod4>y'
 gsettings set org.mate.Marco.window-keybindings maximize-horizontally '<Mod4>x'
 
-gsettings set org.mate.Marco.window-keybindings minimize '<Control><Mod4>h' # hide
+gsettings set org.mate.Marco.window-keybindings minimize '<Shift><Mod4>h' # hide
 gsettings set org.mate.Marco.window-keybindings close '<Shift><Mod4>c'
 
 gsettings set com.solus-project.brisk-menu hot-key '<Mod4>o'
