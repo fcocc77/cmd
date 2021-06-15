@@ -149,10 +149,11 @@ add_launcher('blender_blender', 'top')
 
 add_applet('NotificationAreaAppletFactory::NotificationArea', 'top', True)
 add_applet('GvcAppletFactory::GvcApplet', 'top', True)
+add_applet('WnckletFactory::WorkspaceSwitcherApplet', 'top', True)
+
 add_applet('MultiLoadAppletFactory::MultiLoadApplet', 'top', True)
 add_applet('CPUFreqAppletFactory::CPUFreqApplet', 'top', True)
 
-add_applet('WnckletFactory::WorkspaceSwitcherApplet', 'top', True)
 add_applet('ClockAppletFactory::ClockApplet', 'top', True)
 
 add_applet('BriskMenuFactory::BriskMenu', 'bottom')
