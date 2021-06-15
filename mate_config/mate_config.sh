@@ -35,7 +35,7 @@ function term_set() {
 }
 
 function term_set_bool() {
-    dconf write /org/mate/terminal/profiles/default/$1 $2 
+    dconf write /org/mate/terminal/profiles/default/$1 $2
 }
 
 term_set 'background-color' '#252a31'
@@ -105,6 +105,14 @@ action 12 'to_bottom_left' '<Alt><Mod4>n' 'to_bottom_left'
 
 action 13 'left_focus' '<Mod4>j' 'left_focus'
 action 14 'right_focus' '<Mod4>k' 'right_focus'
+
+# Touchpad Settings
+gsettings set org.mate.peripherals-touchpad natural-scroll true
+gsettings set org.mate.peripherals-touchpad tap-to-click true
+
+# Power Manager Settings
+gsettings set org.mate.power-manager backlight-battery-reduce false
+
 
 mate-panel --reset
 killall mate-terminal
