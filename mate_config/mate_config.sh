@@ -5,6 +5,7 @@ dconf reset -f /org/mate/
 
 # apariencia
 gsettings set org.mate.interface gtk-theme 'TraditionalOk'
+gsettings set org.mate.Marco.general theme 'TraditionalOk'
 gsettings set org.mate.interface icon-theme 'Zafiro-icons'
 
 # centra la ventana al inicio
@@ -26,9 +27,27 @@ cp ./mate_config/panels_pref.layout /tmp/pref.layout
 sed -i "s|{path}|$path|g" /tmp/pref.layout
 
 dconf load /org/mate/panel/ < /tmp/pref.layout
-pkill -9 mate-panel
 # ......
 
+# Terminal
+function term_set() { 
+    dconf write /org/mate/terminal/profiles/default/$1 \'"$2"\' 
+}
+
+function term_set_bool() {
+    dconf write /org/mate/terminal/profiles/default/$1 $2 
+}
+
+term_set 'background-color' '#252a31'
+term_set 'foreground-color' '#abb2bf'
+term_set 'font' 'Cousine NF 12'
+term_set 'scrollbar-position' 'hidden'
+term_set_bool 'use-system-font' 'false'
+term_set_bool 'default-show-menubar' 'false'
+
+
+# caja
+gsettings set org.mate.caja.preferences default-folder-viewer 'list-view'
 
 # shortcuts
 gsettings set org.mate.Marco.global-keybindings switch-to-workspace-1 '<Mod4>1'
@@ -86,4 +105,8 @@ action 12 'to_bottom_left' '<Alt><Mod4>n' 'to_bottom_left'
 
 action 13 'left_focus' '<Mod4>j' 'left_focus'
 action 14 'right_focus' '<Mod4>k' 'right_focus'
+
+mate-panel --reset
+killall mate-terminal
+killall caja
 
