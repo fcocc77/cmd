@@ -34,7 +34,7 @@ gsettings set org.mate.Marco.window-keybindings move-to-side-w '<Control><Mod4>h
 gsettings set org.mate.Marco.window-keybindings move-to-side-n '<Control><Mod4>k' # up
 gsettings set org.mate.Marco.window-keybindings move-to-center '<Control><Mod4>semicolon' #semicolon es ;
 
-gsettings set org.mate.Marco.global-keybindings cycle-windows '<Mod4>j'
+# gsettings set org.mate.Marco.global-keybindings cycle-windows '<Mod4>j'
 gsettings set org.mate.Marco.window-keybindings toggle-maximized '<Mod4>f'
 
 gsettings set org.mate.Marco.window-keybindings maximize-vertically '<Mod4>y'
@@ -51,6 +51,11 @@ add_custom_key() {
     dconf write /org/mate/desktop/keybindings/custom$1/action \'"$4"\'
 }
 
+function action()
+{
+    add_custom_key $1 $2 $3 "python3 $path/../python_scripts/desktop_actions.py $4"
+}
+
 add_custom_key 1 'gnome_terminal' '<Shift><Mod4>Return' 'mate-terminal'
 add_custom_key 2 'chrome' '<Mod4>g' 'google-chrome-stable'
 add_custom_key 3 'calc' '<Mod4>c' 'mate-calc'
@@ -58,5 +63,14 @@ add_custom_key 4 'logout' '<Shift><Mod4>q' 'mate-session-save --logout'
 add_custom_key 5 'tiling' '<Mod4>space' "python3 $path/../python_scripts/tiling.py"
 add_custom_key 6 'pluma' '<Mod4>e' 'pluma'
 
-add_custom_key 7 'move_left' '<Mod4>h' "python3 $path/../python_scripts/desktop_actions.py workspace_move_left"
-add_custom_key 8 'move_right' '<Mod4>l' "python3 $path/../python_scripts/desktop_actions.py workspace_move_right"
+action 7 'move_left' '<Mod4>h' 'workspace_move_left'
+action 8 'move_right' '<Mod4>l' 'workspace_move_right'
+
+action 9 'to_top_right' '<Alt><Mod4>l' 'to_top_right'
+action 10 'to_top_left' '<Alt><Mod4>h' 'to_top_left'
+action 11 'to_bottom_right' '<Alt><Mod4>k' 'to_bottom_right'
+action 12 'to_bottom_left' '<Alt><Mod4>j' 'to_bottom_left'
+
+action 13 'left_focus' '<Mod4>j' 'left_focus'
+action 14 'right_focus' '<Mod4>k' 'right_focus'
+

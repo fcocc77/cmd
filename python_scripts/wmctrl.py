@@ -2,8 +2,10 @@ import os
 import re
 import subprocess
 
-def window_is_fullscreen(window: str) ->bool:
-    result = subprocess.run(['xprop', '-name', window, '_NET_WM_STATE'], stdout=subprocess.PIPE)
+def window_is_fullscreen(window_id: int) ->bool:
+    result = subprocess.run(['xprop', '-id', str(window_id), '_NET_WM_STATE'], \
+            stdout=subprocess.PIPE)
+
     result = str(result.stdout)
 
     if 'MAXIMIZED' in result:
@@ -11,21 +13,21 @@ def window_is_fullscreen(window: str) ->bool:
 
     return False
 
-def move_window(window: str, pos_x: int, pos_y: int, size_x: int, size_y: int):
+def move_window(window_id: int, x: int, y: int, width: int, height: int):
     values = {
         'gravity': 0,
-        'pos_x': pos_x,
-        'pos_y': pos_y,
-        'size_x': size_x,
-        'size_y': size_y,
-        'window': window
+        'pos_x': x,
+        'pos_y': y,
+        'size_x': width,
+        'size_y': height,
+        'id': hex(window_id)
     }
 
-    if window_is_fullscreen(window):
-        remove_maximized = 'wmctrl -r "{window}" -b remove,maximized_vert,maximized_horz'.format(**values)
+    if window_is_fullscreen(window_id):
+        remove_maximized = 'wmctrl -i -r "{id}" -b remove,maximized_vert,maximized_horz'.format(**values)
         os.system(remove_maximized)
 
-    cmd = 'wmctrl -r "{window}" -e {gravity},{pos_x},{pos_y},{size_x},{size_y}'.format(**values)
+    cmd = 'wmctrl -i -r "{id}" -e {gravity},{pos_x},{pos_y},{size_x},{size_y}'.format(**values)
     os.system(cmd)
 
 def get_current_workspace():
@@ -57,7 +59,7 @@ def workspace_move_right():
 
 
 def get_windows(workspace: int) -> list:
-    result = subprocess.run(['wmctrl', '-lx'], stdout=subprocess.PIPE)
+    result = subprocess.run(['wmctrl', '-l'], stdout=subprocess.PIPE)
 
     windows: list = []
 
@@ -65,20 +67,72 @@ def get_windows(workspace: int) -> list:
         line = line.decode()
         _line = re.split(r'\s+', line)
 
+        window_id = int(_line[0], 16)
         ws: int = int(_line[1])
-        if ws == -1:
-            continue
-
-        name: str = _line[2]
-        host: str = _line[3]
-
-        label: str = line.split(host)[-1].strip()
-
 
         if ws == workspace:
-            windows.append(label)
+            windows.append(window_id)
 
     return windows
+
+def get_window_size(window_id: int):
+
+    output = subprocess.run(
+            ['xwininfo', '-id', str(window_id)], stdout=subprocess.PIPE)
+
+    result = output.stdout.decode()
+
+    width = int(result.split('Width: ')[-1].split('\n')[0])
+    height = int(result.split('Height: ')[-1].split('\n')[0])
+
+    return(width, height)
+
+
+def get_height_panels() -> int:
+    #  obtiene la suma del tamaño en y de todos los panels
+
+    height = 0
+    for panel in get_windows(-1):
+        size = get_window_size(panel)
+
+        if (size[1] < 300):
+            height += size[1]
+
+    return height
+
+
+def get_active_window() -> int:
+    output = subprocess.run(
+            ['xdotool', 'getactivewindow'], stdout=subprocess.PIPE)
+
+    return int(output.stdout.decode())
+
+def move_active_window(x: int, y: int, width: int, height: int):
+    move_window(get_active_window(), x, y, width, height)
+
+    get_height_panels()
+
+def set_focus(window_id: int):
+    os.system('wmctrl -i -a ' + hex(window_id))
+
+
+def cycle_focus(reverse: bool = False):
+    windows = get_windows(get_current_workspace()[0])
+    active_window = get_active_window()
+
+    current_index = windows.index(active_window)
+
+    if reverse:
+        index = current_index - 1
+        if index < 0:
+            index = len(windows) - 1
+    else:
+        index = current_index + 1
+        if index >= len(windows):
+            index = 0
+
+    set_focus(windows[index])
+
 
 
 
