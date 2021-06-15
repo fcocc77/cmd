@@ -117,7 +117,7 @@ toplevel-id=top
 locked=true
 position=15
 
-[Object applet-16]
+[Object notification-area]
 object-type=applet
 applet-iid=NotificationAreaAppletFactory::NotificationArea
 toplevel-id=top
@@ -125,7 +125,7 @@ panel-right-stick=true
 locked=true
 position=16
 
-[Object applet-17]
+[Object gvc-applet]
 object-type=applet
 applet-iid=GvcAppletFactory::GvcApplet
 toplevel-id=top
@@ -133,7 +133,7 @@ panel-right-stick=true
 locked=true
 position=17
 
-[Object applet-18]
+[Object workspace-switcher-applet]
 object-type=applet
 applet-iid=WnckletFactory::WorkspaceSwitcherApplet
 toplevel-id=top
@@ -141,7 +141,7 @@ panel-right-stick=true
 locked=true
 position=18
 
-[Object applet-19]
+[Object multi-load-applet]
 object-type=applet
 applet-iid=MultiLoadAppletFactory::MultiLoadApplet
 toplevel-id=top
@@ -149,7 +149,7 @@ panel-right-stick=true
 locked=true
 position=19
 
-[Object applet-20]
+[Object c-p-u-freq-applet]
 object-type=applet
 applet-iid=CPUFreqAppletFactory::CPUFreqApplet
 toplevel-id=top
@@ -157,35 +157,57 @@ panel-right-stick=true
 locked=true
 position=20
 
-[Object applet-21]
+[Object separator-21]
+object-type=separator
+toplevel-id=top
+locked=true
+panel-right-stick=true
+position=21
+
+[Object command-applet]
+object-type=applet
+applet-iid=CommandAppletFactory::CommandApplet
+toplevel-id=top
+panel-right-stick=true
+locked=true
+position=22
+
+[Object separator-23]
+object-type=separator
+toplevel-id=top
+locked=true
+panel-right-stick=true
+position=23
+
+[Object clock-applet]
 object-type=applet
 applet-iid=ClockAppletFactory::ClockApplet
 toplevel-id=top
 panel-right-stick=true
 locked=true
-position=21
+position=24
 
-[Object applet-22]
+[Object brisk-menu]
 object-type=applet
 applet-iid=BriskMenuFactory::BriskMenu
 toplevel-id=bottom
 panel-right-stick=false
 locked=true
-position=22
+position=25
 
-[Object applet-23]
+[Object window-list-applet]
 object-type=applet
 applet-iid=WnckletFactory::WindowListApplet
 toplevel-id=bottom
 panel-right-stick=false
 locked=true
-position=23
+position=26
 
-[Object applet-24]
+[Object show-desktop-applet]
 object-type=applet
 applet-iid=WnckletFactory::ShowDesktopApplet
 toplevel-id=bottom
 panel-right-stick=true
 locked=true
-position=24
+position=27
 

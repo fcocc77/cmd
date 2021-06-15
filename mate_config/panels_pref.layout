@@ -1,0 +1,10 @@
+[objects/multi-load-applet/prefs]
+size=60
+view-memload=true
+
+[objects/c-p-u-freq-applet/prefs]
+show-mode=1
+
+[objects/command-applet/prefs]
+command='sh {path}/command_applet.sh'
+interval=5

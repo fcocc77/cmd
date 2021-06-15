@@ -1,4 +1,4 @@
-import os
+import os, re
 
 layout: str = ''
 position: int = 0
@@ -84,14 +84,17 @@ def add_applet(applet_id: str, panel_id: str, right_stick: bool = False):
     if right_stick:
         _right_stick = 'true'
 
+    name = applet_id.split(':')[-1]
+
     values = {
         'panel_id': panel_id,
         'applet_id': applet_id,
         'position': position,
-        'right_stick': _right_stick
+        'right_stick': _right_stick,
+        'name' : re.sub(r'(?<!^)(?=[A-Z])', '-', name).lower()
     }
 
-    launcher: str = '[Object applet-{position}]\n'\
+    launcher: str = '[Object {name}]\n'\
             'object-type=applet\n'\
             'applet-iid={applet_id}\n'\
             'toplevel-id={panel_id}\n'\
@@ -153,6 +156,12 @@ add_applet('WnckletFactory::WorkspaceSwitcherApplet', 'top', True)
 
 add_applet('MultiLoadAppletFactory::MultiLoadApplet', 'top', True)
 add_applet('CPUFreqAppletFactory::CPUFreqApplet', 'top', True)
+
+add_separator('top', True)
+
+add_applet('CommandAppletFactory::CommandApplet', 'top', True)
+
+add_separator('top', True)
 
 add_applet('ClockAppletFactory::ClockApplet', 'top', True)
 

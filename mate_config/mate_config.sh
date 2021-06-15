@@ -1,13 +1,15 @@
 path=$(dirname $(realpath "$0"))
 
+# restablece mate por defecto, antes de todo
+dconf reset -f /org/mate/
+
+# centra la ventana al inicio
 # desabilitar animacion al minimizar las ventanas
 gsettings set org.mate.interface enable-animations false
 
 
 # desabilita el movimiento de ventanas con el modificador <Alt>
 gsettings set org.mate.Marco.general mouse-button-modifier ''
-
-# centra la ventana al inicio
 gsettings set org.mate.Marco.general center-new-windows true
 
 # layout de panel
@@ -15,6 +17,13 @@ python3 $path/panel_setup.py
 sudo cp $path/panels.layout /usr/share/mate-panel/layouts/panels.layout
 gsettings set org.mate.panel default-layout 'panels'
 mate-panel --replace --reset
+
+cp ./mate_config/panels_pref.layout /tmp/pref.layout
+sed -i "s|{path}|$path|g" /tmp/pref.layout
+
+dconf load /org/mate/panel/ < /tmp/pref.layout
+pkill -9 mate-panel
+# ......
 
 
 # shortcuts
