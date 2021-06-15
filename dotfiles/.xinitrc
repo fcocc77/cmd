@@ -1,5 +1,7 @@
-
 root_password='vfx'
+
+# deja todos los procesadores con la frecuencia bajo demanda
+echo $root_password | sudo -S cpupower frequency-set -g ondemand
 
 # si el monitor HDMI1 esta conectado, deja ese como principal y apaga el del notebook y viceversa
 sh ~/Documents/develop/my-config/scripts/display_switch.sh init
