@@ -3,6 +3,10 @@ path=$(dirname $(realpath "$0"))
 # restablece mate por defecto, antes de todo
 dconf reset -f /org/mate/
 
+# apariencia
+gsettings set org.mate.interface gtk-theme 'TraditionalOk'
+gsettings set org.mate.interface icon-theme 'Zafiro-icons'
+
 # centra la ventana al inicio
 # desabilitar animacion al minimizar las ventanas
 gsettings set org.mate.interface enable-animations false

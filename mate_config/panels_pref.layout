@@ -7,4 +7,5 @@ show-mode=1
 
 [objects/command-applet/prefs]
 command='sh {path}/command_applet.sh'
-interval=5
+interval=3
+width=100

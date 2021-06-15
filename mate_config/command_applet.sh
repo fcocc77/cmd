@@ -9,6 +9,40 @@ gpu_temp=$(echo "$gtemp" | awk '/GPU Current Temp/{print $5}')
 
 cpu_temp=$(sensors | awk '/Package/{print $4}')
 
+bar0='::::::::::'
+bar10='/:::::::::'
+bar20='//::::::::'
+bar30='///:::::::'
+bar40='////::::::'
+bar50='/////:::::'
+bar60='//////::::'
+bar70='///////:::'
+bar80='////////::'
+bar90='/////////:'
+bar100='//////////'
 
-# echo $cpu_temp
-echo GPU: $gpu_usage % ' | ' VRAM: $mem_usage % ' | ' GTemp: $gpu_temp°C ' | ' CTemp: "$cpu_temp"
+if [ 5 -gt $gpu_usage ]; then
+    bar=$bar0
+elif [ 15 -gt $gpu_usage ]; then
+    bar=$bar10
+elif [ 25 -gt $gpu_usage ]; then
+    bar=$bar20
+elif [ 35 -gt $gpu_usage ]; then
+    bar=$bar30
+elif [ 45 -gt $gpu_usage ]; then
+    bar=$bar40
+elif [ 55 -gt $gpu_usage ]; then
+    bar=$bar50
+elif [ 65 -gt $gpu_usage ]; then
+    bar=$bar60
+elif [ 75 -gt $gpu_usage ]; then
+    bar=$bar70
+elif [ 85 -gt $gpu_usage ]; then
+    bar=$bar80
+elif [ 95 -gt $gpu_usage ]; then
+    bar=$bar90
+else
+    bar=$bar100
+fi
+
+echo  gpu: $gpu_usage % $bar' | '   vRam: $mem_usage % ' | '  gTemp: $gpu_temp°C ' | '  temp: "$cpu_temp"
