@@ -8,12 +8,14 @@ size=24
 
 [Object menu-bar-0]
 object-type=menu-bar
+locked=true
 toplevel-id=top
 position=0
 
 [Object separator-1]
 object-type=separator
 toplevel-id=top
+locked=true
 panel-right-stick=false
 position=1
 
@@ -21,35 +23,41 @@ position=1
 object-type=launcher
 launcher-location=/usr/share/applications/caja-browser.desktop
 toplevel-id=top
+locked=true
 position=2
 
 [Object mate-terminal]
 object-type=launcher
 launcher-location=/usr/share/applications/mate-terminal.desktop
 toplevel-id=top
+locked=true
 position=3
 
 [Object google-chrome]
 object-type=launcher
 launcher-location=/usr/share/applications/google-chrome.desktop
 toplevel-id=top
+locked=true
 position=4
 
 [Object pluma]
 object-type=launcher
 launcher-location=/usr/share/applications/pluma.desktop
 toplevel-id=top
+locked=true
 position=5
 
 [Object mate-calc]
 object-type=launcher
 launcher-location=/usr/share/applications/mate-calc.desktop
 toplevel-id=top
+locked=true
 position=6
 
 [Object separator-7]
 object-type=separator
 toplevel-id=top
+locked=true
 panel-right-stick=false
 position=7
 
@@ -57,23 +65,27 @@ position=7
 object-type=launcher
 launcher-location=/usr/share/applications/gparted.desktop
 toplevel-id=top
+locked=true
 position=8
 
 [Object spotify-spotify]
 object-type=launcher
 launcher-location=/var/lib/snapd/desktop/applications/spotify_spotify.desktop
 toplevel-id=top
+locked=true
 position=9
 
 [Object whatsdesk-whatsdesk]
 object-type=launcher
 launcher-location=/var/lib/snapd/desktop/applications/whatsdesk_whatsdesk.desktop
 toplevel-id=top
+locked=true
 position=10
 
 [Object separator-11]
 object-type=separator
 toplevel-id=top
+locked=true
 panel-right-stick=false
 position=11
 
@@ -81,24 +93,28 @@ position=11
 object-type=launcher
 launcher-location=/usr/share/applications/inkscape.desktop
 toplevel-id=top
+locked=true
 position=12
 
 [Object com-blackmagicdesign-resolve]
 object-type=launcher
 launcher-location=/usr/share/applications/com.blackmagicdesign.resolve.desktop
 toplevel-id=top
+locked=true
 position=13
 
 [Object nukex]
 object-type=launcher
 launcher-location=/usr/share/applications/NukeX.desktop
 toplevel-id=top
+locked=true
 position=14
 
 [Object blender-blender]
 object-type=launcher
 launcher-location=/var/lib/snapd/desktop/applications/blender_blender.desktop
 toplevel-id=top
+locked=true
 position=15
 
 [Object applet-16]
@@ -106,6 +122,7 @@ object-type=applet
 applet-iid=NotificationAreaAppletFactory::NotificationArea
 toplevel-id=top
 panel-right-stick=true
+locked=true
 position=16
 
 [Object applet-17]
@@ -113,6 +130,7 @@ object-type=applet
 applet-iid=GvcAppletFactory::GvcApplet
 toplevel-id=top
 panel-right-stick=true
+locked=true
 position=17
 
 [Object applet-18]
@@ -120,6 +138,7 @@ object-type=applet
 applet-iid=MultiLoadAppletFactory::MultiLoadApplet
 toplevel-id=top
 panel-right-stick=true
+locked=true
 position=18
 
 [Object applet-19]
@@ -127,6 +146,7 @@ object-type=applet
 applet-iid=CPUFreqAppletFactory::CPUFreqApplet
 toplevel-id=top
 panel-right-stick=true
+locked=true
 position=19
 
 [Object applet-20]
@@ -134,6 +154,7 @@ object-type=applet
 applet-iid=WnckletFactory::WorkspaceSwitcherApplet
 toplevel-id=top
 panel-right-stick=true
+locked=true
 position=20
 
 [Object applet-21]
@@ -141,6 +162,7 @@ object-type=applet
 applet-iid=ClockAppletFactory::ClockApplet
 toplevel-id=top
 panel-right-stick=true
+locked=true
 position=21
 
 [Object applet-22]
@@ -148,6 +170,7 @@ object-type=applet
 applet-iid=BriskMenuFactory::BriskMenu
 toplevel-id=bottom
 panel-right-stick=false
+locked=true
 position=22
 
 [Object applet-23]
@@ -155,6 +178,7 @@ object-type=applet
 applet-iid=WnckletFactory::WindowListApplet
 toplevel-id=bottom
 panel-right-stick=false
+locked=true
 position=23
 
 [Object applet-24]
@@ -162,5 +186,6 @@ object-type=applet
 applet-iid=WnckletFactory::ShowDesktopApplet
 toplevel-id=bottom
 panel-right-stick=true
+locked=true
 position=24
 

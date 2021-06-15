@@ -15,6 +15,7 @@ def add_menu_bar(panel_id: str):
 
     menu_bar: str = '[Object menu-bar-{position}]\n'\
             'object-type=menu-bar\n'\
+            'locked=true\n'\
             'toplevel-id={panel_id}\n'\
             'position={position}\n\n'.format(**values)
 
@@ -39,6 +40,7 @@ def add_separator(panel_id: str, right_stick: bool = False):
     separator: str = '[Object separator-{position}]\n'\
             'object-type=separator\n'\
             'toplevel-id={panel_id}\n'\
+            'locked=true\n'\
             'panel-right-stick={right_stick}\n'\
             'position={position}\n\n'.format(**values)
 
@@ -68,6 +70,7 @@ def add_launcher(app_name: str, panel_id: str):
             'object-type=launcher\n'\
             'launcher-location={location}\n'\
             'toplevel-id={panel_id}\n'\
+            'locked=true\n'\
             'position={position}\n\n'.format(**values)
 
     global layout
@@ -93,6 +96,7 @@ def add_applet(applet_id: str, panel_id: str, right_stick: bool = False):
             'applet-iid={applet_id}\n'\
             'toplevel-id={panel_id}\n'\
             'panel-right-stick={right_stick}\n'\
+            'locked=true\n'\
             'position={position}\n\n'.format(**values)
 
     global layout
