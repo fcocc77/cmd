@@ -149,6 +149,8 @@ add_launcher('com.blackmagicdesign.resolve', 'top')
 add_launcher('NukeX', 'top')
 add_launcher('blender_blender', 'top')
 
+add_separator('top')
+add_applet('CommandAppletFactory::CommandApplet', 'top')
 
 add_applet('NotificationAreaAppletFactory::NotificationArea', 'top', True)
 add_applet('GvcAppletFactory::GvcApplet', 'top', True)
@@ -157,9 +159,6 @@ add_applet('WnckletFactory::WorkspaceSwitcherApplet', 'top', True)
 add_applet('MultiLoadAppletFactory::MultiLoadApplet', 'top', True)
 add_applet('CPUFreqAppletFactory::CPUFreqApplet', 'top', True)
 
-add_separator('top', True)
-
-add_applet('CommandAppletFactory::CommandApplet', 'top', True)
 
 add_separator('top', True)
 
