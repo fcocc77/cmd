@@ -35,6 +35,15 @@ def move_window(window_id: int, x: int, y: int, width: int, height: int):
     os.system(cmd)
 
 
+def get_resolution():
+    result = subprocess.run(['xwininfo', '-root'], stdout=subprocess.PIPE)
+    output = result.stdout.decode()
+
+    width = int(output.split('Width: ')[-1].split('\n')[0])
+    height = int(output.split('Height: ')[-1].split('\n')[0])
+
+    return(width, height)
+
 def get_current_workspace():
     result = subprocess.run(['wmctrl', '-d'], stdout=subprocess.PIPE)
 

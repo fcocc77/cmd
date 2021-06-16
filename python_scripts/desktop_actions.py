@@ -1,39 +1,39 @@
-from wmctrl import workspace_move_left, workspace_move_right, move_active_window, get_height_panels, move_focus
+from wmctrl import workspace_move_left, workspace_move_right, move_active_window, get_resolution, move_focus
 from sys import argv
 
 action: str = argv[1]
 
-width = 1920
-height = 1080 - get_height_panels()
-
+resolution = get_resolution()
+width = resolution[0]
+height = resolution[1]
+padding = (8, 55)
 
 def to_top_right():
-
-    size_x: int = int(width / 2)
-    size_y: int = int(height / 2)
+    size_x: int = int(width / 2) - padding[0]
+    size_y: int = int(height / 2) - padding[1]
 
     move_active_window(width, 0, size_x, size_y)
 
 
 def to_top_left():
-    size_x: int = int(width / 2)
-    size_y: int = int(height / 2)
+    size_x: int = int(width / 2) - padding[0]
+    size_y: int = int(height / 2) - padding[1]
 
     move_active_window(0, 0, size_x, size_y)
 
 
 def to_bottom_right():
-    size_x: int = int(width / 2)
-    size_y: int = int(height / 2)
+    size_x: int = int(width / 2) - padding[0]
+    size_y: int = int(height / 2) - padding[1]
 
-    move_active_window(width, size_y, size_x, size_y)
+    move_active_window(width, size_y + padding[1] + 1, size_x, size_y)
 
 
 def to_bottom_left():
-    size_x: int = int(width / 2)
-    size_y: int = int(height / 2)
+    size_x: int = int(width / 2) - padding[0]
+    size_y: int = int(height / 2) - padding[1]
 
-    move_active_window(0, size_y, size_x, size_y)
+    move_active_window(0, size_y + padding[1] + 1, size_x, size_y)
 
 
 if action == 'workspace_move_left':
