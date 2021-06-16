@@ -152,8 +152,26 @@ def move_active_window(x: int, y: int, width: int, height: int):
 
 
 def set_focus(window_id: int):
+
+    active_window = get_active_window()
+    if(active_window == window_id):
+        return
+
+    f = open('/tmp/lastfocus', 'w')
+    f.write(str(active_window))
+    f.close()
+
     os.system('wmctrl -i -a ' + hex(window_id))
 
+def get_last_active() -> int:
+    if not os.path.isfile('/tmp/lastfocus'):
+        return -1
+
+    f = open('/tmp/lastfocus', 'r')
+    active = f.read()
+    f.close()
+
+    return int(active)
 
 def get_vertical_windows(window_id: int):
     windows = get_windows(get_current_workspace()[0])
@@ -206,7 +224,10 @@ def get_horizontal_windows(window_id: int):
 def move_focus(direction: str):
 
     active_window = get_active_window()
+    last_active_window = get_last_active()
+
     vertical: bool = direction == 'top' or direction == 'bottom'
+    last_active = False
 
     if vertical:
         vertical_windows = get_vertical_windows(active_window)
@@ -216,12 +237,19 @@ def move_focus(direction: str):
             index = current_index - 1
             if index < 0:
                 index = 0
+
+            last_active = last_active_window in vertical_windows[:current_index]
         else:
             index = current_index + 1
             if index >= len(vertical_windows):
                 index = len(vertical_windows) - 1
 
-        set_focus(vertical_windows[index])
+            last_active = last_active_window in vertical_windows[current_index:]
+
+        if last_active and last_active_window != active_window:
+            set_focus(last_active_window)
+        else:
+            set_focus(vertical_windows[index])
 
     else:
         horizontal_windows = get_horizontal_windows(active_window)
@@ -231,9 +259,17 @@ def move_focus(direction: str):
             index = current_index - 1
             if index < 0:
                 index = 0
+
+            last_active = last_active_window in horizontal_windows[:current_index]
+
         else:
             index = current_index + 1
             if index >= len(horizontal_windows):
                 index = len(horizontal_windows) - 1
 
-        set_focus(horizontal_windows[index])
+            last_active = last_active_window in horizontal_windows[current_index:]
+
+        if last_active and last_active_window != active_window:
+            set_focus(last_active_window)
+        else:
+            set_focus(horizontal_windows[index])
