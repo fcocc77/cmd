@@ -105,8 +105,10 @@ action 10 'to_top_left' '<Alt><Mod4>y' 'to_top_left'
 action 11 'to_bottom_right' '<Alt><Mod4>period' 'to_bottom_right'
 action 12 'to_bottom_left' '<Alt><Mod4>n' 'to_bottom_left'
 
-action 13 'left_focus' '<Mod4>j' 'left_focus'
-action 14 'right_focus' '<Mod4>k' 'right_focus'
+action 13 'left_focus' '<Mod4>h' 'left_focus'
+action 14 'right_focus' '<Mod4>l' 'right_focus'
+action 15 'top_focus' '<Mod4>k' 'top_focus'
+action 16 'bottom_focus' '<Mod4>j' 'bottom_focus'
 
 # Touchpad Settings
 gsettings set org.mate.peripherals-touchpad natural-scroll true
