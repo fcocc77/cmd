@@ -30,8 +30,8 @@ dconf load /org/mate/panel/ < /tmp/pref.layout
 # ......
 
 # Terminal
-function term_set() { 
-    dconf write /org/mate/terminal/profiles/default/$1 \'"$2"\' 
+function term_set() {
+    dconf write /org/mate/terminal/profiles/default/$1 \'"$2"\'
 }
 
 function term_set_bool() {
