@@ -2,6 +2,7 @@ path=$(dirname $(realpath "$0"))
 
 # restablece mate por defecto, antes de todo
 dconf reset -f /org/mate/
+sleep 1
 
 # apariencia
 gsettings set org.mate.interface gtk-theme 'TraditionalOk'
@@ -19,9 +20,10 @@ gsettings set org.mate.Marco.general center-new-windows true
 
 # layout de panel
 python3 $path/panel_setup.py
-sudo cp $path/panels.layout /usr/share/mate-panel/layouts/panels.layout
-gsettings set org.mate.panel default-layout 'panels'
-mate-panel --replace --reset
+gsettings set org.mate.panel default-layout $path/panels.layout
+mate-panel --reset
+
+sleep 1
 
 cp ./mate_config/panels_pref.layout /tmp/pref.layout
 sed -i "s|{path}|$path|g" /tmp/pref.layout
@@ -30,8 +32,8 @@ dconf load /org/mate/panel/ < /tmp/pref.layout
 # ......
 
 # Terminal
-function term_set() {
-    dconf write /org/mate/terminal/profiles/default/$1 \'"$2"\'
+function term_set() { 
+    dconf write /org/mate/terminal/profiles/default/$1 \'"$2"\' 
 }
 
 function term_set_bool() {
@@ -113,8 +115,9 @@ gsettings set org.mate.peripherals-touchpad tap-to-click true
 # Power Manager Settings
 gsettings set org.mate.power-manager backlight-battery-reduce false
 
+sleep 1
 
-mate-panel --reset
+killall mate-panel
 killall mate-terminal
 killall caja
 
