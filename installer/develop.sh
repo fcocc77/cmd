@@ -21,6 +21,8 @@ packages=(
 sudo dnf -y groupinstall "Development Tools"
 sudo dnf -y install ${packages[@]}
 
+sudo pip3 install autopep8
+
 # con esto funciona el qDebug para QT5
 sudo mkdir /etc/xdg/QtProject
 echo "[Rules]
