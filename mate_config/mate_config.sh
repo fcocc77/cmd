@@ -1,9 +1,5 @@
 path=$(dirname $(realpath "$0"))
 
-# restablece mate por defecto, antes de todo
-dconf reset -f /org/mate/
-sleep 1
-
 # apariencia
 gsettings set org.mate.interface gtk-theme 'TraditionalOk'
 gsettings set org.mate.Marco.general theme 'TraditionalOk'
@@ -104,11 +100,15 @@ action 9 'to_top_right' '<Alt><Mod4>o' 'to_top_right'
 action 10 'to_top_left' '<Alt><Mod4>y' 'to_top_left'
 action 11 'to_bottom_right' '<Alt><Mod4>period' 'to_bottom_right'
 action 12 'to_bottom_left' '<Alt><Mod4>n' 'to_bottom_left'
+action 13 'to_left' '<Alt><Mod4>u' 'to_left'
+action 14 'to_right' '<Alt><Mod4>i' 'to_right'
+action 15 'to_top' '<Alt><Mod4>,' 'to_top'
+action 16 'to_bottom' '<Alt><Mod4>m' 'to_bottom'
 
-action 13 'left_focus' '<Mod4>h' 'left_focus'
-action 14 'right_focus' '<Mod4>l' 'right_focus'
-action 15 'top_focus' '<Mod4>k' 'top_focus'
-action 16 'bottom_focus' '<Mod4>j' 'bottom_focus'
+action 17 'left_focus' '<Mod4>h' 'left_focus'
+action 18 'right_focus' '<Mod4>l' 'right_focus'
+action 19 'top_focus' '<Mod4>k' 'top_focus'
+action 20 'bottom_focus' '<Mod4>j' 'bottom_focus'
 
 # Touchpad Settings
 gsettings set org.mate.peripherals-touchpad natural-scroll true
