@@ -6,7 +6,7 @@ action: str = argv[1]
 resolution = get_resolution()
 width = resolution[0]
 height = resolution[1]
-padding = (8, 55)
+padding = (8, 42)
 
 def to_top_right():
     size_x: int = int(width / 2) - padding[0]
@@ -26,14 +26,14 @@ def to_bottom_right():
     size_x: int = int(width / 2) - padding[0]
     size_y: int = int(height / 2) - padding[1]
 
-    move_active_window(width, size_y + padding[1] + 1, size_x, size_y)
+    move_active_window(width, size_y + padding[1] + 13, size_x, size_y)
 
 
 def to_bottom_left():
     size_x: int = int(width / 2) - padding[0]
     size_y: int = int(height / 2) - padding[1]
 
-    move_active_window(0, size_y + padding[1] + 1, size_x, size_y)
+    move_active_window(0, size_y + padding[1] + 13, size_x, size_y)
 
 def to_left():
     size_x: int = int(width / 2) - padding[0]
@@ -57,7 +57,7 @@ def to_bottom():
     size_x: int = width - padding[0]
     size_y: int = int(height / 2) - padding[1]
 
-    move_active_window(0, size_y + padding[1] + 1, size_x, size_y)
+    move_active_window(0, size_y + padding[1] + 13, size_x, size_y)
 
 if action == 'workspace_move_left':
     workspace_move_left()

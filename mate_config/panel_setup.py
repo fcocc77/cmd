@@ -1,27 +1,11 @@
-import os, re
+import os
+import re
 
 layout: str = ''
 position: int = 0
-desktop_locations = [ '/var/lib/snapd/desktop/applications', '/usr/share/applications' ]
+desktop_locations = [
+    '/var/lib/snapd/desktop/applications', '/usr/share/applications']
 
-def add_menu_bar(panel_id: str):
-
-    global position
-
-    values = {
-        'panel_id': panel_id,
-        'position': position
-    }
-
-    menu_bar: str = '[Object menu-bar-{position}]\n'\
-            'object-type=menu-bar\n'\
-            'locked=true\n'\
-            'toplevel-id={panel_id}\n'\
-            'position={position}\n\n'.format(**values)
-
-    global layout
-    layout += menu_bar
-    position += 1
 
 def add_separator(panel_id: str, right_stick: bool = False):
 
@@ -38,11 +22,11 @@ def add_separator(panel_id: str, right_stick: bool = False):
     }
 
     separator: str = '[Object separator-{position}]\n'\
-            'object-type=separator\n'\
-            'toplevel-id={panel_id}\n'\
-            'locked=true\n'\
-            'panel-right-stick={right_stick}\n'\
-            'position={position}\n\n'.format(**values)
+        'object-type=separator\n'\
+        'toplevel-id={panel_id}\n'\
+        'locked=true\n'\
+        'panel-right-stick={right_stick}\n'\
+        'position={position}\n\n'.format(**values)
 
     global layout
     layout += separator
@@ -67,15 +51,16 @@ def add_launcher(app_name: str, panel_id: str):
     }
 
     launcher: str = '[Object {name}]\n'\
-            'object-type=launcher\n'\
-            'launcher-location={location}\n'\
-            'toplevel-id={panel_id}\n'\
-            'locked=true\n'\
-            'position={position}\n\n'.format(**values)
+        'object-type=launcher\n'\
+        'launcher-location={location}\n'\
+        'toplevel-id={panel_id}\n'\
+        'locked=true\n'\
+        'position={position}\n\n'.format(**values)
 
     global layout
     layout += launcher
     position += 1
+
 
 def add_applet(applet_id: str, panel_id: str, right_stick: bool = False):
     global position
@@ -91,16 +76,16 @@ def add_applet(applet_id: str, panel_id: str, right_stick: bool = False):
         'applet_id': applet_id,
         'position': position,
         'right_stick': _right_stick,
-        'name' : re.sub(r'(?<!^)(?=[A-Z])', '-', name).lower()
+        'name': re.sub(r'(?<!^)(?=[A-Z])', '-', name).lower()
     }
 
     launcher: str = '[Object {name}]\n'\
-            'object-type=applet\n'\
-            'applet-iid={applet_id}\n'\
-            'toplevel-id={panel_id}\n'\
-            'panel-right-stick={right_stick}\n'\
-            'locked=true\n'\
-            'position={position}\n\n'.format(**values)
+        'object-type=applet\n'\
+        'applet-iid={applet_id}\n'\
+        'toplevel-id={panel_id}\n'\
+        'panel-right-stick={right_stick}\n'\
+        'locked=true\n'\
+        'position={position}\n\n'.format(**values)
 
     global layout
     layout += launcher
@@ -116,19 +101,16 @@ def add_panel(panel_id: str, orientation: str, size: int = 24):
     }
 
     panel: str = '[Toplevel {panel_id}]\n'\
-            'orientation={orientation}\n'\
-            'size={size}\n\n'.format(**values)
+        'orientation={orientation}\n'\
+        'size={size}\n\n'.format(**values)
 
     global layout
     layout += panel
 
 
 add_panel('top', 'top', 27)
-add_panel('bottom', 'bottom')
+add_applet('BriskMenuFactory::BriskMenu', 'top')
 
-add_menu_bar('top')
-
-add_separator('top')
 
 add_launcher('caja-browser', 'top')
 add_launcher('mate-terminal', 'top')
@@ -150,43 +132,21 @@ add_launcher('NukeX', 'top')
 add_launcher('blender_blender', 'top')
 
 add_separator('top')
-add_applet('CommandAppletFactory::CommandApplet', 'top')
+add_separator('top')
 
+add_applet('WnckletFactory::WindowMenuApplet', 'top')
+
+add_applet('ClockAppletFactory::ClockApplet', 'top', True)
 add_applet('NotificationAreaAppletFactory::NotificationArea', 'top', True)
 add_applet('GvcAppletFactory::GvcApplet', 'top', True)
 add_applet('WnckletFactory::WorkspaceSwitcherApplet', 'top', True)
-
 add_applet('MultiLoadAppletFactory::MultiLoadApplet', 'top', True)
 add_applet('CPUFreqAppletFactory::CPUFreqApplet', 'top', True)
 
-
 add_separator('top', True)
 
-add_applet('ClockAppletFactory::ClockApplet', 'top', True)
-
-add_applet('BriskMenuFactory::BriskMenu', 'bottom')
-add_applet('WnckletFactory::WindowListApplet', 'bottom')
-add_applet('WnckletFactory::ShowDesktopApplet', 'bottom', True)
+add_applet('CommandAppletFactory::CommandApplet', 'top', True)
 
 f = open('mate_config/panels.layout', "w")
 f.write(layout)
 f.close()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
