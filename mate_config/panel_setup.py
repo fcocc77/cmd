@@ -111,6 +111,7 @@ def add_panel(panel_id: str, orientation: str, size: int = 24):
 add_panel('top', 'top', 27)
 add_applet('BriskMenuFactory::BriskMenu', 'top')
 
+add_separator('top')
 
 add_launcher('caja-browser', 'top')
 add_launcher('mate-terminal', 'top')
@@ -132,6 +133,7 @@ add_launcher('NukeX', 'top')
 add_launcher('blender_blender', 'top')
 
 add_separator('top')
+add_applet('WnckletFactory::WorkspaceSwitcherApplet', 'top')
 add_separator('top')
 
 add_applet('WnckletFactory::WindowMenuApplet', 'top')
@@ -139,11 +141,8 @@ add_applet('WnckletFactory::WindowMenuApplet', 'top')
 add_applet('ClockAppletFactory::ClockApplet', 'top', True)
 add_applet('NotificationAreaAppletFactory::NotificationArea', 'top', True)
 add_applet('GvcAppletFactory::GvcApplet', 'top', True)
-add_applet('WnckletFactory::WorkspaceSwitcherApplet', 'top', True)
 add_applet('MultiLoadAppletFactory::MultiLoadApplet', 'top', True)
 add_applet('CPUFreqAppletFactory::CPUFreqApplet', 'top', True)
-
-add_separator('top', True)
 
 add_applet('CommandAppletFactory::CommandApplet', 'top', True)
 
