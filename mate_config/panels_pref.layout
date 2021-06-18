@@ -7,6 +7,12 @@ command='sh {path}/command_applet.sh'
 interval=3
 width=100
 
+[objects/workspace-switcher-applet/prefs]
+display-workspace-names=true
+
+[objects/c-p-u-freq-applet/prefs]
+show-mode=1
+
 [toplevels/top/background]
 color='rgba(255,255,255,0.85)'
 type='color'

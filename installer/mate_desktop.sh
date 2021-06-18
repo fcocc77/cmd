@@ -90,11 +90,3 @@ sudo dnf -y install ${packages[@]}
 icon_folder='/usr/share/icons/Zafiro-icons'
 sudo git clone https://github.com/zayronxio/Zafiro-icons.git $icon_folder
 
-# Elimina los iconos claros y deja solo los oscuros
-sudo rm -rf "$icon_folder/panel/16"
-sudo rm -rf "$icon_folder/panel/22"
-
-sudo mv "$icon_folder/panel/16-light" "$icon_folder/panel/16"
-sudo mv "$icon_folder/panel/22-light" "$icon_folder/panel/22"
-
-

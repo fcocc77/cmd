@@ -4,8 +4,8 @@ dconf reset -f /org/mate/
 sleep 1
 
 # apariencia
-gsettings set org.mate.interface gtk-theme 'TraditionalOk'
-gsettings set org.mate.Marco.general theme 'TraditionalOk'
+gsettings set org.mate.interface gtk-theme 'MateTheme'
+gsettings set org.mate.Marco.general theme 'MateTheme'
 gsettings set org.mate.interface icon-theme 'Zafiro-icons'
 
 # centra la ventana al inicio
@@ -27,6 +27,12 @@ sed -i "s|{path}|$path|g" /tmp/pref.layout
 
 dconf load /org/mate/panel/ < /tmp/pref.layout
 # ......
+
+# WorkSpaces Names
+gsettings set org.mate.Marco.workspace-names name-1 '.  Web  .'
+gsettings set org.mate.Marco.workspace-names name-2 'Code'
+gsettings set org.mate.Marco.workspace-names name-3 'VFX'
+gsettings set org.mate.Marco.workspace-names name-4 'Misc'
 
 # Terminal
 function term_set() { 
