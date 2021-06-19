@@ -44,6 +44,7 @@ def get_resolution():
 
     return(width, height)
 
+
 def get_current_workspace():
     result = subprocess.run(['wmctrl', '-d'], stdout=subprocess.PIPE)
 
@@ -163,6 +164,7 @@ def set_focus(window_id: int):
 
     os.system('wmctrl -i -a ' + hex(window_id))
 
+
 def get_last_active() -> int:
     if not os.path.isfile('/tmp/lastfocus'):
         return -1
@@ -171,7 +173,11 @@ def get_last_active() -> int:
     active = f.read()
     f.close()
 
-    return int(active)
+    if active:
+        return int(active)
+    else:
+        return -1
+
 
 def get_vertical_windows(window_id: int):
     windows = get_windows(get_current_workspace()[0])
