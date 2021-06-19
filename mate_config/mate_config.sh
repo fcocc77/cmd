@@ -6,7 +6,7 @@ sleep 1
 # apariencia
 gsettings set org.mate.interface gtk-theme 'MateTheme'
 gsettings set org.mate.Marco.general theme 'MateTheme'
-gsettings set org.mate.interface icon-theme 'Zafiro-icons'
+gsettings set org.mate.interface icon-theme 'WhiteSur'
 
 # centra la ventana al inicio
 # desabilitar animacion al minimizar las ventanas
