@@ -1,4 +1,4 @@
-from wmctrl import workspace_move_left, workspace_move_right, move_focus
+from wmctrl import workspace_move_left, workspace_move_right, move_focus, reset_size_and_center_pos
 from sys import argv
 
 action: str = argv[1]
@@ -20,3 +20,6 @@ elif action == 'top_focus':
 
 elif action == 'bottom_focus':
     move_focus('bottom')
+
+elif action == 'reset_window':
+    reset_size_and_center_pos()

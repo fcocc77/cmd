@@ -15,7 +15,7 @@ def window_is_fullscreen(window_id: int) -> bool:
     return False
 
 
-def move_window(window_id: int, x: int, y: int, width: int, height: int):
+def set_rect(window_id: int, x: int, y: int, width: int, height: int):
     values = {
         'gravity': 0,
         'pos_x': x,
@@ -43,6 +43,16 @@ def get_resolution():
     height = int(output.split('Height: ')[-1].split('\n')[0])
 
     return(width, height)
+
+def reset_size_and_center_pos():
+    #  ajusta el tamaño al 50% de la pantalla y lo centra
+    size = get_resolution()
+    width = int(size[0] / 2)
+    height = int(size[1] / 2)
+    x = int(width / 2)
+    y = int(height / 2)
+
+    set_rect(get_active_window(), x, y, width, height)
 
 
 def get_current_workspace():
@@ -147,7 +157,7 @@ def get_active_window() -> int:
 
 
 def move_active_window(x: int, y: int, width: int, height: int):
-    move_window(get_active_window(), x, y, width, height)
+    set_rect(get_active_window(), x, y, width, height)
 
     get_height_panels()
 

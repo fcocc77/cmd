@@ -122,6 +122,8 @@ action 18 'right_focus' '<Mod4>l' 'right_focus'
 action 19 'top_focus' '<Mod4>k' 'top_focus'
 action 20 'bottom_focus' '<Mod4>j' 'bottom_focus'
 
+action 21 'reset_window' '<Alt><Mod4>u' 'reset_window'
+
 # Touchpad Settings
 gsettings set org.mate.peripherals-touchpad natural-scroll true
 gsettings set org.mate.peripherals-touchpad tap-to-click true
