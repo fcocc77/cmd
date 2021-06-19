@@ -71,6 +71,7 @@ gsettings set org.mate.Marco.window-keybindings move-to-side-w '<Alt><Mod4>h' # 
 gsettings set org.mate.Marco.window-keybindings move-to-side-n '<Alt><Mod4>k' # up
 gsettings set org.mate.Marco.window-keybindings move-to-center '<Alt><Mod4>semicolon' #semicolon es ;
 
+gsettings set org.mate.Marco.window-keybindings toggle-maximized '<Shift><Mod4>f'
 gsettings set org.mate.Marco.window-keybindings toggle-fullscreen '<Mod4>f'
 gsettings set org.mate.Marco.global-keybindings switch-to-workspace-prev '<Mod4>z'
 
