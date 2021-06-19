@@ -1,6 +1,8 @@
 [objects/multi-load-applet/prefs]
 size=60
 view-memload=true
+cpuload-color3='rgb(239, 41, 41)'
+memload-color3='rgb(19, 63, 23)'
 
 [objects/command-applet/prefs]
 command='sh {path}/command_applet.sh'
