@@ -111,9 +111,11 @@ add_custom_key 3 'caja' '<Mod4>c' 'caja /home'
 add_custom_key 4 'logout' '<Shift><Mod4>q' 'mate-session-save --logout'
 add_custom_key 5 'tiling' '<Mod4>space' "python3 $path/../python_scripts/tiling.py"
 add_custom_key 6 'pluma' '<Mod4>e' 'pluma'
+add_custom_key 7 'session_restore' '<Shift><Mod4>r' 'session restore missing'
+add_custom_key 8 'session_save' '<Shift><Mod4>s' 'session save'
 
-action 7 'move_left' '<Control><Mod4>h' 'workspace_move_left'
-action 8 'move_right' '<Control><Mod4>l' 'workspace_move_right'
+action 15 'move_left' '<Control><Mod4>h' 'workspace_move_left'
+action 16 'move_right' '<Control><Mod4>l' 'workspace_move_right'
 
 action 17 'left_focus' '<Mod4>h' 'left_focus'
 action 18 'right_focus' '<Mod4>l' 'right_focus'
@@ -123,6 +125,8 @@ action 20 'bottom_focus' '<Mod4>j' 'bottom_focus'
 # Touchpad Settings
 gsettings set org.mate.peripherals-touchpad natural-scroll true
 gsettings set org.mate.peripherals-touchpad tap-to-click true
+gsettings set org.mate.peripherals-touchpad motion-acceleration 7.5
+gsettings set org.mate.peripherals-touchpad motion-threshold 3
 
 # Power Manager Settings
 gsettings set org.mate.power-manager backlight-battery-reduce false
