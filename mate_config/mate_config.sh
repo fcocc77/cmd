@@ -69,23 +69,27 @@ gsettings set org.mate.Marco.window-keybindings move-to-side-e '<Alt><Mod4>l' # 
 gsettings set org.mate.Marco.window-keybindings move-to-side-s '<Alt><Mod4>j' # down
 gsettings set org.mate.Marco.window-keybindings move-to-side-w '<Alt><Mod4>h' # left
 gsettings set org.mate.Marco.window-keybindings move-to-side-n '<Alt><Mod4>k' # up
+gsettings set org.mate.Marco.window-keybindings move-to-corner-ne '<Alt><Mod4>o' # top right
+gsettings set org.mate.Marco.window-keybindings move-to-corner-nw '<Alt><Mod4>y' # top left
+gsettings set org.mate.Marco.window-keybindings move-to-corner-se '<Alt><Mod4>period' # bottom right
+gsettings set org.mate.Marco.window-keybindings move-to-corner-sw '<Alt><Mod4>n' # bottom left
 gsettings set org.mate.Marco.window-keybindings move-to-center '<Alt><Mod4>semicolon' #semicolon es ;
 
-gsettings set org.mate.Marco.window-keybindings toggle-maximized '<Shift><Mod4>f'
+gsettings set org.mate.Marco.window-keybindings toggle-maximized '<Shift><Mod4>semicolon'
 gsettings set org.mate.Marco.window-keybindings toggle-fullscreen '<Mod4>f'
 gsettings set org.mate.Marco.global-keybindings switch-to-workspace-prev '<Mod4>z'
 
-gsettings set org.mate.Marco.window-keybindings tile-to-corner-nw '<Alt><Mod4>y'
-gsettings set org.mate.Marco.window-keybindings tile-to-corner-se '<Alt><Mod4>period'
-gsettings set org.mate.Marco.window-keybindings tile-to-side-e '<Alt><Mod4>i'
-gsettings set org.mate.Marco.window-keybindings tile-to-corner-ne '<Alt><Mod4>o'
-gsettings set org.mate.Marco.window-keybindings tile-to-corner-sw '<Alt><Mod4>n'
-gsettings set org.mate.Marco.window-keybindings tile-to-side-w '<Alt><Mod4>u'
+gsettings set org.mate.Marco.window-keybindings tile-to-corner-nw '<Shift><Mod4>y'
+gsettings set org.mate.Marco.window-keybindings tile-to-corner-se '<Shift><Mod4>period'
+gsettings set org.mate.Marco.window-keybindings tile-to-side-e '<Shift><Mod4>i'
+gsettings set org.mate.Marco.window-keybindings tile-to-corner-ne '<Shift><Mod4>o'
+gsettings set org.mate.Marco.window-keybindings tile-to-corner-sw '<Shift><Mod4>n'
+gsettings set org.mate.Marco.window-keybindings tile-to-side-w '<Shift><Mod4>u'
 
-gsettings set org.mate.Marco.window-keybindings maximize-vertically '<Mod4>y'
-gsettings set org.mate.Marco.window-keybindings maximize-horizontally '<Mod4>x'
+gsettings set org.mate.Marco.window-keybindings maximize-vertically '<Shift><Mod4>k'
+gsettings set org.mate.Marco.window-keybindings maximize-horizontally '<Shift><Mod4>h'
 
-gsettings set org.mate.Marco.window-keybindings minimize '<Shift><Mod4>h' # hide
+gsettings set org.mate.Marco.window-keybindings minimize '<Control><Alt>h' # hide
 gsettings set org.mate.Marco.window-keybindings close '<Shift><Mod4>c'
 
 gsettings set com.solus-project.brisk-menu hot-key '<Mod4>o'
