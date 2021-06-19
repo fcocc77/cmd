@@ -232,58 +232,33 @@ def move_focus(direction: str):
     active_window = get_active_window()
     last_active_window = get_last_active()
 
-    vertical: bool = direction == 'top' or direction == 'bottom'
-    last_active = False
-
-    if vertical:
-        vertical_windows = get_vertical_windows(active_window)
-
-        if not active_window in vertical_windows:
-            return
-
-        current_index = vertical_windows.index(active_window)
-
-        if direction == 'top':
-            index = current_index - 1
-            if index < 0:
-                index = 0
-
-            last_active = last_active_window in vertical_windows[:current_index]
-        else:
-            index = current_index + 1
-            if index >= len(vertical_windows):
-                index = len(vertical_windows) - 1
-
-            last_active = last_active_window in vertical_windows[current_index:]
-
-        if last_active and last_active_window != active_window:
-            set_focus(last_active_window)
-        else:
-            set_focus(vertical_windows[index])
-
+    if direction == 'top' or direction == 'bottom':
+        windows_list = get_vertical_windows(active_window)
+        move_next = direction == 'top'
     else:
-        horizontal_windows = get_horizontal_windows(active_window)
+        windows_list = get_horizontal_windows(active_window)
+        move_next = direction == 'left'
 
-        if not active_window in horizontal_windows:
-            return
+    if not active_window in windows_list:
+        set_focus(get_windows(get_current_workspace()[0])[0])
+        return
 
-        current_index = horizontal_windows.index(active_window)
+    current_index = windows_list.index(active_window)
 
-        if direction == 'left':
-            index = current_index - 1
-            if index < 0:
-                index = 0
+    if move_next:
+        index = current_index - 1
+        if index < 0:
+            index = 0
 
-            last_active = last_active_window in horizontal_windows[:current_index]
+        last_active = last_active_window in windows_list[:current_index]
+    else:
+        index = current_index + 1
+        if index >= len(windows_list):
+            index = len(windows_list) - 1
 
-        else:
-            index = current_index + 1
-            if index >= len(horizontal_windows):
-                index = len(horizontal_windows) - 1
+        last_active = last_active_window in windows_list[current_index:]
 
-            last_active = last_active_window in horizontal_windows[current_index:]
-
-        if last_active and last_active_window != active_window:
-            set_focus(last_active_window)
-        else:
-            set_focus(horizontal_windows[index])
+    if last_active and last_active_window != active_window:
+        set_focus(last_active_window)
+    else:
+        set_focus(windows_list[index])
