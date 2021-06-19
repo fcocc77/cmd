@@ -71,8 +71,15 @@ gsettings set org.mate.Marco.window-keybindings move-to-side-w '<Alt><Mod4>h' # 
 gsettings set org.mate.Marco.window-keybindings move-to-side-n '<Alt><Mod4>k' # up
 gsettings set org.mate.Marco.window-keybindings move-to-center '<Alt><Mod4>semicolon' #semicolon es ;
 
-# gsettings set org.mate.Marco.global-keybindings cycle-windows '<Mod4>j'
-gsettings set org.mate.Marco.window-keybindings toggle-maximized '<Mod4>f'
+gsettings set org.mate.Marco.window-keybindings toggle-fullscreen '<Mod4>f'
+gsettings set org.mate.Marco.global-keybindings switch-to-workspace-prev '<Mod4>z'
+
+gsettings set org.mate.Marco.window-keybindings tile-to-corner-nw '<Alt><Mod4>y'
+gsettings set org.mate.Marco.window-keybindings tile-to-corner-se '<Alt><Mod4>period'
+gsettings set org.mate.Marco.window-keybindings tile-to-side-e '<Alt><Mod4>i'
+gsettings set org.mate.Marco.window-keybindings tile-to-corner-ne '<Alt><Mod4>o'
+gsettings set org.mate.Marco.window-keybindings tile-to-corner-sw '<Alt><Mod4>n'
+gsettings set org.mate.Marco.window-keybindings tile-to-side-w '<Alt><Mod4>u'
 
 gsettings set org.mate.Marco.window-keybindings maximize-vertically '<Mod4>y'
 gsettings set org.mate.Marco.window-keybindings maximize-horizontally '<Mod4>x'
@@ -102,15 +109,6 @@ add_custom_key 6 'pluma' '<Mod4>e' 'pluma'
 
 action 7 'move_left' '<Control><Mod4>h' 'workspace_move_left'
 action 8 'move_right' '<Control><Mod4>l' 'workspace_move_right'
-
-action 9 'to_top_right' '<Alt><Mod4>o' 'to_top_right'
-action 10 'to_top_left' '<Alt><Mod4>y' 'to_top_left'
-action 11 'to_bottom_right' '<Alt><Mod4>period' 'to_bottom_right'
-action 12 'to_bottom_left' '<Alt><Mod4>n' 'to_bottom_left'
-action 13 'to_left' '<Alt><Mod4>u' 'to_left'
-action 14 'to_right' '<Alt><Mod4>i' 'to_right'
-action 15 'to_top' '<Alt><Mod4>comma' 'to_top'
-action 16 'to_bottom' '<Alt><Mod4>m' 'to_bottom'
 
 action 17 'left_focus' '<Mod4>h' 'left_focus'
 action 18 'right_focus' '<Mod4>l' 'right_focus'
