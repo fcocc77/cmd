@@ -231,6 +231,10 @@ def move_focus(direction: str):
 
     if vertical:
         vertical_windows = get_vertical_windows(active_window)
+
+        if not active_window in vertical_windows:
+            return
+
         current_index = vertical_windows.index(active_window)
 
         if direction == 'top':
@@ -253,6 +257,10 @@ def move_focus(direction: str):
 
     else:
         horizontal_windows = get_horizontal_windows(active_window)
+
+        if not active_window in horizontal_windows:
+            return
+
         current_index = horizontal_windows.index(active_window)
 
         if direction == 'left':
