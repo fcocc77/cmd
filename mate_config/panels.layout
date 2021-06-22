@@ -24,89 +24,173 @@ toplevel-id=top
 locked=true
 position=2
 
+[Object separator-3]
+object-type=separator
+toplevel-id=top
+locked=true
+panel-right-stick=false
+position=3
+
 [Object mate-terminal]
 object-type=launcher
 launcher-location=/usr/share/applications/mate-terminal.desktop
 toplevel-id=top
 locked=true
-position=3
+position=4
+
+[Object separator-5]
+object-type=separator
+toplevel-id=top
+locked=true
+panel-right-stick=false
+position=5
 
 [Object google-chrome]
 object-type=launcher
 launcher-location=/usr/share/applications/google-chrome.desktop
 toplevel-id=top
 locked=true
-position=4
+position=6
+
+[Object separator-7]
+object-type=separator
+toplevel-id=top
+locked=true
+panel-right-stick=false
+position=7
 
 [Object pluma]
 object-type=launcher
 launcher-location=/usr/share/applications/pluma.desktop
 toplevel-id=top
 locked=true
-position=5
+position=8
+
+[Object separator-9]
+object-type=separator
+toplevel-id=top
+locked=true
+panel-right-stick=false
+position=9
 
 [Object mate-calc]
 object-type=launcher
 launcher-location=/usr/share/applications/mate-calc.desktop
 toplevel-id=top
 locked=true
-position=6
+position=10
+
+[Object separator-11]
+object-type=separator
+toplevel-id=top
+locked=true
+panel-right-stick=false
+position=11
 
 [Object gparted]
 object-type=launcher
 launcher-location=/usr/share/applications/gparted.desktop
 toplevel-id=top
 locked=true
-position=7
+position=12
+
+[Object separator-13]
+object-type=separator
+toplevel-id=top
+locked=true
+panel-right-stick=false
+position=13
 
 [Object spotify-spotify]
 object-type=launcher
 launcher-location=/var/lib/snapd/desktop/applications/spotify_spotify.desktop
 toplevel-id=top
 locked=true
-position=8
+position=14
+
+[Object separator-15]
+object-type=separator
+toplevel-id=top
+locked=true
+panel-right-stick=false
+position=15
 
 [Object whatsdesk-whatsdesk]
 object-type=launcher
 launcher-location=/var/lib/snapd/desktop/applications/whatsdesk_whatsdesk.desktop
 toplevel-id=top
 locked=true
-position=9
+position=16
+
+[Object separator-17]
+object-type=separator
+toplevel-id=top
+locked=true
+panel-right-stick=false
+position=17
 
 [Object inkscape]
 object-type=launcher
 launcher-location=/usr/share/applications/inkscape.desktop
 toplevel-id=top
 locked=true
-position=10
+position=18
 
-[Object com-blackmagicdesign-resolve]
-object-type=launcher
-launcher-location=/usr/share/applications/com.blackmagicdesign.resolve.desktop
+[Object separator-19]
+object-type=separator
 toplevel-id=top
 locked=true
-position=11
+panel-right-stick=false
+position=19
 
 [Object nukex]
 object-type=launcher
 launcher-location=/usr/share/applications/NukeX.desktop
 toplevel-id=top
 locked=true
-position=12
+position=20
+
+[Object separator-21]
+object-type=separator
+toplevel-id=top
+locked=true
+panel-right-stick=false
+position=21
 
 [Object blender-blender]
 object-type=launcher
 launcher-location=/var/lib/snapd/desktop/applications/blender_blender.desktop
 toplevel-id=top
 locked=true
-position=13
+position=22
 
-[Object separator-14]
+[Object separator-23]
 object-type=separator
 toplevel-id=top
 locked=true
 panel-right-stick=false
-position=14
+position=23
+
+[Object com-blackmagicdesign-resolve]
+object-type=launcher
+launcher-location=/usr/share/applications/com.blackmagicdesign.resolve.desktop
+toplevel-id=top
+locked=true
+position=24
+
+[Object separator-25]
+object-type=separator
+toplevel-id=top
+locked=true
+panel-right-stick=false
+position=25
+
+[Object separator-26]
+object-type=separator
+toplevel-id=top
+locked=true
+panel-right-stick=false
+position=26
 
 [Object workspace-switcher-applet]
 object-type=applet
@@ -114,14 +198,14 @@ applet-iid=WnckletFactory::WorkspaceSwitcherApplet
 toplevel-id=top
 panel-right-stick=false
 locked=true
-position=15
+position=27
 
-[Object separator-16]
+[Object separator-28]
 object-type=separator
 toplevel-id=top
 locked=true
 panel-right-stick=false
-position=16
+position=28
 
 [Object window-menu-applet]
 object-type=applet
@@ -129,7 +213,7 @@ applet-iid=WnckletFactory::WindowMenuApplet
 toplevel-id=top
 panel-right-stick=false
 locked=true
-position=17
+position=29
 
 [Object clock-applet]
 object-type=applet
@@ -137,7 +221,7 @@ applet-iid=ClockAppletFactory::ClockApplet
 toplevel-id=top
 panel-right-stick=true
 locked=true
-position=18
+position=30
 
 [Object notification-area]
 object-type=applet
@@ -145,7 +229,7 @@ applet-iid=NotificationAreaAppletFactory::NotificationArea
 toplevel-id=top
 panel-right-stick=true
 locked=true
-position=19
+position=31
 
 [Object gvc-applet]
 object-type=applet
@@ -153,7 +237,7 @@ applet-iid=GvcAppletFactory::GvcApplet
 toplevel-id=top
 panel-right-stick=true
 locked=true
-position=20
+position=32
 
 [Object multi-load-applet]
 object-type=applet
@@ -161,7 +245,7 @@ applet-iid=MultiLoadAppletFactory::MultiLoadApplet
 toplevel-id=top
 panel-right-stick=true
 locked=true
-position=21
+position=33
 
 [Object c-p-u-freq-applet]
 object-type=applet
@@ -169,7 +253,7 @@ applet-iid=CPUFreqAppletFactory::CPUFreqApplet
 toplevel-id=top
 panel-right-stick=true
 locked=true
-position=22
+position=34
 
 [Object command-applet]
 object-type=applet
@@ -177,5 +261,5 @@ applet-iid=CommandAppletFactory::CommandApplet
 toplevel-id=top
 panel-right-stick=true
 locked=true
-position=23
+position=35
 

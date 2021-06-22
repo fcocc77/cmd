@@ -61,6 +61,8 @@ def add_launcher(app_name: str, panel_id: str):
     layout += launcher
     position += 1
 
+    add_separator(panel_id)
+
 
 def add_applet(applet_id: str, panel_id: str, right_stick: bool = False):
     global position
@@ -122,9 +124,9 @@ add_launcher('gparted', 'top')
 add_launcher('spotify_spotify', 'top')
 add_launcher('whatsdesk_whatsdesk', 'top')
 add_launcher('inkscape', 'top')
-add_launcher('com.blackmagicdesign.resolve', 'top')
 add_launcher('NukeX', 'top')
 add_launcher('blender_blender', 'top')
+add_launcher('com.blackmagicdesign.resolve', 'top')
 
 add_separator('top')
 add_applet('WnckletFactory::WorkspaceSwitcherApplet', 'top')
