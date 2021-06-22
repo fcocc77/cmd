@@ -137,9 +137,11 @@ add_applet('WnckletFactory::WindowMenuApplet', 'top')
 add_applet('ClockAppletFactory::ClockApplet', 'top', True)
 add_applet('NotificationAreaAppletFactory::NotificationArea', 'top', True)
 add_applet('GvcAppletFactory::GvcApplet', 'top', True)
+add_separator('top', True)
 add_applet('MultiLoadAppletFactory::MultiLoadApplet', 'top', True)
+add_separator('top', True)
 add_applet('CPUFreqAppletFactory::CPUFreqApplet', 'top', True)
-
+add_separator('top', True)
 add_applet('CommandAppletFactory::CommandApplet', 'top', True)
 
 f = open('mate_config/panels.layout', "w")

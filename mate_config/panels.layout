@@ -239,13 +239,27 @@ panel-right-stick=true
 locked=true
 position=32
 
+[Object separator-33]
+object-type=separator
+toplevel-id=top
+locked=true
+panel-right-stick=true
+position=33
+
 [Object multi-load-applet]
 object-type=applet
 applet-iid=MultiLoadAppletFactory::MultiLoadApplet
 toplevel-id=top
 panel-right-stick=true
 locked=true
-position=33
+position=34
+
+[Object separator-35]
+object-type=separator
+toplevel-id=top
+locked=true
+panel-right-stick=true
+position=35
 
 [Object c-p-u-freq-applet]
 object-type=applet
@@ -253,7 +267,14 @@ applet-iid=CPUFreqAppletFactory::CPUFreqApplet
 toplevel-id=top
 panel-right-stick=true
 locked=true
-position=34
+position=36
+
+[Object separator-37]
+object-type=separator
+toplevel-id=top
+locked=true
+panel-right-stick=true
+position=37
 
 [Object command-applet]
 object-type=applet
@@ -261,5 +282,5 @@ applet-iid=CommandAppletFactory::CommandApplet
 toplevel-id=top
 panel-right-stick=true
 locked=true
-position=35
+position=38
 
