@@ -1,0 +1,3 @@
+# para que funcione los videos en linux tinen que estar en un codec
+# especifico, video en 'proress' y audio en 'pcm_s24le'
+ffmpeg -i 'input' -vcodec proress -acodec pcm_s24le 'output'
