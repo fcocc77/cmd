@@ -250,7 +250,11 @@ def move_focus(direction: str):
         move_next = direction == 'left'
 
     if not active_window in windows_list:
-        set_focus(get_windows(get_current_workspace()[0])[0])
+        index_current_workspace = get_current_workspace()[0]
+        windows = get_windows(index_current_workspace)
+        if len(windows):
+            set_focus(windows[0])
+
         return
 
     current_index = windows_list.index(active_window)
