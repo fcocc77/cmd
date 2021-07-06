@@ -2,4 +2,4 @@
 tar -czvf archivo.tar.gz /carpeta/a/empaquetar/
 
 # Descomprimir
-tar -xzvf archivo.tar.gz
+tar -xzvf archivo.tar.gz --directory <path>
