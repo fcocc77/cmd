@@ -28,15 +28,18 @@ sed -i "s|{path}|$path|g" /tmp/pref.layout
 dconf load /org/mate/panel/ < /tmp/pref.layout
 # ......
 
-# WorkSpaces Names
+# WorkSpaces
+gsettings set org.mate.Marco.general num-workspaces 5
+
 gsettings set org.mate.Marco.workspace-names name-1 '.  Web  .'
 gsettings set org.mate.Marco.workspace-names name-2 'Code'
-gsettings set org.mate.Marco.workspace-names name-3 'VFX'
-gsettings set org.mate.Marco.workspace-names name-4 'Misc'
+gsettings set org.mate.Marco.workspace-names name-3 'VFX-1'
+gsettings set org.mate.Marco.workspace-names name-4 'VFX-2'
+gsettings set org.mate.Marco.workspace-names name-5 'Misc'
 
 # Terminal
-function term_set() { 
-    dconf write /org/mate/terminal/profiles/default/$1 \'"$2"\' 
+function term_set() {
+    dconf write /org/mate/terminal/profiles/default/$1 \'"$2"\'
 }
 
 function term_set_bool() {
@@ -59,6 +62,7 @@ gsettings set org.mate.Marco.global-keybindings switch-to-workspace-1 '<Mod4>1'
 gsettings set org.mate.Marco.global-keybindings switch-to-workspace-2 '<Mod4>2'
 gsettings set org.mate.Marco.global-keybindings switch-to-workspace-3 '<Mod4>3'
 gsettings set org.mate.Marco.global-keybindings switch-to-workspace-4 '<Mod4>4'
+gsettings set org.mate.Marco.global-keybindings switch-to-workspace-5 '<Mod4>5'
 
 gsettings set org.mate.Marco.window-keybindings move-to-workspace-1 '<Shift><Mod4>1'
 gsettings set org.mate.Marco.window-keybindings move-to-workspace-2 '<Shift><Mod4>2'
