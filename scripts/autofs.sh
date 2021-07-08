@@ -21,7 +21,7 @@ fi
 
 # diferentes metodos si es el disco a montar es linux o mac
 if [ $os == "linux" ]; then
-	echo $disk -fstype=cifs,$rw,noperm,vers=1.0,username=$user,password=$password ://$ip/$disk > /etc/auto.cifs
+	echo $disk -fstype=cifs,$rw,noperm,username=$user,password=$password ://$ip/$disk > /etc/auto.cifs
 else
 	echo $disk -fstype=cifs,nounix,sec=ntlmssp,noperm,$rw,username=$user,password=$password ://$ip/$disk > /etc/auto.cifs
 fi
