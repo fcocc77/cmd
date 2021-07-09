@@ -125,6 +125,7 @@ add_launcher('spotify_spotify', 'top')
 add_launcher('whatsdesk_whatsdesk', 'top')
 add_launcher('inkscape', 'top')
 add_launcher('NukeX', 'top')
+add_launcher('Houdini', 'top')
 add_launcher('blender_blender', 'top')
 add_launcher('com.blackmagicdesign.resolve', 'top')
 
