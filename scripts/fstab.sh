@@ -1,31 +1,22 @@
-# ---------------------
-disk="server_01"
-ip=""
-host="santiago-zone.ddns.net"
-# ---------------------
-user="server1"
-password="vfx"
-# ---------------------
 
-# resuelve el dominio a ip si es un dominio
-if [ ! $ip ]; then
-    lastline=$(nslookup $host | tail -n 2)
-    list=$(echo $lastline | tr ":" "\n")
-    arr=($list)
-    ip=${arr[1]}
+ip='192.168.1.77'
+disk='Documents'
+
+user='pancho'
+password='vfx'
+
+mount_folder="/mnt/$disk"
+
+if [ ! -d "$mount_folder" ]; then
+    mkdir "$mount_folder"
 fi
-# ---------------------------
 
-# crea directorio de montaje
-mkdir /mnt/$disk
-# ----------------------------
+if grep -qs "$mount_folder" /proc/mounts; then
+    sudo umount "$mount_folder"
+fi
 
-# borra la linea que contega el disco
-sed -i "/$disk/d" /etc/fstab
-# ---------------------
+sudo sed -i "/$disk/d" /etc/fstab
 
-echo //$ip/$disk /mnt/$disk cifs rw,noperm,vers=1.0,username=$user,password=$password 0 0 >>/etc/fstab
+sudo sh -c "echo //$ip/$disk /mnt/$disk cifs rw,noperm,username=$user,password=$password 0 0 >> /etc/fstab"
 
-# actualiza el fstab
-mount -a
-# -----------------
+sudo mount -a

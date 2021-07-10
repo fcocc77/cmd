@@ -6,8 +6,8 @@ shared="/opt"
 
 name=$(basename $shared)
 
-yum -y install samba samba-client samba-common
-smbpasswd -a $user
+sudo dnf -y install samba samba-client samba-common
+sudo smbpasswd -a $user
 
 echo "[global]
 workgroup = WORKGROUP
@@ -25,10 +25,17 @@ read only = no
 create mask = 0777
 directory mask = 0777" > /etc/samba/smb.conf
 
-chcon -Rt samba_share_t $shared
+sudo chcon -Rt samba_share_t $shared
 
-systemctl start smb
-systemctl start nmb
-systemctl enable smb
-systemctl enable nmb
+sudo systemctl start smb
+sudo systemctl start nmb
+sudo systemctl enable smb
+sudo systemctl enable nmb
+
+sudo firewall-cmd --zone=public --permanent --add-port 139/tcp
+sudo firewall-cmd --zone=public --permanent --add-port 445/tcp
+
+sudo firewall-cmd --zone=public --permanent --add-port 137/udp
+sudo firewall-cmd --zone=public --permanent --add-port 138/udp
+
 

@@ -32,7 +32,7 @@ sudo iptables -A OUTPUT -o lo -m owner --gid-owner no-internet -j ACCEPT
 # ---------------------
 
 # permite el acceso al puerto 771 de la ip local de vmanager
-sudo iptables -A OUTPUT -p tcp -d "192.168.10.10" --dport 771 -j ACCEPT
+sudo iptables -A OUTPUT -p tcp -d "192.168.1.77" --dport 771 -j ACCEPT
 # -------------------------------
 
 # bloquea el acceso a internet en el grupo no-internet
