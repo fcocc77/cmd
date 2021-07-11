@@ -30,7 +30,10 @@ while(True):
 
     temp: int = psutil.sensors_temperatures()["coretemp"][0].current
 
-    if (temp > 85):
+    if (temp > 90):
+        set_frequency(1.0, True)
+
+    elif (temp > 85):
         set_frequency(2.0, True)
 
     elif (temp > 80):
