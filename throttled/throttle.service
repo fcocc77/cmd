@@ -1,0 +1,15 @@
+[Unit]
+Description=Cpu Throttled
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/bin/sh -c "/opt/throttled/throttle_service.sh start"
+ExecStop=/bin/sh -c "/opt/throttled/throttle_service.sh stop"
+Restart=always
+TimeoutStartSec=0
+
+[Install]
+WantedBy=default.target
+
+
