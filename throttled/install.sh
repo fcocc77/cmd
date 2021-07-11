@@ -1,6 +1,6 @@
 sudo pip3 install psutil
 
-sudo dnf copr enable abn/throttled
+sudo dnf -y copr enable abn/throttled
 sudo dnf install -y throttled
 
 
