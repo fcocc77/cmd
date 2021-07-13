@@ -68,6 +68,7 @@ gsettings set org.mate.Marco.window-keybindings move-to-workspace-1 '<Shift><Mod
 gsettings set org.mate.Marco.window-keybindings move-to-workspace-2 '<Shift><Mod4>2'
 gsettings set org.mate.Marco.window-keybindings move-to-workspace-3 '<Shift><Mod4>3'
 gsettings set org.mate.Marco.window-keybindings move-to-workspace-4 '<Shift><Mod4>4'
+gsettings set org.mate.Marco.window-keybindings move-to-workspace-5 '<Shift><Mod4>5'
 
 gsettings set org.mate.Marco.window-keybindings move-to-side-e '<Alt><Mod4>l' # right
 gsettings set org.mate.Marco.window-keybindings move-to-side-s '<Alt><Mod4>j' # down
