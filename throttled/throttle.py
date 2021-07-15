@@ -34,10 +34,10 @@ while(True):
         set_frequency(1.0, True)
 
     elif (temp > 85):
-        set_frequency(2.0, True)
+        set_frequency(1.5, True)
 
     elif (temp > 80):
-        set_frequency(2.5)
+        set_frequency(2.0)
 
     elif (temp < 60):
         set_frequency(3.5)
@@ -46,6 +46,6 @@ while(True):
         set_frequency(5.0)
 
     else:
-        set_frequency(2.9)
+        set_frequency(2.5)
 
     sleep(2)
